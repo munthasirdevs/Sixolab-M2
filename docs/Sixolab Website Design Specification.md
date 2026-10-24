@@ -1,0 +1,897 @@
+# **Sixolab LLC Frontend Architecture, Design System, and Full-Site Specification**
+
+## **Executive Reference Synthesis & Architectural Paradigm**
+
+Designing the flagship digital presence for **Sixolab LLC** requires reconciling two traditionally distinct web design paradigms: the atmospheric, kinetic craft of award-winning creative studios and the dense, high-trust service taxonomy of global technology consultancies1. As the parent holding company governing **Gitlink IT Solutions** (Technology / Build), **Xenon Studios** (Creative & Branding / Create), and **One Percent** (Film & Visual Execution / Produce), the Sixolab platform must operate simultaneously as an executive holding-group portal and a comprehensive, end-to-end service engine capable of onboarding single-vertical clients or orchestrating multi-company launches1.  
+An architectural audit of the eleven benchmark reference platforms alongside the existing child agency ecosystems demonstrates how world-class digital products balance visual theatre with structural legibility. Rather than treating these references as isolated aesthetic moodboards, the Sixolab frontend specification extracts specific functional mechanics from each benchmark and synthesizes them into a unified HTML5, Tailwind CSS, vanilla JavaScript, and GSAP architecture. From **Resend** (resend.com), the system adopts a strict dark-mode-first discipline built on pure black and carbon surfaces, 1px specular top-edge card borders, monospace technical metadata, and subtle fractal noise textures that eliminate gradient banding across dark viewports4. From **Graphite** (graphite.com), the architecture incorporates exposed hairline Bento grids, structural 1px solid subdivisions, coordinate crosshair intersections, and monumental footer geometry9. **Huly** (huly.io) informs the volumetric atmospheric lighting model, where focused vertical and conic light-beam shaders in the hero viewport pair deep crimson and wine ambient bleed with a single high-luminance orange primary call-to-action button, while secondary navigation actions remain in restrained outline pills to avoid visual competition11.  
+The narrative pacing and interaction mechanics draw equally from the studio benchmarks. **Mission Control** (missioncontrol.co) provides the blueprint for startup-velocity editorial clarity, seamlessly bridging brand identity, digital product design, and engineering under founder-led positioning2. **Cuberto** (cuberto.com) supplies the tactile 2D physics language, including a custom mix-blend-mode dual-ring cursor follower, 2D planar magnetic pull on interactive buttons, elastic SVG Bezier horizontal dividing lines that vibrate when crossed by the pointer, masked line-by-line typography reveals, and continuous horizontal ticker marquees15. **Instrument** (instrument.com), **Huge Inc** (hugeinc.com), and **Fantasy** (fantasy.co) govern the macro-to-micro homepage flow, combining monumental neo-grotesque typography and disciplined negative space with futuristic, stage-like UI transitions3. Finally, **ScienceSoft** (scnsoft.com), **BairesDev** (bairesdev.com), and **Accenture** (accenture.com) establish the enterprise service taxonomy architecture, demonstrating how a holding organization can expose over fifty granular capabilities, explicit engagement criteria, and flexible contract models through progressive disclosure without inducing cognitive overload1.
+
+| Reference Platform | Core Architectural Domain | Extracted UI, Layout, and Motion Mechanics for Sixolab LLC |
+| :---- | :---- | :---- |
+| **Resend** (resend.com) | Dark-Mode-First Surface Engineering | Pure dark-mode foundation (\#080808 and \#111111), 1px specular top-edge card borders (linear-gradient(90deg, transparent, rgba(255,90,31,0.45), transparent)), monospace metadata badges, and subtle SVG noise overlays (opacity: 0.035) that prevent color banding across dark gradients4. |
+| **Graphite** (graphite.com) | Exposed Hairline Bento Architecture | Structural 1px solid grid subdivisions using translucent Subtle Gray (rgba(115, 115, 115, 0.18)), exposed coordinate intersections (+ crosshairs at grid junctions), interactive system diagrams, and monumental footer architecture9. |
+| **Huly** (huly.io) | Volumetric Atmospheric Lighting | Focused vertical and conic light-beam shaders in the hero viewport, pairing Deep Crimson (\#6B0F12) and Dark Wine (\#300507) ambient bleed with a high-luminance Sixo Orange (\#FF5A1F) primary CTA button, while keeping secondary navigation buttons in restrained outline pills to prevent visual competition11. |
+| **Mission Control** (missioncontrol.co) | Startup Velocity & Editorial Clarity | Direct, founder-oriented value propositions, seamless narrative bridging between brand identity, digital product design, and engineering, and transparent engagement model cards2. |
+| **Cuberto** (cuberto.com) | Tactile 2D Physics & Cursor Choreography | Custom mix-blend-mode dual-ring cursor follower, 2D planar magnetic pull on buttons (translateX/translateY without 3D tilt), elastic SVG Bezier horizontal dividing lines that snap when crossed by the pointer, masked line-by-line text reveals, and infinite horizontal ticker marquees15. |
+| **Instrument** (instrument.com) | Swiss-Grid Typographic Authority | High-contrast neo-grotesque display typography, disciplined negative space, structured case-study matrices, and editorial discipline across multi-disciplinary portfolios3. |
+| **Fantasy** (fantasy.co) | AI-Native Futuristic Staging | Cinematic dark surfaces, seamless stage transitions, and interactive capability selectors that feel like operating a precision software instrument rather than browsing a static brochure17. |
+| **Huge Inc** (hugeinc.com) | Macro-to-Micro Homepage Pacing | Bold, declarative section transitions that shift effortlessly from macro holding-group philosophy ("Build. Create. Produce.") to granular operational execution1. |
+| **ScienceSoft, BairesDev & Accenture** (scnsoft.com, bairesdev.com, accenture.com) | Enterprise Service Taxonomy & Governance | Structured capability matrices, progressive disclosure accordions, explicit engagement criteria tables ("Best Fit For", "What We Need", "What You Receive"), flexible contract/payment frameworks, and cross-company delivery blueprints that convert enterprise buyers1. |
+
+A critical structural synthesis emerges when examining the live child agency platforms—**Gitlink IT Solutions** (gitlinkitsolutions.com) and **Xenon Studios** (xenonstudios.bd)—alongside the **Sixolab LLC Group & Ecosystem Documentation**1. In the commercial market, Gitlink IT Solutions has historically delivered an expansive suite of digital services encompassing web development, custom software engineering, AI automation, digital marketing (SEO, SMM, SEM), graphic design, video editing, CMS development, data operations, and IT consultancy across more than 60 completed client engagements18. Within the formalized 2026 Sixolab LLC holding structure, group capabilities are disciplined into three specialized operating verticals—**Gitlink IT Solutions (BUILD / Technology)**, **Xenon Studios (CREATE / Brand & Experience)**, and **One Percent (PRODUCE / Film & Visual Execution)**—united under the parent governance of **Sixolab LLC (CONNECT & OPERATE)**1.  
+To satisfy the dual mandate that Sixolab functions as the strategic mother company while directly offering and showcasing every service provided across its child agencies, the frontend information architecture implements a **Dual-Layer Service Matrix**1. At the executive storytelling layer, visitors encounter the disciplined "Build. Create. Produce." triad defined in the group documentation1. At the operational drill-down layer, the interface exposes all 44 core ecosystem capabilities alongside Gitlink's extended digital marketing, e-commerce, CMS, operational support, and flexible payment frameworks, routing every engagement through Sixolab's single-point-of-contact governance1.
+
+## **Brand Identity System, Color Tokens & Tailwind CSS Configuration**
+
+### **Anatomy of the Sixolab Brand Mark and Verbal Identity**
+
+The visual and kinetic language of the website derives directly from the geometric construction of the Sixolab refined brand mark. Rather than treating the logo as a static header stamp, the frontend architecture deconstructs its four semantic layers into discrete SVG path groups (\#sixo-path-flow, \#sixo-path-space, \#sixo-path-base, and \#sixo-path-knight) that drive the preloader choreography, scroll progress indicators, and ambient background geometry. Constructed on a modular geometric grid of intersecting circles with smooth curves and consistent stroke weight, the mark scales cleanly from 16px favicons to full-viewport architectural watermarks.
+
+| Anatomical Layer | SVG Element ID | Visual Geometry | Strategic Meaning & Brand Narrative |
+| :---- | :---- | :---- | :---- |
+| **S — FLOW** | \#sixo-path-flow | Continuous upper-to-lower S-curve ribbon | The overall flow of the mark forms a subtle "S", representing operational continuity across technology, creative, and production verticals. |
+| **O — SPACE** | \#sixo-path-space | Enclosed central negative-space aperture | The central negative space creates an "O", symbolizing the unified holding hub where client objectives and specialist teams converge. |
+| **L — BASE** | \#sixo-path-base | Lower ascending foundation stroke | The foundation and bottom stroke represents "L", embodying structural engineering, shared operational systems, and long-term stability. |
+| **KNIGHT — STRATEGY** | \#sixo-path-knight | Upper-right crest and overarching profile | The overall silhouette subtly resembles a chess knight, symbolizing strategy, foresight, and intelligent moves in competitive markets. |
+
+The primary wordmark renders **S I X O** in Pure White (\#F5F5F5) and **L A B** in Sixo Orange (\#FF5A1F) with wide architectural tracking (letter-spacing: 0.32em). Four official mark variations are supported in the SVG sprite system: White (\#F5F5F5), Orange (\#FF5A1F), Gray (\#A1A1AA), and Reverse (\#F5F5F5 inside a \#111111 circular badge), alongside app-icon containers (border-radius: 22%) in Obsidian Black, Sixo Orange, Pure White, and watermarked Carbon Black. Two official taglines anchor the verbal identity across all templates: the corporate technical tagline **"BUILDING SOFTWARE. BUILDING FUTURE."** and the ecosystem operational mantra **"BUILD. CREATE. PRODUCE."**1. Official corporate metadata establishes **Mahi** as Founder & CEO, with group-level communications routed through \+880 1234 567890, hello@sixolab.com, and www\.sixolab.com, complemented by child agency desks at gitlinkitsolutions@gmail.com and connect@xenonstudios.bd21.
+
+### **Strict 70 / 20 / 10 Color Architecture and Token Mapping**
+
+The Sixolab color system enforces a dark-mode-only discipline designed to convey intelligence, power, and innovation while maintaining WCAG AAA/AA contrast for technical legibility. The **70 / 20 / 10 Usage Ratio** governs every viewport across the platform: **70%** of the visual field is allocated to primary dark foundations (**Obsidian Black \#080808** and **Carbon Black \#111111**), **20%** is allocated to secondary atmospheric depth (**Deep Crimson \#6B0F12** and **Dark Wine \#300507**), and strictly **10%** is reserved for high-impact brand accents (**Sixo Orange \#FF5A1F** and **Orange Glow \#FF7A30**). Dark tones lead the visual hierarchy while orange supports exclusively as an indicator of action, active state, or strategic emphasis.
+
+| Category | Token Name | Hex Code | CSS Custom Property | Usage Ratio | Architectural Role & DOM Placement |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| **Primary Foundation** | **Obsidian Black** | \#080808 | \--bg-obsidian | 70% (Primary) | Primary \<body\> canvas, main section backgrounds, negative space, and preloader shutter base. |
+| **Primary Surface** | **Carbon Black** | \#111111 | \--bg-carbon | 70% (Primary) | Bento cards, service containers, navigation pill surface, sticky tables, and modal interiors. |
+| **Secondary Atmosphere** | **Deep Crimson** | \#6B0F12 | \--ambient-crimson | 20% (Secondary) | Radial light-beam cores, ambient hero backlighting, and active card background gradients. |
+| **Secondary Depth** | **Dark Wine** | \#300507 | \--ambient-wine | 20% (Secondary) | Mid-stop gradient transitions, deep drop-shadow tinting, and recessed container wells. |
+| **Brand Accent** | **Sixo Orange** | \#FF5A1F | \--accent-orange | 10% (Accent) | Primary CTA backgrounds, the "LAB" wordmark characters, active tab indicators, and focal badges. |
+| **Interactive Accent** | **Orange Glow** | \#FF7A30 | \--accent-glow | 10% (Accent) | Hover states, specular card top-borders, SVG path drawing pulses, and button aura shadows. |
+| **Neutral Primary** | **Pure White** | \#F5F5F5 | \--text-white | Neutral | All H1–H4 headings, primary metric numerals, active navigation links, and the "SIXO" wordmark. |
+| **Neutral Secondary** | **Gray Text** | \#A1A1AA | \--text-gray | Neutral | Body copy, service descriptions, table cell content, and subtitle paragraphs. |
+| **Neutral Structural** | **Subtle Gray** | \#737373 | \--border-subtle | Neutral | Exposed hairline grid borders (rgba(115,115,115,0.2)), form input outlines, and muted captions. |
+| **Neutral Inactive** | **Disabled** | \#525252 | \--text-disabled | Neutral | Inactive filter pills, disabled form buttons, locked step numbers, and watermarked background text. |
+
+Two standardized gradient tokens unify surface lighting across all pages. The **Background Gradient (--grad-bg)** flows linearly from \#080808 through \#300507 to \#6B0F12 (linear-gradient(135deg, \#080808 0%, \#300507 55%, \#6B0F12 100%)), providing atmospheric warmth behind hero sections, executive callout banners, and card hover underlays. The **Accent Glow Gradient (--grad-accent)** transitions from \#FF5A1F to \#FF7A30 (linear-gradient(90deg, \#FF5A1F 0%, \#FF7A30 100%)), driving primary call-to-action buttons, active timeline conduits, specular top borders, and gradient-clipped display keywords.
+
+### **Typography Scale and Exposed Hairline Grid System**
+
+Inspired by the typographic precision of Resend, Graphite, and Instrument, the font stack pairs a geometric neo-grotesque display typeface (**Plus Jakarta Sans** for monumental headlines and brand wordmarks), a neutral neo-grotesque interface font (**Inter** for body copy, tables, and form controls), and a technical monospace font (**JetBrains Mono** for index numerals, vertical badges, and system telemetry)5. Following Resend's dark-mode legibility rules, the system avoids font-thin or font-light weights on dark backgrounds so characters never halate or dissolve against \#08080824.
+
+| Element / Role | Font Family | Font Weight | Desktop Size (lg+) | Mobile Size (base) | Line Height | Letter Spacing | Color Token |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| **Hero Display (H1)** | Plus Jakarta Sans | 700 (Bold) | 4.5rem (72px) | 2.5rem (40px) | 1.06 | \-0.03em | \#F5F5F5 |
+| **Section Header (H2)** | Plus Jakarta Sans | 600 (SemiBold) | 3.0rem (48px) | 2.0rem (32px) | 1.12 | \-0.025em | \#F5F5F5 |
+| **Agency / Pillar Title (H3)** | Plus Jakarta Sans | 600 (SemiBold) | 1.75rem (28px) | 1.375rem (22px) | 1.25 | \-0.015em | \#F5F5F5 |
+| **Card / Capability Title (H4)** | Inter | 600 (SemiBold) | 1.25rem (20px) | 1.125rem (18px) | 1.35 | \-0.01em | \#F5F5F5 |
+| **Lead Editorial Copy** | Inter | 400 (Regular) | 1.25rem (20px) | 1.0625rem (17px) | 1.65 | 0em | \#A1A1AA |
+| **Standard Body Copy** | Inter | 400 (Regular) | 1.0rem (16px) | 0.9375rem (15px) | 1.6 | 0em | \#A1A1AA |
+| **Eyebrow / Vertical Tag** | JetBrains Mono | 500 (Medium) | 0.75rem (12px) | 0.75rem (12px) | 1.4 | 0.16em (Uppercase) | \#FF5A1F |
+| **Technical Index / Label** | JetBrains Mono | 400 (Regular) | 0.8125rem (13px) | 0.75rem (12px) | 1.4 | 0.08em | \#737373 |
+
+Structurally, every page is framed within a centered max-w-\[1440px\] architectural container bounded by continuous left and right 1px solid rgba(115, 115, 115, 0.16) guide rails. Major horizontal sections are separated by full-bleed 1px borders, and at primary column junctions, a 9px × 9px SVG crosshair (+) in Subtle Gray (\#737373) marks the structural node.
+
+### **Master Tailwind CSS Configuration**
+
+The following configuration defines the complete token system for Tailwind CSS alongside custom utilities for gradients, specular highlights, and ambient shadows.
+
+JavaScript  
+// tailwind.config.js  
+module.exports \= {  
+  darkMode: 'class',  
+  content: \['./\*.html', './js/\*\*/\*.js'\],  
+  theme: {  
+    extend: {  
+      colors: {  
+        obsidian: '\#080808',  
+        carbon: '\#111111',  
+        sixo: {  
+          orange: '\#FF5A1F',  
+          glow: '\#FF7A30',  
+          crimson: '\#6B0F12',  
+          wine: '\#300507',  
+        },  
+        neutral: {  
+          white: '\#F5F5F5',  
+          gray: '\#A1A1AA',  
+          subtle: '\#737373',  
+          disabled: '\#525252',  
+        }  
+      },  
+      fontFamily: {  
+        display: \['"Plus Jakarta Sans"', 'Inter', 'sans-serif'\],  
+        sans: \['Inter', 'system-ui', 'sans-serif'\],  
+        mono: \['"JetBrains Mono"', 'monospace'\],  
+      },  
+      backgroundImage: {  
+        'sixo-ambient': 'linear-gradient(135deg, \#080808 0%, \#300507 55%, \#6B0F12 100%)',  
+        'sixo-accent': 'linear-gradient(90deg, \#FF5A1F 0%, \#FF7A30 100%)',  
+        'sixo-radial-crimson': 'radial-gradient(circle at 50% 0%, rgba(107, 15, 18, 0.55) 0%, rgba(48, 5, 7, 0.25) 45%, rgba(8, 8, 8, 0\) 75%)',  
+        'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.5) 50%, rgba(255,255,255,0) 100%)',  
+      },  
+      boxShadow: {  
+        'orange-glow': '0 0 28px \-4px rgba(255, 90, 31, 0.45), 0 0 12px \-2px rgba(255, 122, 48, 0.3)',  
+        'orange-glow-lg': '0 0 45px \-5px rgba(255, 90, 31, 0.65), 0 0 20px \-2px rgba(255, 122, 48, 0.45)',  
+        'crimson-ambient': '0 20px 60px \-15px rgba(107, 15, 18, 0.4)',  
+      },  
+      letterSpacing: {  
+        'brand': '0.32em',  
+        'eyebrow': '0.16em',  
+      }  
+    }  
+  },  
+  plugins: \[\],  
+};
+
+## **Signature GSAP Preloader, Ambient 3D Canvas & Non-3D-Hover Motion Engine**
+
+### **Strict Prohibition of 3D Hover Tilt & The 2D Planar Physics Mandate**
+
+In accordance with the frontend animation mandate, **no element anywhere on the Sixolab website may utilize 3D hover perspective transforms** (transform: perspective(...) rotateX(...) rotateY(...) or 3D card tilting on pointer hover are strictly excluded). Three-dimensional card tilting degrades sub-pixel typographic rendering on dark backgrounds and detracts from executive restraint. Instead, the Sixolab motion engine achieves tactile responsiveness exclusively through five 2D planar and shader-driven micro-interaction patterns executed in GSAP and CSS15.  
+First, all Bento cards and capability containers implement **Radial Spotlight Border & Surface Tracking**. As the pointer traverses a grid of .sixo-spotlight-card elements, a lightweight vanilla JavaScript mousemove listener updates \--mouse-x and \--mouse-y CSS custom properties relative to each card's bounding box. A masked ::before pseudo-element illuminates the 1px border with an Orange Glow (\#FF7A30) radial gradient (radial-gradient(380px circle at var(--mouse-x) var(--mouse-y), rgba(255,122,48,0.65), rgba(107,15,18,0.25) 45%, transparent 100%)), while the card interior stays rock-steady on the 2D plane. Second, primary buttons, navigation pills, and agency badges utilize **2D Planar Magnetic Pull** via gsap.quickTo("x") and gsap.quickTo("y"), translating the element up to 12px horizontally and 8px vertically toward the cursor (ease: "power3.out") and snapping back elastically on pointer exit15. Third, button labels employ a **Vertical Dual-Layer Text Slot Roll**, where hovering translates the primary text layer to yPercent: \-100 while raising a duplicate layer in \#FF7A30 or \#080808 from yPercent: 100 to 0 over 0.35s25. Fourth, horizontal section dividers function as **Elastic SVG Bezier Guitar Strings** (\<path d="M 0 40 Q 720 40 1440 40"\>), bending their quadratic control point in response to pointer velocity and snapping back via ease: "elastic.out(1, 0.25)"15. Fifth, table rows and service accordions execute a **2D Planar Sweep Fill**, sliding a linear-gradient(90deg, rgba(107,15,18,0.32) 0%, rgba(17,17,17,0.95) 100%) highlight from left to right while nudging the heading 4px along the X-axis.
+
+| Interaction Pattern | Target DOM Elements | GSAP / CSS Mechanism | Visual & Color Feedback (Zero 3D Tilt) |
+| :---- | :---- | :---- | :---- |
+| **Radial Spotlight Border** | .sixo-spotlight-card (Bento & Service Cards) | JS \--mouse-x/--mouse-y \+ CSS mask-composite: exclude | Illuminates 1px border in \#FF7A30 and \#6B0F12 within a 380px radius of cursor. |
+| **2D Planar Magnetic Pull** | .magnetic-btn, Header CTA, Filter Pills | gsap.quickTo(el, "x") & gsap.quickTo(el, "y") (0.4s) | Translates flat on X/Y axes (max ±12px); aura intensifies to shadow-orange-glow-lg. |
+| **Dual-Layer Text Slot Roll** | .btn-text-wrap inside all CTAs and Nav links | gsap.to(layers, { yPercent: \-100, duration: 0.35 }) | Upper \#F5F5F5 label slides up out of mask as lower \#FF7A30 label slides into place. |
+| **Elastic SVG Bezier String** | .sixo-elastic-divider between major sections | SVG \<path\> Q control point \+ elastic.out(1, 0.25) | Line bends toward pointer crossing vector and oscillates back to horizontal equilibrium15. |
+| **Blend-Mode Cursor Follower** | \#sixo-cursor-dot & \#sixo-cursor-ring | gsap.quickSetter (0.08s dot, 0.22s ring) | 10px \#FF5A1F core dot \+ 36px \#FF7A30 ring that expands to 64px over links15. |
+
+### **Creative Loading Screen Choreography: "The Knight's Gambit & Modular Genesis"**
+
+To establish immediate brand authority on initial session entry, the website executes a **3.2-second choreographed GSAP Timeline Preloader** (\#sixo-preloader) that visually constructs the Sixolab brand mark from its modular geometry before parting the viewport into the Hero section26. Subsequent internal page navigations within the same browser session read a sessionStorage.getItem('sixo\_loaded') flag and bypass the full construction sequence in favor of a rapid 0.45s shutter wipe.  
+The preloader container (fixed inset-0 z-\[9500\] overflow-hidden) comprises two full-width horizontal split-shutter panels (\#shutter-top and \#shutter-bottom) colored in Obsidian Black (\#080808) and divided across the screen's horizontal equator by a 1px Subtle Gray (\#737373) hairline. Across four synchronized stages, the GSAP timeline orchestrates the genesis of the brand mark, the three child verticals, and the parent wordmark1.
+
+| Timeline Stage & Window | Target SVG / DOM Selectors | GSAP Properties & Easing | Visual & Narrative Execution |
+| :---- | :---- | :---- | :---- |
+| **Stage 1: Modular Grid Genesis** (0.00s – 0.65s) | \#modular-grid-circles, \#preloader-counter, \#preloader-status | scale: 0.8 \-\> 1.0, opacity: 0 \-\> 0.35, ease: "expo.out" | Five dashed construction circles (stroke: \#737373) lock into place in the center of the \#080808 canvas while the bottom-right counter begins ticking from 000% to 100% and top-left telemetry reads \[ INITIALIZING SIXOLAB ECOSYSTEM \]. |
+| **Stage 2A: L — Base Draw-On** (0.20s – 0.75s) | \#path-l-base, \#anatomy-callout | strokeDashoffset: 1 \-\> 0, duration: 0.55, ease: "power3.inOut" | The lower foundation stroke draws in Pure White (\#F5F5F5, stroke-width: 16\) as the callout badge below the mark reads \[ L — BASE : FOUNDATION \]27. |
+| **Stage 2B: O — Space Loop** (0.70s – 1.30s) | \#path-o-space, \#anatomy-callout, \#preloader-status | strokeDashoffset: 1 \-\> 0, duration: 0.60, ease: "power3.inOut" | The central negative-space aperture closes in \#F5F5F5 with a subtle radial pulse of Deep Crimson (\#6B0F12); status updates to \[ 01 // GITLINK IT SOLUTIONS : BUILD \] and callout reads \[ O — SPACE : ECOSYSTEM CORE \]1. |
+| **Stage 2C: S — Flow Ribbon** (1.25s – 1.80s) | \#path-s-flow, \#anatomy-callout, \#preloader-status | strokeDashoffset: 1 \-\> 0, duration: 0.55, ease: "power3.inOut" | The ascending S-curve sweeps upward in \#F5F5F5; status updates to \[ 02 // XENON STUDIOS : CREATE \] and callout reads \[ S — FLOW : CONTINUITY \]1. |
+| **Stage 2D: Knight Crest Ignition** (1.75s – 2.30s) | \#path-knight-strategy, \#anatomy-callout, \#preloader-status | strokeDashoffset: 1 \-\> 0, stroke: "\#FF5A1F", filter: drop-shadow(...) | The chess knight head and ear crest draw on in **Sixo Orange (\#FF5A1F)** with an **Orange Glow (\#FF7A30)** aura; status updates to \[ 03 // ONE PERCENT : PRODUCE \] and callout reads \[ KNIGHT — STRATEGY & FORESIGHT \]1. |
+| **Stage 3: Wordmark & Tagline Reveal** (1.85s – 2.50s) | \#preloader-wordmark, \#preloader-tagline, \#modular-grid-circles | y: "100%" \-\> "0%", ease: "power4.out", opacity: 0 \-\> 1 | SIXO (\#F5F5F5) and LAB (\#FF5A1F) rise out of an overflow mask (tracking-\[0.34em\]), followed by BUILDING SOFTWARE. BUILDING FUTURE. in \#A1A1AA while the construction grid dissolves. |
+| **Stage 4: Split-Shutter Parting** (2.55s – 3.20s) | \#shutter-top, \#shutter-bottom, \#sixo-preloader | yPercent: \-100 (top), yPercent: 100 (bottom), ease: "expo.inOut" | The central equator line flashes \#FF5A1F, and the top and bottom \#080808 shutters slide apart vertically to unveil the Hero section and trigger the Hero entrance timeline. |
+
+### **Premium Ambient 3D Background Architecture: "The Obsidian & Crimson Volumetric Field"**
+
+To give the website the unmistakable depth of a tier-one global agency without introducing 3D hover tilt on UI cards, the background incorporates a fixed, non-interactive HTML5 Canvas / WebGL layer (\<canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"\>) driven by gsap.ticker and scrubbed via ScrollTrigger12.  
+The canvas renders two harmonized visual layers. The first layer is a **Huly-inspired Volumetric Light Cone** originating from the upper-right hero quadrant (x: 72%, y: 18%) and cascading diagonally across the Obsidian Black (\#080808) void11. Its radial and conic shader stops blend seamlessly from a Sixo Orange core filament (rgba(255, 90, 31, 0.11)) into Deep Crimson (rgba(107, 15, 18, 0.22)), Dark Wine (rgba(48, 5, 7, 0.14)), and pure Obsidian Black (rgba(8, 8, 8, 0)). Suspended inside this volumetric light field is the second layer: a **3D Projected Wireframe Ribbon Lattice** consisting of three mathematical orbital curves modeled after the S-O-L ribbon of the Sixolab mark. Rendered in ultra-fine translucent white strokes (rgba(245, 245, 245, 0.055)) with glowing \#FF5A1F vertex nodes, the 3D geometry rotates smoothly at 0.008 rad/tick and morphs its spatial formation via ScrollTrigger as the visitor progresses down the page—appearing as a unified S-O-L sculpture in the Hero, separating into three orbital rings (Build, Create, Produce) in the Ecosystem Triad section, aligning into a horizontal conduit during the 5-Step Process section, and resolving into the iconic embossed Chess Knight silhouette in the global footer1.
+
+## **Master Page-by-Page & Section-by-Section Frontend Specification: Home Page (index.html)**
+
+### **Section 01: Global Sticky Header & Ecosystem Switcher (\<header id="global-nav"\>)**
+
+The global navigation header is engineered as a fixed, high-contrast command bar (fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/80 backdrop-blur-xl border-b border-neutral-subtle/20 transition-all duration-300). Inside the max-w-\[1440px\] mx-auto px-6 lg:px-12 h-full flex items-center justify-between wrapper, the header divides into three functional zones that balance parent-company authority with immediate child-agency routing1.
+
+| Header Zone | DOM Structure & Tailwind Classes | Exact Text / Copywriting | Color Tokens & Interactive Behavior |
+| :---- | :---- | :---- | :---- |
+| **Left Zone: Brand Identity** | \<a href="index.html" class="flex items-center gap-3 group"\> containing inline SVG Knight Mark (w-8 h-8) \+ Wordmark \<span\> \+ Group Badge \<span\> | Wordmark: SIXOLAB (SIXO \+ LAB) \| Badge: LLC // GROUP1 | SVG Mark: \#F5F5F5 (shifts to \#FF5A1F on hover). SIXO in \#F5F5F5, LAB in \#FF5A1F. Divider in rgba(115,115,115,0.4). Badge in \#A1A1AA. |
+| **Center Zone: Navigation Pill** | \<nav class="hidden lg:flex items-center gap-1 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-3 py-1.5 shadow-crimson-ambient"\> | Links: Overview (index.html), The Ecosystem (ecosystem.html), Capabilities (services.html), Process & Models (process.html), Case Studies (\#case-studies) | Active link in \#F5F5F5 with a 5px \#FF5A1F indicator dot; inactive links in \#A1A1AA transitioning to \#F5F5F5 via dual-layer vertical text slot roll. |
+| **Center Dropdown: Ecosystem Switcher** | Absolute mega-menu panel (top-full mt-3 w-\[680px\] bg-carbon border border-neutral-subtle/30 rounded-2xl p-6 shadow-crimson-ambient) triggered on hovering The Ecosystem | 3 Specialist Cards: 01 Gitlink IT Solutions \[BUILD\], 02 Xenon Studios \[CREATE\], 03 One Percent \[PRODUCE\] \+ Parent link Sixolab LLC \[CONNECT & OPERATE\]1 | Each sub-card has \#080808 background, \#737373 hairline border shifting to \#FF5A1F on hover, role badge in \#FF5A1F, and direct internal/external links1. |
+| **Right Zone: Secondary Action** | \<a href="contact.html" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-xs font-medium"\> | Initiate Discovery | Restrained outline pill following Huly hierarchy rules12: text \#F5F5F5, border rgba(255,90,31,0.5), pulsing 6px dot in \#FF5A1F. Hover fills \#FF5A1F with \#080808 text. |
+
+### **Section 02: Hero Section (\<section id="hero"\>)**
+
+Occupying the full initial viewport (min-h-screen pt-32 pb-20 flex flex-col justify-between relative overflow-hidden border-b border-neutral-subtle/20), the Hero section establishes Sixolab LLC's foundational proposition: a single executive relationship governing three elite specialist companies1. The background layers the \#080808 Obsidian Black base with the bg-sixo-ambient (\#080808 ![][image1] \#300507 ![][image1] \#6B0F12) volumetric glow in the upper-right quadrant and an embossed dark-metallic Sixolab Knight watermark (opacity: 0.12, rim-lit in \#FF5A1F and \#6B0F12), mirroring the signature atmospheric treatment from the Sixolab Color Palette specification. Within the 12-column grid (max-w-\[1440px\] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center), Columns 1 through 8 house the primary typographic stack and call-to-action controls, while Columns 9 through 12 frame the focal 3D wireframe S-O-L sculpture rendered on the background canvas.
+
+| Hero Element | Tag & Tailwind Utility Classes | Exact Copywriting String | Color Placement & GSAP Entrance Animation |
+| :---- | :---- | :---- | :---- |
+| **Eyebrow Status Pill** | div.inline-flex.items-center.gap-2.5.px-3.5.py-1.5.rounded-full.bg-carbon.border.border-sixo-orange/35.mb-8 | SIXOLAB LLC — PARENT HOLDING ECOSYSTEM // EST. 20261 | Container \#111111, border rgba(255,90,31,0.35), pulsing dot \#FF5A1F, mono text \#F5F5F5. Fades in at t \= 2.65s (y: 16 \-\> 0). |
+| **Primary Display Headline (H1)** | h1.font-display.font-bold.text-4xl.sm:text-6xl.lg:text-\[72px\].leading-\[1.05\].tracking-\[-0.03em\].mb-6 | Line 1: One group. \| Line 2: Three specialists. \| Line 3: Build. Create. Produce.1 | Lines 1 & 2 in Pure White (\#F5F5F5); Line 3 clipped to bg-sixo-accent (\#FF5A1F ![][image1] \#FF7A30). Masked line-by-line rise (yPercent: 105 \-\> 0, stagger: 0.12s, ease: "power4.out"). |
+| **Lead Editorial Paragraph (p)** | p.font-sans.text-lg.lg:text-xl.text-neutral-gray.max-w-2xl.leading-relaxed.mb-6 | "Sixolab LLC is the parent organization overseeing a multidisciplinary ecosystem spanning technology, creative, branding, media, and commercial production. It provides the strategic, operational, and business framework that connects its specialized companies—giving clients one relationship and the right specialist for every part of the work."1 | Gray Text (\#A1A1AA) with high contrast against \#080808. Fades up (opacity: 0 \-\> 1, y: 24 \-\> 0, duration: 0.7s) at t \= 2.95s. |
+| **Technical Sub-Tagline** | p.font-mono.text-xs.tracking-\[0.24em\].uppercase.text-neutral-subtle.mb-10 | BUILDING SOFTWARE. BUILDING FUTURE. // CONNECT & OPERATE THE ECOSYSTEM1 | Subtle Gray (\#737373) with // separator in \#FF5A1F. |
+| **Primary Hero CTA** | a.magnetic-btn.inline-flex.items-center.gap-3.px-8.py-4.rounded-full.bg-sixo-accent.text-obsidian.font-display.font-bold.text-sm.shadow-orange-glow | Scope an Ecosystem Project → (href="contact.html") | Background gradient \#FF5A1F ![][image1] \#FF7A30, text \#080808, outer glow rgba(255,90,31,0.45). Hover intensifies to shadow-orange-glow-lg with 2D magnetic pull12. |
+| **Secondary Hero CTA** | a.magnetic-btn.inline-flex.items-center.gap-3.px-8.py-4.rounded-full.bg-carbon.border.border-neutral-subtle/30.text-neutral-white.font-display.font-semibold.text-sm | Explore the 3 Companies (href="\#ecosystem-triad") | Background \#111111, border rgba(115,115,115,0.3), text \#F5F5F5. Hover shifts border to \#FF5A1F and background to rgba(48,5,7,0.35). |
+| **Bottom Telemetry Bar (4 Columns)** | div.grid.grid-cols-1.md:grid-cols-4.border-t.border-neutral-subtle/20.pt-8.mt-16.gap-6 | **Col 1**: 00 // PARENT COMPANY — Sixolab LLC (Connect & Operate) \| **Col 2**: 01 // TECHNOLOGY — Gitlink IT Solutions (BUILD) \| **Col 3**: 02 // CREATIVE — Xenon Studios (CREATE) \| **Col 4**: 03 // PRODUCTION — One Percent (PRODUCE)1 | Index tags in \#FF5A1F, company titles in \#F5F5F5, role descriptions in \#A1A1AA. Top border draws left-to-right (scaleX: 0 \-\> 1, stagger: 0.1s). |
+
+### **Section 03: The Brand Philosophy & Knight Anatomy Interactive Strip (\<section id="brand-anatomy"\>)**
+
+Directly beneath the Hero viewport sits an architectural 5-column horizontal strip (py-20 bg-carbon border-b border-neutral-subtle/20) divided by exposed 1px vertical hairlines (grid-cols-1 lg:grid-cols-5 divide-y lg:divide-y-0 lg:divide-x divide-neutral-subtle/20). This section translates the **"THE MEANING"** specification from the Sixolab Brand Identity sheet into an interactive narrative sequence. As the visitor's cursor moves across Columns 2 through 5, the corresponding anatomical segment of the inline SVG mark illuminates in Sixo Orange (\#FF5A1F) with an Orange Glow (\#FF7A30) drop shadow over a muted \#525252 base silhouette.
+
+| Grid Column | Eyebrow / Index (\#FF5A1F) | Heading (H2 / H3 in \#F5F5F5) | Exact Body Copywriting (\#A1A1AA) | Interactive SVG State |
+| :---- | :---- | :---- | :---- | :---- |
+| **Col 1: Section Anchor** | THE SIXOLAB MARK | Engineered for Strategy, Built on Flow. (H2) | "Built on a modular grid with smooth curves and consistent stroke for perfect balance, scalability, and intelligent execution." | Displays the complete modular construction grid with all circles active. |
+| **Col 2: S — Flow** | ANATOMY // 01 | S — FLOW (H3, with S in \#FF5A1F) | "The overall flow of the mark forms a subtle 'S'—representing seamless operational continuity across every phase of work." | Highlights the continuous S-curve ribbon in \#FF5A1F (stroke-dashoffset pulse). |
+| **Col 3: O — Space** | ANATOMY // 02 | O — SPACE (H3, with O in \#FF5A1F) | "The central negative space creates an 'O'—the unified holding hub where technology, creative, and production converge." | Illuminates the central negative-space aperture with a radial \#6B0F12 & \#FF5A1F core glow. |
+| **Col 4: L — Base** | ANATOMY // 03 | L — BASE (H3, with L in \#FF5A1F) | "The foundation and bottom stroke represents 'L'—the shared operational standards and engineering infrastructure supporting every company." | Highlights the lower horizontal/ascending foundation stroke in \#FF5A1F. |
+| **Col 5: Knight — Strategy** | ANATOMY // 04 | KNIGHT — STRATEGY (H3, with KNIGHT in \#FF5A1F) | "The overall silhouette subtly resembles a chess knight, symbolizing strategy, foresight, and intelligent moves." | Illuminates the full chess knight profile in \#FF5A1F with an \#FF7A30 outer aura. |
+
+### **Section 04: The Ecosystem Model & Quick-Reference Routing Matrix (\<section id="ecosystem-triad"\>)**
+
+Set against an Obsidian Black canvas (py-28 lg:py-36 bg-obsidian relative border-b border-neutral-subtle/20), Section 04 articulates the structural mechanics of the Sixolab holding model1. The section opens with a centered editorial header (max-w-3xl mx-auto text-center mb-20) featuring the monospace eyebrow 01 // THE ECOSYSTEM MODEL in \#FF5A1F, the H2 headline "Sixolab does not pretend to personally provide every service. It owns and operates the specialists who do." in \#F5F5F5, and the lead paragraph "Sixolab LLC owns and operates a network of focused companies, each with its own expertise, team, and standards. For clients, that means one relationship and the right specialist for every part of the work: whether you need one company or all three working as one team." in \#A1A1AA1.  
+Below the editorial header, an interactive HTML/SVG Hub-and-Spoke diagram connects the apex parent node (SIXOLAB LLC — PARENT COMPANY \[CONNECT & OPERATE\], styled in bg-carbon border-2 border-sixo-orange px-8 py-4 rounded-xl shadow-orange-glow) via orthogonal SVG circuit paths (stroke="\#737373" with animated \#FF5A1F energy pulses) to the three specialist pillar cards (grid grid-cols-1 lg:grid-cols-3 gap-8)1.
+
+| Card Attribute | Pillar 01: Technology | Pillar 02: Creative | Pillar 03: Production |
+| :---- | :---- | :---- | :---- |
+| **Container Styling** | .sixo-spotlight-card rounded-2xl p-8 bg-carbon | .sixo-spotlight-card rounded-2xl p-8 bg-carbon | .sixo-spotlight-card rounded-2xl p-8 bg-carbon |
+| **Role Badge (\#FF5A1F)** | ROLE // BUILD1 | ROLE // CREATE1 | ROLE // PRODUCE1 |
+| **Vertical Tag (\#737373)** | VERTICAL: TECHNOLOGY1 | VERTICAL: CREATIVE & BRANDING1 | VERTICAL: PRODUCTION1 |
+| **Company Title (H3, \#F5F5F5)** | Gitlink IT Solutions1 | Xenon Studios1 | One Percent1 |
+| **Core Directive (\#FF7A30)** | "Builds the technology."1 | "Creates the brand and creative."1 | "Produces the visual execution."1 |
+| **Exact Description (\#A1A1AA)** | "Software, AI, automation and the infrastructure behind every product."1 | "How a business, product or idea looks, communicates and feels."1 | "Turning creative concepts into real-world films, photography and campaigns."1 |
+| **Primary Card CTA (\#F5F5F5)** | Explore Gitlink Architecture → (gitlink.html) | Explore Xenon Architecture → (xenon.html) | Explore One Percent Architecture → (one-percent.html) |
+| **Child Domain Badge (\#737373)** | gitlinkitsolutions.com ↗20 | xenonstudios.bd ↗21 | Established Production House1 |
+
+Directly beneath the three specialist cards sits the **Quick Reference: Who Handles What** interactive routing matrix (bg-carbon border border-neutral-subtle/25 rounded-2xl overflow-hidden mt-16), translating Page 3 of the Group & Ecosystem Documentation into an interactive selector where hovering any row illuminates a 4px left border bar in \#FF5A1F and sweeps the row background with rgba(107, 15, 18, 0.25)1.
+
+| IF YOU NEED (\#F5F5F5 Column Header) | YOU WORK WITH (\#FF5A1F Column Header) | ROLE (\#A1A1AA Column Header) | Interactive Action (\#FF7A30) |
+| :---- | :---- | :---- | :---- |
+| "Software, web & mobile apps, AI, automation, platforms"1 | **Gitlink IT Solutions**1 | BUILD1 | Scope with Gitlink → (gitlink.html) |
+| "Brand strategy, identity, design, UI/UX, campaign creative"1 | **Xenon Studios**1 | CREATE1 | Scope with Xenon → (xenon.html) |
+| "TVCs, brand films, photography, post-production, VFX"1 | **One Percent**1 | PRODUCE1 | Scope with One Percent → (one-percent.html) |
+| "Strategy, partnerships, ventures, multi-company projects"1 | **Sixolab LLC**1 | CONNECT & OPERATE1 | Engage Group Directly → (contact.html) |
+
+### **Section 05: Deep-Dive Vertical Showcases (Pinned Scrollytelling Deck) (\<section id="vertical-deep-dives"\>)**
+
+Section 05 utilizes a GSAP ScrollTrigger pinned layout (py-28 lg:py-36 bg-obsidian border-b border-neutral-subtle/20) to present the complete capability rosters of all three specialist agencies without forcing the user to leave the home page1. On desktop viewports (lg:grid-cols-12), Columns 1 through 4 remain sticky (sticky top-28 h-fit) displaying a dynamic vertical counter (01 / 03 ![][image1] 02 / 03 ![][image1] 03 / 03), the active company's ecosystem role badge (BUILD, CREATE, PRODUCE), and a circular SVG progress indicator in \#FF5A1F. Columns 5 through 12 scroll through three comprehensive agency showcase panels (bg-carbon border border-neutral-subtle/25 rounded-3xl p-8 lg:p-12 mb-16 relative overflow-hidden), each crowned by a 1px specular top border (bg-sixo-specular-top).
+
+#### **Panel 05A: Gitlink IT Solutions — Technology Vertical (\#panel-gitlink)**
+
+The first showcase panel presents **Gitlink IT Solutions** (VERTICAL: Technology \| ECOSYSTEM ROLE: BUILD \| FOCUS: Technical delivery)1. The panel header renders the eyebrow 02 // TECHNOLOGY — GITLINK IT SOLUTIONS in \#FF5A1F, the H2 title "BUILD THE TECHNOLOGY." in \#F5F5F5, and the exact positioning narrative in \#A1A1AA: "Gitlink IT Solutions handles the technology vertical of the Sixolab ecosystem. This is where the actual technical delivery sits. From custom software and AI to automation, cloud infrastructure and the internal systems a business runs on, Gitlink designs and engineers technology that is built to scale and built to last. If someone asks who handles the technology, the answer is Gitlink IT Solutions."1. Beneath this narrative, a 3-column Bento matrix displays all 13 core ecosystem capabilities alongside Gitlink's extended web, e-commerce, CMS, and digital growth offerings from gitlinkitsolutions.com1.
+
+| Capability Index & Title (H4, \#F5F5F5) | Exact Capability Description (\#A1A1AA) | Source & Domain Classification |
+| :---- | :---- | :---- |
+| **01\. Custom Software Development** | "Bespoke software engineered around your workflows, instead of forcing your business into off-the-shelf tools."1 | Ecosystem Core Capability (BUILD) |
+| **02\. Web Applications** | "Fast, secure and scalable browser-based applications, portals and customer-facing platforms."1 | Ecosystem Core Capability (BUILD) |
+| **03\. Enterprise Software** | "Robust systems for large teams: role-based access, reporting, integrations and long-term maintainability."1 | Ecosystem Core Capability (BUILD) |
+| **04\. AI Solutions** | "Practical AI built around real business problems: assistants, analysis, content and decision support."1 | Ecosystem Core Capability (BUILD) |
+| **05\. AI Integration** | "Embedding AI into your existing products and processes so it increases leverage, not complexity."1 | Ecosystem Core Capability (BUILD) |
+| **06\. SaaS Development** | "Designing and building subscription software products, from first MVP through to scale."1 | Ecosystem Core Capability (BUILD) |
+| **07\. Business Automation** | "Removing repetitive manual work through automated workflows and system-to-system handoffs."1 | Ecosystem Core Capability (BUILD) |
+| **08\. Mobile Applications** | "iOS and Android applications with clean UX and dependable backends (Native Swift/Kotlin, React Native & Flutter)."1 | Ecosystem Core \+ Extended App Stack |
+| **09\. APIs & Integrations** | "Connecting your tools, data and third-party services into one system that works together."1 | Ecosystem Core Capability (BUILD) |
+| **10\. Cloud & Digital Infrastructure** | "Hosting, deployment, security and scaling foundations that keep products fast and online."1 | Ecosystem Core Capability (BUILD) |
+| **11\. Internal Business Systems** | "Inventory, CRM, operations and management tools tailored to how your company actually runs."1 | Ecosystem Core Capability (BUILD) |
+| **12\. Dashboards & Digital Platforms** | "Live visibility into data and operations, plus platforms that bring users, content and transactions together."1 | Ecosystem Core Capability (BUILD) |
+| **13\. Technical Consulting** | "Architecture reviews, technology selection and roadmaps, before you commit budget to the wrong build."1 | Ecosystem Core Capability (BUILD) |
+| **14\. Website & E-Commerce Engineering** | "Business & portfolio websites, WooCommerce & Shopify online stores, high-converting landing pages (\<2s load speed), Core Web Vitals optimization, and headless/custom CMS (WordPress, Webflow, Strapi, Contentful)."19 | Extended Child Agency Suite (gitlinkitsolutions.com) |
+| **15\. Digital Marketing & Operational Support** | "Data-driven SEO, Social Media Marketing (SMM), Search Engine Marketing (SEM), 24/7 dedicated support, monthly performance reporting, data entry/OCR, and technical/SEO writing."18 | Extended Child Agency Suite (gitlinkitsolutions.com) |
+
+#### **Panel 05B: Xenon Studios — Creative & Branding Vertical (\#panel-xenon)**
+
+The second showcase panel presents **Xenon Studios** (VERTICAL: Creative & branding \| ECOSYSTEM ROLE: CREATE \| FOCUS: Brand & experience)1. Crowned by the eyebrow 03 // CREATIVE — XENON STUDIOS \[FOCUSED • STRUCTURED • PURPOSE-DRIVEN\] in \#FF5A1F and the H2 title "CREATE THE BRAND AND CREATIVE." in \#F5F5F5, the panel delivers the exact studio narrative in \#A1A1AA: "Xenon Studios is the creative and branding sister concern within the Sixolab ecosystem. It handles how businesses, products and ideas look, communicate and feel. Brand is perception, and visuals exist to reinforce positioning. Xenon starts with strategy, then builds the identity, design and creative experiences that make a brand memorable. Xenon Studios builds brands and creative experiences that people remember."1. All 12 capabilities from Page 10 of the Group Documentation are rendered inside a 3-column architectural Bento grid1.
+
+| Capability Index & Title (H4, \#F5F5F5) | Exact Capability Description (\#A1A1AA) | Deliverable Focus (\#737373) |
+| :---- | :---- | :---- |
+| **01\. Brand Strategy** | "Positioning, audience, messaging and personality: the thinking that comes before any visual."1 | Positioning Architecture |
+| **02\. Creative Direction** | "One creative vision guiding every touchpoint, campaign and piece of content."1 | Cross-Channel Vision |
+| **03\. Brand Identity** | "Logo, typography, color and tone assembled into an identity that is recognizable and ownable."1 | Visual Identity Systems |
+| **04\. Graphic Design** | "Print and digital collateral, packaging and marketing material with premium finish."1 | Print, Digital & Packaging1 |
+| **05\. UI/UX** | "Research-led interface and experience design for apps, platforms and digital products."1 | Product Interface Design |
+| **06\. Web Design** | "Websites and landing pages designed to carry the brand and convert the visitor."1 | High-Conversion Web UI |
+| **07\. Motion Design** | "Animated identities, explainers and interface motion where every movement has a reason."1 | Kinetic Identity & UI Motion |
+| **08\. Campaign Creative** | "Concepts and assets built around a single campaign objective across channels."1 | Integrated Campaign Assets |
+| **09\. Social Media Creative** | "Platform-native content systems that keep a brand consistent and noticed."1 | Social Visual Systems |
+| **10\. Digital Experiences** | "Interactive, immersive and web-based experiences that bring a brand to life."1 | Immersive Web Storytelling |
+| **11\. Content Design** | "Decks, editorial and presentations structured and designed to communicate clearly."1 | Pitch Decks & Editorial1 |
+| **12\. Visual Systems** | "Scalable design systems and guidelines so every future asset stays on brand."1 | Design Tokens & Guidelines |
+
+#### **Panel 05C: One Percent — Commercial & Film Production Vertical (\#panel-one-percent)**
+
+The third showcase panel presents **One Percent** (VERTICAL: Production \| ECOSYSTEM ROLE: PRODUCE \| FOCUS: Film & visual execution)1. The header features the eyebrow 04 // PRODUCTION — ONE PERCENT in \#FF5A1F, the H2 title "PRODUCE THE VISUAL EXECUTION." in \#F5F5F5, and the exact production-house narrative in \#A1A1AA: "One Percent is the production company responsible for turning creative concepts into real-world visual productions. It is the production-house side of the ecosystem. From concept and direction through shooting, editing, color, sound and VFX, One Percent delivers finished work under one roof. One Percent already has production experience with major Bangladeshi and global brands. This is an established production company, not a service category on paper."1. Below the narrative, all 19 capabilities from Pages 13 and 14 of the Group Documentation are structured across their four production pillars1.
+
+| Production Pillar (\#FF5A1F) | Capability Title (H4, \#F5F5F5) | Exact Capability Description (\#A1A1AA) |
+| :---- | :---- | :---- |
+| **Direction & Management** | **01\. Creative Direction** | "The concept, treatment and visual language that guides a production from idea to final frame."1 |
+| **Direction & Management** | **02\. Production Management** | "Scheduling, budgeting, crew, locations and logistics, so shoots run on time and on plan."1 |
+| **Production Formats** | **03\. Commercial Production** | "End-to-end production for commercial campaigns across broadcast and digital."1 |
+| **Production Formats** | **04\. TVCs** | "Television commercials crafted for impact in seconds."1 |
+| **Production Formats** | **05\. Advertising Films** | "Narrative-driven advertising films for campaigns and launches."1 |
+| **Production Formats** | **06\. Brand Films** | "Longer-form films that communicate who a brand is and what it stands for."1 |
+| **Production Formats** | **07\. Corporate Films** | "Company profiles, internal communication and stakeholder films with polish."1 |
+| **Production Formats** | **08\. Product Films** | "Cinematic product showcases that make features feel desirable."1 |
+| **Production Formats** | **09\. Documentary Production** | "Real stories, told with depth, patience and a documentary eye."1 |
+| **Production Formats** | **10\. Music Videos** | "Visual storytelling built around sound, rhythm and artist identity."1 |
+| **On-Set Craft** | **11\. Cinematography** | "Camera, lighting and composition that give every frame a cinematic feel."1 |
+| **On-Set Craft** | **12\. Photography** | "Commercial, product and brand photography with a consistent visual standard."1 |
+| **On-Set Craft** | **13\. Videography** | "Fast, reliable video capture for events, content and documentation."1 |
+| **Post-Production** | **14\. Editing** | "Story-first editing: pacing, structure and rhythm that hold attention."1 |
+| **Post-Production** | **15\. Color Grading** | "Color that sets mood and keeps a whole project visually consistent."1 |
+| **Post-Production** | **16\. Motion Graphics** | "Titles, animation and graphic layers that clarify and elevate the edit."1 |
+| **Post-Production** | **17\. VFX** | "Visual effects, compositing and cleanup that make the impossible shot possible."1 |
+| **Post-Production** | **18\. Sound Design** | "Layered sound, mix and music, because sound does more of the work than people notice."1 |
+| **Post-Production** | **19\. Post-Production** | "The complete finishing pipeline, from offline cut to final masters and deliverables."1 |
+
+### **Section 06: What Sixolab LLC Oversees — Group-Level Governance Bento Grid (\<section id="group-governance"\>)**
+
+Section 06 shifts focus back to the holding company (py-28 lg:py-36 bg-obsidian border-b border-neutral-subtle/20), presenting the nine strategic domains overseen directly by **Sixolab LLC**1. The section header pairs the eyebrow 01 // GROUP-LEVEL AREAS — SIXOLAB LLC in \#FF5A1F with the H2 title "What Sixolab LLC Oversees" in \#F5F5F5 and the lead explanation in \#A1A1AA: "Sixolab LLC provides the strategic, operational and business framework connecting its specialized companies: setting direction, protecting standards and making sure clients get one coherent experience, whichever company is doing the work."1. The nine governance areas are arranged in a 3×3 architectural Bento grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16) where each .sixo-spotlight-card tracks pointer coordinates in 2D space.
+
+| Grid Cell & Monospace Tag (\#FF5A1F) | Group-Level Governance Title (H3, \#F5F5F5) | Exact Governance Description (\#A1A1AA) |
+| :---- | :---- | :---- |
+| 01 // DIRECTION | **Business Strategy** | "Long-term direction, positioning and growth planning across the group and inside client engagements."1 |
+| 02 // INCUBATION | **Venture Development** | "Identifying, structuring and launching new companies and products within the ecosystem."1 |
+| 03 // STANDARDS | **Operations** | "Shared processes, standards and delivery systems that keep every company running consistently."1 |
+| 04 // ALLIANCES | **Partnerships** | "Alliances with technology providers, brands, agencies and institutions that extend what the group can deliver."1 |
+| 05 // SCOPING | **Business Development** | "Matching each client to the right company and shaping proposals that span disciplines."1 |
+| 06 // INTEGRATION | **Cross-company Projects** | "Coordinating engagements that need technology, creative and production to work as one team."1 |
+| 07 // CAPITAL | **Strategic Investments / New Ventures** | "Backing and building new businesses that strengthen and fit the ecosystem."1 |
+| 08 // PORTFOLIO | **Brand & Portfolio Management** | "Governing how each company is positioned and how the group presents as one portfolio."1 |
+| 09 // OWNERSHIP | **Client Relationships** | "A single point of accountability for clients working with more than one company."1 |
+
+### **Section 07: The Process — "Five Steps, Every Time" & Engagement Models (\<section id="the-process"\>)**
+
+Set on a Carbon Black foundation (py-28 lg:py-36 bg-carbon border-b border-neutral-subtle/20 relative overflow-hidden), Section 07 details how engagements operate across the ecosystem1. The header presents the eyebrow 05 // THE PROCESS — WORKING TOGETHER in \#FF5A1F, the H2 headline "One Ecosystem. One Standard. Five Steps, Every Time." in \#F5F5F5, and the exact operational guarantee in \#A1A1AA: "Whether a project needs one company or all three, every engagement follows the same disciplined path: clear scope, clear ownership and clear communication. Timelines and investment are defined per project, after discovery. Nothing is guessed, and nothing is padded."1. A 3-cell metadata bar highlights MODELS: Project / Retainer, SCOPE: Defined per project, and ACCOUNTABILITY: One point of contact1.  
+Across a 5-column horizontal layout (grid-cols-1 lg:grid-cols-5 gap-6 mt-16 relative), a continuous SVG conduit line (h-\[2px\] bg-neutral-subtle/25) is progressively filled with \#FF5A1F and \#FF7A30 via a ScrollTrigger scrub as the user scrolls through the five phases, followed immediately by a 4-column grid of Engagement Models1.
+
+| Component Type | Step / Model Identifier (\#FF5A1F) | Title (H3, \#F5F5F5) | Exact Copywriting String (\#A1A1AA) |
+| :---- | :---- | :---- | :---- |
+| **Process Step 01** | STEP // 01 | **Discovery** | "Goals, constraints, audience and success criteria."1 |
+| **Process Step 02** | STEP // 02 | **Proposal** | "Scope, deliverables, milestones and terms."1 |
+| **Process Step 03** | STEP // 03 | **Execution** | "The right company builds, designs or shoots."1 |
+| **Process Step 04** | STEP // 04 | **Review** | "Structured feedback at agreed checkpoints."1 |
+| **Process Step 05** | STEP // 05 | **Delivery** | "Final assets, handover and support."1 |
+| **Engagement Model 01** | MODEL // 01 | **Project-based** | "A defined scope, timeline and deliverable. Best for builds, launches, films and identity work."1 |
+| **Engagement Model 02** | MODEL // 02 | **Retainer** | "Ongoing capacity for continuous development, content, design or production needs."1 |
+| **Engagement Model 03** | MODEL // 03 | **Multi-company engagement** | "Technology, creative and production coordinated by Sixolab under one plan and one point of contact."1 |
+| **Engagement Model 04** | MODEL // 04 | **Venture & partnership** | "Collaboration on new ventures or long-term strategic initiatives with the group."1 |
+
+### **Section 08: Full Ecosystem Launch Simulation & Featured Portfolio Matrix (\<section id="case-studies"\>)**
+
+Section 08 (py-28 lg:py-36 bg-obsidian border-b border-neutral-subtle/20) provides concrete proof of execution by combining the **Full Launch Across the Ecosystem** architecture from Page 17 of the Group Documentation with verified client case studies from the child agencies1. The upper container (bg-sixo-ambient border border-sixo-orange/35 rounded-3xl p-8 lg:p-12 mb-24) renders an interactive 4-tier launch schematic demonstrating how all four entities synchronize during an end-to-end product and brand launch, while the lower container presents a filterable case-study matrix (All, Technology \[Gitlink\], Creative & Brand \[Xenon\], Commercial Production \[One Percent\]) showcasing verified project metrics1.
+
+| Matrix Layer / Project | Executing Entity & Vertical Badge (\#FF5A1F) | Title / Client Engagement (H3, \#F5F5F5) | Exact Scope & Verified Outcome Copywriting (\#A1A1AA) |
+| :---- | :---- | :---- | :---- |
+| **Ecosystem Launch Layer 1** | GITLINK IT SOLUTIONS // BUILD | **Product & Platform Engineering** | "Builds the product, platform or system the business runs on."1 |
+| **Ecosystem Launch Layer 2** | XENON STUDIOS // CREATE | **Brand, Interface & Web Architecture** | "Creates the brand, interface and website around it."1 |
+| **Ecosystem Launch Layer 3** | ONE PERCENT // PRODUCE | **Launch Film & Campaign Production** | "Produces the launch film, photography and campaign content."1 |
+| **Ecosystem Launch Layer 4** | SIXOLAB LLC // CONNECT & OPERATE | **Unified Group Governance** | "Connects it all under one plan, one timeline and one point of contact."1 |
+| **Featured Case Study 01** | GITLINK // WEB & HEALTHCARE PORTAL (2025) | **HarmonyCare Hospital Portal** | "Comprehensive healthcare portal and patient scheduling system. Improved patient appointment booking speed by 40%, enhanced mobile accessibility, and achieved a 98/100 Lighthouse performance score."20 |
+| **Featured Case Study 02** | GITLINK // REAL ESTATE PLATFORM (2025) | **Aether Estates Digital Platform** | "High-performance property showcase and digital estate platform engineered for rapid search filtering, mobile responsiveness, and lead conversion."20 |
+| **Featured Case Study 03** | GITLINK // HOSPITALITY WEB (2025) | **Noir Bistro Digital Experience** | "Bespoke restaurant and hospitality web architecture uniting atmospheric visual presentation with frictionless reservation flows."20 |
+| **Featured Case Study 04** | ECOSYSTEM // BRAND & GRAPHIC IDENTITY (2026) | **RC Holdings Limited & Dr. Zahed's Hair & Skinic** | "End-to-end visual identity systems, corporate brand collateral, and high-impact multi-channel social and digital campaign creatives across 60+ completed engagements."20 |
+| **Featured Case Study 05** | ONE PERCENT // BROADCAST & DIGITAL FILM | **National & Global Brand Campaigns** | "Full-pipeline commercial production, television commercials (TVCs), narrative brand films, cinematography, color grading, sound design, and VFX for major Bangladeshi and global brands."1 |
+
+### **Section 09: Monumental Call-to-Action & Global Architectural Footer (\<footer id="global-footer"\>)**
+
+Inspired by Graphite and Resend's monumental closing stages7, the global footer (bg-obsidian relative overflow-hidden) is split into an upper atmospheric conversion stage (py-28 bg-sixo-ambient border-b border-neutral-subtle/20) and a lower 5-column architectural directory (pt-20 pb-12 px-6 lg:px-12 max-w-\[1440px\] mx-auto) culminating in an edge-to-edge wireframe wordmark watermark.
+
+| Footer Zone | Tag & Tailwind Classes | Exact Copywriting & Directory Links | Color Tokens & Visual Styling |
+| :---- | :---- | :---- | :---- |
+| **Upper CTA Stage** | div.max-w-4xl.mx-auto.text-center.px-6 | Eyebrow: SIXOLAB LLC // BUILD. CREATE. PRODUCE. \| H2: "Let us build something people remember." \| Lead: "Technology that scales. Brands that last. Productions that stand out. One ecosystem, built to deliver all three." \| CTA: Start a Group Discovery Session →1 | Background bg-sixo-ambient (\#080808 ![][image1] \#300507 ![][image1] \#6B0F12). H2 in \#F5F5F5 (72px), lead in \#A1A1AA, CTA button in bg-sixo-accent (\#FF5A1F ![][image1] \#FF7A30) with \#080808 text and shadow-orange-glow-lg. |
+| **Footer Col 1–2: Corporate HQ** | div.col-span-1.lg:col-span-2.space-y-3 | SIXOLAB LLC \| Tagline: BUILDING SOFTWARE. BUILDING FUTURE. \| Mahi — Founder & CEO \| Phone: \+880 1234 567890 \| Email: hello@sixolab.com \| Web: www\.sixolab.com | Wordmark in \#F5F5F5 & \#FF5A1F; Founder name MAHI in \#FF5A1F; contact links in \#A1A1AA shifting to \#F5F5F5 on hover with \#FF5A1F icons. |
+| **Footer Col 3: The Ecosystem** | ul.space-y-2.5.text-sm | Header: ECOSYSTEM COMPANIES \| Links: Sixolab LLC (Connect & Operate), Gitlink IT Solutions (Build — gitlinkitsolutions.com), Xenon Studios (Create — xenonstudios.bd), One Percent (Produce — Film & VFX)1 | Header in \#FF5A1F (font-mono text-xs), links in \#A1A1AA ![][image1] \#F5F5F5. |
+| **Footer Col 4: Governance & Specs** | ul.space-y-2.5.text-sm | Header: ARCHITECTURE & PROCESS \| Links: Master Services Directory (53 Capabilities), 5-Step Engagement Process, Engagement Criteria Matrix, Flexible Contract & Payment Terms1 | Header in \#FF5A1F (font-mono text-xs), links in \#A1A1AA ![][image1] \#F5F5F5. |
+| **Footer Col 5: Direct Routing** | ul.space-y-2.5.text-sm | Header: INITIATE ENGAGEMENT \| Links: Multi-Company Launch Scope, Software & AI Assessment (Gitlink), Brand Strategy Brief (Xenon), TVC & Film Treatment (One Percent)1 | Header in \#FF5A1F (font-mono text-xs), links in \#A1A1AA ![][image1] \#FF7A30. |
+| **Bottom Monumental Watermark** | div.w-full.overflow-hidden.pt-16.select-none | S I X O L A B (font-display font-extrabold text-\[11vw\] leading-none tracking-widest text-center) | Outlined in 1px Subtle Gray (-webkit-text-stroke: 1px rgba(115,115,115,0.22)) with L A B softly under-lit by a radial Orange Glow (rgba(255,90,31,0.14)). |
+
+## **Secondary Pages Step-by-Step Frontend Specifications**
+
+To ensure the platform operates as a complete, enterprise-grade multi-page system, the following specifications establish the exact section order, heading hierarchy, verbatim copywriting, color tokens, and interactive mechanics for all seven secondary pages. Every secondary page shares the Global Sticky Header (Section 01), the Ambient 3D Volumetric Canvas (\#sixo-ambient-3d), and the Global Architectural Footer (Section 09).
+
+### **Page 2: The Ecosystem & Holding Group (ecosystem.html)**
+
+The Ecosystem page serves as the executive briefing document for founders, enterprise procurement leaders, and institutional partners evaluating Sixolab LLC at the holding-group level1. It opens with a deep crimson-lit hero banner, transitions into a structural comparison of how the parent organization governs its three operating companies, details all nine group-level oversight areas, and concludes with the formal four-quadrant Engagement Criteria Matrix for working directly with Sixolab LLC1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Verbatim Body Copy | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 2.1: Holding Hero** (\#eco-hero) | pt-36 pb-24 bg-obsidian with top bg-sixo-radial-crimson (\#6B0F12 ![][image1] \#300507 ![][image1] \#080808) | Eyebrow (\#FF5A1F): 01 // PARENT / HOLDING COMPANY \| H1 (\#F5F5F5): "Sixolab LLC: Connect & Operate the Ecosystem." \| Lead (\#A1A1AA): "Sixolab LLC is the parent organization behind a multidisciplinary ecosystem spanning technology, creative, branding, media and commercial production. It provides the strategic, operational and business framework connecting its specialized companies: setting direction, protecting standards and making sure clients get one coherent experience, whichever company is doing the work."1 | Metadata bar at bottom of hero displays VERTICAL: Group & holding, ECOSYSTEM ROLE: Connect & operate, and COMPANIES: Gitlink, Xenon, One Percent in \#111111 cards with \#FF5A1F labels1. |
+| **Section 2.2: The Triad Model** (\#eco-model) | py-24 bg-carbon border-y border-neutral-subtle/20 (4-Column Comparative Grid) | H2 (\#F5F5F5): "The Model: Build. Create. Produce." \| **Card 1**: Gitlink IT Solutions: BUILD — "Builds the technology. Software, AI, automation and the infrastructure behind every product." \| **Card 2**: Xenon Studios: CREATE — "Creates the brand and creative. How a business, product or idea looks, communicates and feels." \| **Card 3**: One Percent: PRODUCE — "Produces the visual execution. Turning creative concepts into real-world films, photography and campaigns." \| **Card 4**: Sixolab LLC: CONNECT & OPERATE — "Connects and operates the ecosystem, giving every company a shared strategy, standard and client experience."1 | Hovering any of the 4 columns highlights its corresponding SVG vector node on the central ecosystem map in \#FF5A1F and \#FF7A30. |
+| **Section 2.3: Group Governance Deep-Dive** (\#eco-areas) | py-28 bg-obsidian (9 Expandable Architectural Rows) | H2 (\#F5F5F5): "Group-Level Areas: What Sixolab LLC Oversees" \| 9 Rows: 01 Business Strategy, 02 Venture Development, 03 Operations, 04 Partnerships, 05 Business Development, 06 Cross-company Projects, 07 Strategic Investments / New Ventures, 08 Brand & Portfolio Management, 09 Client Relationships with verbatim descriptions from Page 5 of the Group Documentation1. | Smooth 2D Planar Sweep Fill (\#300507 ![][image1] \#111111) on row hover; clicking expands operational governance protocols via GSAP height tween. |
+| **Section 2.4: Sixolab Direct Engagement Criteria** (\#eco-criteria) | py-28 bg-carbon border-t border-neutral-subtle/20 (2×2 Bento Matrix) | H2 (\#F5F5F5): "Engagement Criteria: Working with Sixolab LLC Directly" \| **Q1 (BEST FIT FOR)**: "Businesses that need more than one discipline at once • Organizations launching a brand or product end to end • Partners and investors exploring venture collaboration" \| **Q2 (WHAT WE NEED FROM YOU)**: "A clear business objective and a named decision-maker • Willingness to share context: goals, constraints, existing assets • Timely feedback and approvals at agreed checkpoints" \| **Q3 (WHAT YOU RECEIVE)**: "One point of contact across every company involved • A unified proposal and a coordinated timeline • Strategic oversight from discovery through delivery" \| **Q4 (HOW WE ENGAGE)**: "Group-level discovery to define the full scope • Work then scoped and assigned to the right company • Sixolab coordinates and stays accountable throughout"1 | Each quadrant sits in an \#080808 recessed well with a 2px top accent bar in \#FF5A1F and bullet markers rendered as 6px \#FF5A1F squares. |
+
+### **Page 3: Gitlink IT Solutions — Technology Vertical (gitlink.html)**
+
+The dedicated Gitlink IT Solutions page (gitlink.html) combines the 13 core engineering capabilities and engagement criteria from Pages 6–8 of the Sixolab Ecosystem Documentation with the complete web development, e-commerce, CMS, digital marketing, and operational service catalog from gitlinkitsolutions.com1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Verbatim Body Copy | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 3.1: Gitlink Hero** (\#gitlink-hero) | pt-36 pb-24 bg-obsidian with technical dot-matrix SVG grid (\#737373 at 12%) and vertical \#FF5A1F light beam12 | Eyebrow (\#FF5A1F): 02 // TECHNOLOGY VERTICAL — ROLE: BUILD — FOCUS: TECHNICAL DELIVERY \| H1 (\#F5F5F5): "Gitlink IT Solutions: Build the Technology." \| Lead (\#A1A1AA): "Gitlink IT Solutions handles the technology vertical of the Sixolab ecosystem. This is where the actual technical delivery sits. From custom software and AI to automation, cloud infrastructure and the internal systems a business runs on, Gitlink designs and engineers technology that is built to scale and built to last."1 | Includes live external verification pill gitlinkitsolutions.com ↗ (gitlinkitsolutions@gmail.com) and primary CTA Request Technical Discovery (\#FF5A1F)20. |
+| **Section 3.2: 13 Core Engineering Capabilities** (\#gitlink-core) | py-28 bg-carbon border-y border-neutral-subtle/20 (13-Card Bento Grid) | H2 (\#F5F5F5): "Capabilities: What Gitlink IT Solutions Delivers" \| Full cards for Custom Software Development, Web Applications, Enterprise Software, AI Solutions, AI Integration, SaaS Development, Business Automation, Mobile Applications, APIs & Integrations, Cloud & Digital Infrastructure, Internal Business Systems, Dashboards & Digital Platforms, and Technical Consulting using exact copy from Page 7 of the Group Documentation1. | Cards utilize .sixo-spotlight-card 2D radial border tracking (\#FF7A30) and monospace index tags (TECH // 01 to TECH // 13). |
+| **Section 3.3: Extended Web, E-Commerce, CMS & Digital Growth Suite** (\#gitlink-extended) | py-28 bg-obsidian (5-Tab Interactive Command Deck) | H2 (\#F5F5F5): "Extended Digital, Web & Operational Capabilities" \| **Tab 1 (Website & E-Commerce)**: *Business & Portfolio Websites* (pixel-perfect UI, mobile-first, SEO markup), *E-Commerce Development* (WooCommerce & Shopify, custom cart/checkout, payment gateways, inventory dashboards), *Landing Page Design & Build* (\<2s load speed, A/B testing-ready, CTA optimization), *Website Speed Optimization* (Core Web Vitals audit & fix, caching/CDN, minification), *Maintenance & Support Plans* (updates, malware removal, backups, monthly uptime reports)29. **Tab 2 (CMS & Mobile Stack)**: WordPress custom themes/plugins, Webflow, headless CMS (Strapi, Contentful), native iOS (Swift) & Android (Kotlin), React Native & Flutter19. **Tab 3 (Digital Marketing)**: SEO, SMM, and SEM lead generation18. **Tab 4 (Extended Ops)**: Data Entry & OCR, SEO/Business Writing & Compose, IT & Business Consultancy19. **Tab 5 (Client-Care Protocols)**: *Monthly Service Report*, *Lifetime Monthly Business Report*, *Ad-Hoc Service Add-On*, *Suggestion-Based Optimization*, *Opinion-Centric Execution*, and *24/7 Dedicated Support*18. | Clicking tabs triggers a GSAP cross-fade (opacity: 0 \-\> 1, y: 12 \-\> 0, duration: 0.35s) with active tab underlined by a sliding \#FF5A1F bar. |
+| **Section 3.4: 6-Stage Engineering Pipeline** (\#gitlink-pipeline) | py-24 bg-carbon border-y border-neutral-subtle/20 (6-Column Stepper) | H2 (\#F5F5F5): "How We Build: Our Development Process" \| 01 Discovery & Requirements, 02 Wireframe & UI Design (Figma), 03 Development & Coding, 04 Integration & Features, 05 Testing & QA (Performance, Accessibility & Security), 06 Launch & Ongoing Support29. | Scroll-scrubbed \#FF5A1F progress line illuminates each stage node sequentially. |
+| **Section 3.5: Gitlink Engagement Criteria Matrix** (\#gitlink-criteria) | py-28 bg-obsidian (2×2 Bento Matrix) | H2 (\#F5F5F5): "Engagement Criteria: Working with Gitlink IT Solutions" \| **Q1 (BEST FIT FOR)**: "Companies replacing manual or spreadsheet-driven operations • Founders and teams building a software product • Established businesses modernizing legacy systems" \| **Q2 (WHAT WE NEED FROM YOU)**: "A defined problem or outcome, even if the solution is open • Access to the people and processes the system will serve • Access to existing systems, data and credentials where relevant • One decision-maker for scope and sign-off" \| **Q3 (WHAT YOU RECEIVE)**: "A scoped proposal with clear milestones • Working software delivered in reviewable stages • Documentation and a structured handover • Ownership and support terms defined in the agreement" \| **Q4 (HOW WE ENGAGE)**: "Discovery and technical assessment first • Fixed-scope project or ongoing retainer • Milestone-based delivery with regular demos • Optional post-launch maintenance and support"1 | Styled in \#111111 containers with \#FF5A1F specular top borders. |
+
+### **Page 4: Xenon Studios — Creative & Branding Vertical (xenon.html)**
+
+The dedicated Xenon Studios page (xenon.html) embodies the creative sister concern's positioning (Focused • Structured • Purpose-driven), presenting its 12 brand, design, UI/UX, and motion capabilities alongside its formal engagement criteria from Pages 9–11 of the Group Documentation1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Verbatim Body Copy | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 4.1: Xenon Hero** (\#xenon-hero) | pt-36 pb-24 bg-sixo-ambient (\#080808 ![][image1] \#300507 ![][image1] \#6B0F12) | Eyebrow (\#FF5A1F): 03 // CREATIVE & BRANDING VERTICAL — ROLE: CREATE — FOCUS: BRAND & EXPERIENCE \| H1 (\#F5F5F5): "Xenon Studios: Create the Brand and Creative." \| Lead (\#A1A1AA): "Xenon Studios is the creative and branding sister concern within the Sixolab ecosystem. It handles how businesses, products and ideas look, communicate and feel. Brand is perception, and visuals exist to reinforce positioning. Xenon starts with strategy, then builds the identity, design and creative experiences that make a brand memorable."1 | Includes studio ethos badge FOCUSED • STRUCTURED • PURPOSE-DRIVEN and direct channel badge connect@xenonstudios.bd (xenonstudios.bd)21. |
+| **Section 4.2: 12 Brand & Experience Capabilities** (\#xenon-capabilities) | py-28 bg-obsidian (12 Architectural Accordion / Bento Cards) | H2 (\#F5F5F5): "Capabilities: What Xenon Studios Delivers" \| Full specifications for 01 Brand Strategy, 02 Creative Direction, 03 Brand Identity, 04 Graphic Design, 05 UI/UX, 06 Web Design, 07 Motion Design, 08 Campaign Creative, 09 Social Media Creative, 10 Digital Experiences, 11 Content Design, and 12 Visual Systems using verbatim descriptions from Page 10 of the Group Documentation1. | Hovering any capability card triggers a 2D radial border glow in \#FF7A30 and reveals deliverable file/system tags (Figma Systems, Brand Books, Lottie/GSAP Motion, Packaging)1. |
+| **Section 4.3: Xenon Engagement Criteria Matrix** (\#xenon-criteria) | py-28 bg-carbon border-t border-neutral-subtle/20 (2×2 Bento Matrix) | H2 (\#F5F5F5): "Engagement Criteria: Working with Xenon Studios" \| **Q1 (BEST FIT FOR)**: "New businesses that need a strong identity from day one • Established brands repositioning or modernizing • Product teams that need considered UI/UX and design systems" \| **Q2 (WHAT WE NEED FROM YOU)**: "A brief covering goals, audience and competitors • References: what you love and what you refuse to look like • Existing brand assets, if any • One approver and consolidated feedback per round" \| **Q3 (WHAT YOU RECEIVE)**: "A strategy and creative direction document • Concept routes presented with clear rationale • Final files in every format required for use • Brand guidelines for consistent future use" \| **Q4 (HOW WE ENGAGE)**: "Discovery session to align on positioning • Concept presentation, then development • A defined number of revision rounds per phase • Structured handover of all final assets"1 | Recessed \#080808 quadrants with \#FF5A1F header badges and CTA button Submit a Brand Brief to Xenon → (contact.html?vertical=xenon). |
+
+### **Page 5: One Percent — Commercial & Film Production Vertical (one-percent.html)**
+
+The dedicated One Percent page (one-percent.html) is staged with widescreen cinematic restraint, presenting the production house's 19 capabilities across four craft pillars and its formal engagement criteria from Pages 12–14 of the Group Documentation1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Verbatim Body Copy | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 5.1: One Percent Cinema Hero** (\#onepercent-hero) | pt-36 pb-24 bg-obsidian with widescreen 2.39:1 framing hairlines and anamorphic \#6B0F12 / \#FF5A1F top horizon glow | Eyebrow (\#FF5A1F): 04 // PRODUCTION VERTICAL — ROLE: PRODUCE — FOCUS: FILM & VISUAL EXECUTION \| H1 (\#F5F5F5): "One Percent: Produce the Visual Execution." \| Lead (\#A1A1AA): "One Percent is the production company responsible for turning creative concepts into real-world visual productions. It is the production-house side of the ecosystem. From concept and direction through shooting, editing, color, sound and VFX, One Percent delivers finished work under one roof. One Percent already has production experience with major Bangladeshi and global brands. This is an established production company, not a service category on paper."1 | Includes interactive timecode readout (00:00:01:00 // 24FPS // RAW MASTER) in JetBrains Mono (\#737373) and primary CTA Submit a Production Brief (\#FF5A1F). |
+| **Section 5.2: 4-Pillar Production & Post Pipeline** (\#onepercent-capabilities) | py-28 bg-carbon border-y border-neutral-subtle/20 (4 Categorized Pillar Matrices) | H2 (\#F5F5F5): "Capabilities: What One Percent Delivers" \| **Pillar 1 (DIRECTION & MANAGEMENT)**: *Creative Direction*, *Production Management*. **Pillar 2 (PRODUCTION FORMATS)**: *Commercial Production*, *TVCs*, *Advertising Films*, *Brand Films*, *Corporate Films*, *Product Films*, *Documentary Production*, *Music Videos*. **Pillar 3 (ON-SET CRAFT)**: *Cinematography*, *Photography*, *Videography*. **Pillar 4 (POST-PRODUCTION)**: *Editing*, *Color Grading*, *Motion Graphics*, *VFX*, *Sound Design*, *Post-Production*—all with verbatim copy from Pages 13–14 of the Group Documentation1. | Each pillar is framed by a 2px left border in \#FF5A1F and individual capability cards in \#080808 with 2D radial border lighting. |
+| **Section 5.3: One Percent Engagement Criteria Matrix** (\#onepercent-criteria) | py-28 bg-obsidian (2×2 Bento Matrix) | H2 (\#F5F5F5): "Engagement Criteria: Working with One Percent" \| **Q1 (BEST FIT FOR)**: "Brands launching a campaign, product or film • Agencies that need a dependable production partner • Corporates and institutions that need premium video content" \| **Q2 (WHAT WE NEED FROM YOU)**: "A creative brief, or a goal we can develop into one • Target platforms, formats and delivery date • Budget range, so the concept fits reality • Approvals, permissions and talent or location clearances" \| **Q3 (WHAT YOU RECEIVE)**: "Treatment, script or storyboard for approval • A production plan and schedule • Crew, equipment and on-set direction • Edited, graded and sound-finished masters plus platform cutdowns" \| **Q4 (HOW WE ENGAGE)**: "Brief and treatment first • Pre-production, then shoot, then post • Defined review stages before final delivery • Per-project quoting based on scope"1 | \#111111 cards with \#FF5A1F header accents and direct routing link to the production desk (contact.html?vertical=onepercent). |
+
+### **Page 6: Master Capabilities & Services Directory (services.html)**
+
+Inspired by the enterprise service directories of Accenture, BairesDev, and ScienceSoft, services.html provides a unified, searchable command index of all **53 capabilities** across Sixolab LLC and its child agencies1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Content Structure | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 6.1: Directory Hero & Sticky Filter Bar** (\#services-filter) | pt-36 pb-12 bg-obsidian \+ Sticky Bar (sticky top-20 z-40 bg-obsidian/95 backdrop-blur-md border-y border-neutral-subtle/20 py-4) | Eyebrow (\#FF5A1F): MASTER CAPABILITY TAXONOMY // 53 SPECIALIZED SERVICES \| H1 (\#F5F5F5): "Every Discipline. One Coherent Standard." \| Filter Pills: All (53), Sixolab Governance (9), Gitlink // BUILD (15), Xenon // CREATE (12), One Percent // PRODUCE (19) \+ Live Search Input (Search software, AI, UI/UX, TVC, VFX, SEO...)1. | Active filter pill uses bg-sixo-orange text-obsidian font-mono text-xs font-bold; live search filters capability rows instantaneously via vanilla JS \+ GSAP opacity/height transitions. |
+| **Section 6.2: The 53-Row Interactive Service Matrix** (\#services-table) | py-20 bg-obsidian (Full-Width Architectural Table) | Divided into 4 collapsible macro-groups (01 Sixolab LLC — Connect & Operate, 02 Gitlink IT Solutions — Build, 03 Xenon Studios — Create, 04 One Percent — Produce). Each row displays: Index Number, Capability Title, Verbatim Description, Executing Specialist Badge, and a \+ Add to Project Scope toggle button1. | Clicking \+ Add to Project Scope on any row turns the button \#FF5A1F (✓ Added to Scope), increments a floating bottom-right tray (Selected Capabilities: N), and passes the selected IDs via URL parameters directly into contact.html. |
+
+### **Page 7: Process, Engagement Models & Governance Criteria (process.html)**
+
+The Process & Criteria page (process.html) consolidates the operational rules of engagement from Pages 15–17 of the Group Documentation alongside the flexible contract and payment frameworks established on gitlinkitsolutions.com1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3) & Verbatim Body Copy | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 7.1: Process Hero & The 5 Steps** (\#process-hero) | pt-36 pb-24 bg-obsidian border-b border-neutral-subtle/20 | Eyebrow (\#FF5A1F): 05 // THE PROCESS — ONE ECOSYSTEM. ONE STANDARD. \| H1 (\#F5F5F5): "Five Steps, Every Time. Nothing Guessed, Nothing Padded." \| Detailed breakdown of 01 Discovery, 02 Proposal, 03 Execution, 04 Review, and 05 Delivery1. | Interactive horizontal timeline where clicking any step expands the exact deliverables and sign-off artifacts required before advancing to the next stage1. |
+| **Section 7.2: The 5 Universal General Criteria** (\#general-criteria) | py-28 bg-carbon border-b border-neutral-subtle/20 (5 Architectural Slabs) | H2 (\#F5F5F5): "General Criteria: What Makes a Project Run Well Across Every Company" \| **01\. A clear objective**: "We build better when we know what success looks like." \| **02\. One decision-maker**: "Faster approvals, fewer conflicting rounds." \| **03\. Timely feedback**: "Schedules hold when review happens when agreed." \| **04\. Access to assets and people**: "Brand files, systems, data and key stakeholders." \| **05\. Written scope**: "Every engagement is documented before work begins, and changes are agreed in writing."1 | Each slab (bg-obsidian border-l-4 border-sixo-orange p-6 rounded-r-2xl) illuminates in \#FF7A30 along its left spine as it enters the viewport. |
+| **Section 7.3: Contract Methods & 6 Transparent Payment Terms** (\#payment-terms) | py-28 bg-obsidian (2×3 Bento Grid for Payment Terms \+ 6 Contract Cards) | H2 (\#F5F5F5): "Flexible Contract Methods & Transparent Payment Schedules" \| **Contract Methods**: *Project-Based / Fixed Project*, *Retainer / Monthly Subscription*, *Multi-Company Engagement*, *One-Time Task*, *Maintenance & Support*, *Venture & Partnership*1. **6 Payment Schedules**: **01\. 50% Upfront, 50% on Completion** ("Begin with 50% payment to start work, and pay the remaining 50% only after the final deliverable is approved."), **02\. Milestone Payments** ("Structured releases tied to reviewable project stages."), **03\. Secure Escrow Payment** ("Funds are held safely by a third-party platform and released to us only after you verify and approve the completed work."), **04\. Fixed Monthly Payment** ("Pay a fixed amount each month on a specific due date."), **05\. Monthly 50/50 Split** ("50% within the first 10 days of the month, and the remaining 50% within the last 10 days—balancing cash flow and commitment."), **06\. Tailored Payment Schedule** ("We'll design a completely custom payment plan together that aligns perfectly with your business cash flow and project needs.")18. | Hovering any payment card highlights its cash-flow bar diagram in \#FF5A1F and \#6B0F12. |
+
+### **Page 8: Multi-Disciplinary Project Configurator & Contact Portal (contact.html)**
+
+The Contact & Discovery Portal (contact.html) replaces generic contact forms with an interactive **Ecosystem Scope Configurator** that diagnoses whether a client requires a single specialist company or a multi-company engagement managed directly by Sixolab LLC1.
+
+| Section ID & Name | Layout & Background Tokens | Exact Headings (H1/H2/H3), Directory Data & Form Fields | Interactive Mechanics & Color Accents |
+| :---- | :---- | :---- | :---- |
+| **Section 8.1: Left Column — Executive & Agency Directory** (\#contact-directory) | col-span-1 lg:col-span-5 bg-carbon border border-neutral-subtle/25 rounded-3xl p-8 lg:p-10 h-fit | Eyebrow (\#FF5A1F): DIRECT ECOSYSTEM CHANNELS \| H1 (\#F5F5F5): "Let Us Build Something People Remember."1 \| **Card 1 (Parent HQ)**: Sixolab LLC — Mahi, Founder & CEO — hello@sixolab.com — \+880 1234 567890 — www\.sixolab.com \| **Card 2 (Technology)**: Gitlink IT Solutions \[BUILD\] — gitlinkitsolutions@gmail.com — www\.gitlinkitsolutions.com20 \| **Card 3 (Creative)**: Xenon Studios \[CREATE\] — connect@xenonstudios.bd — www\.xenonstudios.bd21 \| **Card 4 (Production)**: One Percent \[PRODUCE\] — Production & TVC Desk via hello@sixolab.com1. | Clicking any email address copies it to the clipboard and triggers a floating \#FF5A1F toast badge (\[ COPIED TO CLIPBOARD \]). |
+| **Section 8.2: Right Column — Interactive 4-Step Scope Configurator** (\#scope-configurator) | col-span-1 lg:col-span-7 bg-carbon border border-neutral-subtle/25 rounded-3xl p-8 lg:p-12 | **Step 1 (SELECT VERTICALS)**: Multi-select toggle cards for BUILD // Gitlink IT Solutions, CREATE // Xenon Studios, PRODUCE // One Percent, and CONNECT & OPERATE // Sixolab LLC Group Venture1. **Step 2 (ENGAGEMENT & PAYMENT MODEL)**: Pills for Project-Based, Retainer, Multi-Company Launch, Venture / Partnership, plus preferred payment structure (50/50, Milestones, Escrow, Monthly, Tailored)1. **Step 3 (DECISION-MAKER & BRIEF)**: Inputs for Named Decision-Maker, Organization / Brand, Work Email, Phone / WhatsApp, and Business Objective, Target Platforms & Timeline1. **Submit CTA**: Transmit Scope to Sixolab Discovery Desk →. | When 2 or more verticals are toggled active in Step 1, a GSAP banner (bg-sixo-wine/50 border border-sixo-orange text-neutral-white font-mono text-xs p-4 rounded-xl) animates open: \[ MULTI-COMPANY ENGAGEMENT ACTIVE: Sixolab LLC will assign one point of contact and a unified proposal across selected companies. \]1. |
+
+## **Production Implementation Blueprint (HTML5, CSS3, Tailwind & GSAP Code Modules)**
+
+The following self-contained HTML5, CSS3, Tailwind CSS, vanilla JavaScript, and GSAP blueprint implements the complete visual and interactive foundation of the Sixolab LLC platform, including the 70/20/10 color token architecture, the 4-stage Knight/S-O-L SVG Preloader, the Ambient 3D Volumetric Ribbon Canvas, the 2D Planar Spotlight Card system, the Elastic SVG Bezier Section Divider, and the core Home Page structural sections.
+
+HTML  
+\<\!DOCTYPE **html**\>  
+\<html lang\="en" class\="dark scroll-smooth"\>  
+\<head\>  
+  \<meta charset\="UTF-8" /\>  
+  \<meta name\="viewport" content\="width=device-width, initial-scale=1.0" /\>  
+  \<title\>SIXOLAB LLC — Build. Create. Produce. \| Group & Ecosystem Portal\</title\>  
+  \<\!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono \--\>  
+  \<link rel\="preconnect" href\="https\://fonts.googleapis.com"\>  
+  \<link rel\="preconnect" href\="https\://fonts.gstatic.com" crossorigin\>  
+  \<link href\="https\://fonts.googleapis.com/css2?family=Inter:wght@400;500;600\&family=JetBrains+Mono:wght@400;500;700\&family=Plus+Jakarta+Sans:wght@600;700;800\&display=swap" rel\="stylesheet"\>  
+  \<\!-- Tailwind CSS CDN & Token Configuration \--\>  
+  \<script src\="https\://cdn.tailwindcss.com"\>\</script\>  
+  \<script\>  
+    tailwind.config \= {  
+      darkMode: 'class',  
+      theme: {  
+        extend: {  
+          colors: {  
+            obsidian: '\#080808',  
+            carbon: '\#111111',  
+            sixo: {  
+              orange: '\#FF5A1F',  
+              glow: '\#FF7A30',  
+              crimson: '\#6B0F12',  
+              wine: '\#300507',  
+            },  
+            neutral: {  
+              white: '\#F5F5F5',  
+              gray: '\#A1A1AA',  
+              subtle: '\#737373',  
+              disabled: '\#525252',  
+            }  
+          },  
+          fontFamily: {  
+            display: \['"Plus Jakarta Sans"', 'sans-serif'\],  
+            sans: \['Inter', 'sans-serif'\],  
+            mono: \['"JetBrains Mono"', 'monospace'\],  
+          },  
+          backgroundImage: {  
+            'sixo-ambient': 'linear-gradient(135deg, \#080808 0%, \#300507 55%, \#6B0F12 100%)',  
+            'sixo-accent': 'linear-gradient(90deg, \#FF5A1F 0%, \#FF7A30 100%)',  
+            'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%)',  
+          },  
+          boxShadow: {  
+            'orange-glow': '0 0 28px \-4px rgba(255, 90, 31, 0.45), 0 0 12px \-2px rgba(255, 122, 48, 0.3)',  
+            'orange-glow-lg': '0 0 45px \-5px rgba(255, 90, 31, 0.65), 0 0 20px \-2px rgba(255, 122, 48, 0.45)',  
+            'crimson-ambient': '0 20px 60px \-15px rgba(107, 15, 18, 0.4)',  
+          }  
+        }  
+      }  
+    }  
+  \</script\>  
+  \<style\>  
+    :root {  
+      \--bg-obsidian: \#080808;  
+      \--bg-carbon: \#111111;  
+      \--accent-orange: \#FF5A1F;  
+      \--accent-glow: \#FF7A30;  
+      \--ambient-crimson: \#6B0F12;  
+      \--ambient-wine: \#300507;  
+      \--text-white: \#F5F5F5;  
+      \--text-gray: \#A1A1AA;  
+      \--border-subtle: \#737373;  
+      \--text-disabled: \#525252;  
+    }
+
+    body {  
+      background-color: var(--bg-obsidian);  
+      color: var(--text-white);  
+      overflow-x: hidden;  
+    }
+
+    ::selection {  
+      background-color: var(--accent-orange);  
+      color: var(--bg-obsidian);  
+    }
+
+    /\* Resend-Inspired Subtle Fractal Noise Overlay \*/  
+    .sixo-noise {  
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http\://www\.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");  
+    }
+
+    /\* 2D Planar Spotlight Card (Strictly Zero 3D Hover Tilt) \*/  
+    .sixo-spotlight-card {  
+      position: relative;  
+      background: var(--bg-carbon);  
+      border: 1px solid rgba(115, 115, 115, 0.2);  
+      transition: border-color 0.3s ease, background-color 0.3s ease;  
+    }  
+    .sixo-spotlight-card::before {  
+      content: "";  
+      position: absolute;  
+      inset: 0;  
+      border-radius: inherit;  
+      padding: 1px;  
+      background: radial-gradient(  
+        380px circle at var(--mouse-x, \-500px) var(--mouse-y, \-500px),  
+        rgba(255, 122, 48, 0.65),  
+        rgba(107, 15, 18, 0.25) 45%,  
+        transparent 100%  
+      );  
+      \-webkit-mask: linear-gradient(\#fff 0 0\) content-box, linear-gradient(\#fff 0 0);  
+      \-webkit-mask-composite: xor;  
+      mask-composite: exclude;  
+      pointer-events: none;  
+    }  
+  \</style\>  
+\</head\>  
+\<body class\="antialiased sixo-noise"\>
+
+  \<\!-- CUSTOM 2D PLANAR CURSOR FOLLOWER \--\>  
+  \<div id\="sixo-cursor-dot" class\="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-sixo-orange pointer-events-none z-\[10000\] \-translate-x-1/2 \-translate-y-1/2 hidden lg:block"\>\</div\>  
+  \<div id\="sixo-cursor-ring" class\="fixed top-0 left-0 w-9 h-9 rounded-full border border-sixo-glow/50 pointer-events-none z-\[9999\] \-translate-x-1/2 \-translate-y-1/2 hidden lg:block transition-colors duration-200"\>\</div\>
+
+  \<\!-- CREATIVE PRELOADER: THE KNIGHT'S GAMBIT & S-O-L MODULAR GENESIS \--\>  
+  \<div id\="sixo-preloader" class\="fixed inset-0 z-\[9500\] flex flex-col justify-between p-6 lg:p-12 pointer-events-auto overflow-hidden"\>  
+    \<div id\="shutter-top" class\="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"\>\</div\>  
+    \<div id\="shutter-bottom" class\="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"\>\</div\>
+
+    \<div class\="relative z-10 flex justify-between items-center font-mono text-xs tracking-widest"\>  
+      \<span id\="preloader-status" class\="text-sixo-orange"\>\[ INITIALIZING SIXOLAB ECOSYSTEM \]\</span\>  
+      \<span class\="text-neutral-subtle"\>BUILD // CREATE // PRODUCE\</span\>  
+    \</div\>
+
+    \<div class\="relative z-10 flex flex-col items-center justify-center my-auto"\>  
+      \<div class\="relative w-48 h-48 flex items-center justify-center"\>  
+        \<svg id\="sixo-construct-svg" viewBox\="0 0 200 200" class\="w-full h-full overflow-visible"\>  
+          \<g id\="modular-grid-circles" stroke\="\#737373" stroke-width\="0.75" stroke-dasharray\="3 3" fill\="none" opacity\="0.35"\>  
+            \<circle cx\="100" cy\="70" r\="42" /\>  
+            \<circle cx\="100" cy\="130" r\="46" /\>  
+            \<circle cx\="132" cy\="82" r\="28" /\>  
+            \<line x1\="20" y1\="100" x2\="180" y2\="100" /\>  
+            \<line x1\="100" y1\="20" x2\="100" y2\="180" /\>  
+          \</g\>  
+          \<path id\="path-l-base" pathLength\="1" stroke-dasharray\="1" stroke-dashoffset\="1"  
+            d\="M 62 125 C 62 158, 105 172, 138 152"  
+            fill\="none" stroke\="\#F5F5F5" stroke-width\="16" stroke-linecap\="round" /\>  
+          \<path id\="path-o-space" pathLength\="1" stroke-dasharray\="1" stroke-dashoffset\="1"  
+            d\="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125"  
+            fill\="none" stroke\="\#F5F5F5" stroke-width\="16" stroke-linecap\="round" /\>  
+          \<path id\="path-s-flow" pathLength\="1" stroke-dasharray\="1" stroke-dashoffset\="1"  
+            d\="M 100 96 C 64 84, 58 46, 98 34 L 122 26"  
+            fill\="none" stroke\="\#F5F5F5" stroke-width\="16" stroke-linecap\="round" /\>  
+          \<path id\="path-knight-strategy" pathLength\="1" stroke-dasharray\="1" stroke-dashoffset\="1"  
+            d\="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62"  
+            fill\="none" stroke\="\#FF5A1F" stroke-width\="16" stroke-linecap\="round" stroke-linejoin\="round" /\>  
+        \</svg\>  
+        \<div id\="anatomy-callout" class\="absolute \-bottom-6 font-mono text-\[11px\] tracking-\[0.2em\] text-sixo-glow uppercase"\>  
+          \[ L — BASE : FOUNDATION \]  
+        \</div\>  
+      \</div\>
+
+      \<div class\="overflow-hidden mt-8"\>  
+        \<div id\="preloader-wordmark" class\="font-display font-bold text-2xl lg:text-3xl tracking-\[0.34em\] text-neutral-white translate-y-full"\>  
+          SIXO\<span class\="text-sixo-orange"\>LAB\</span\>  
+        \</div\>  
+      \</div\>  
+      \<p id\="preloader-tagline" class\="font-mono text-\[10px\] tracking-\[0.28em\] text-neutral-gray uppercase mt-2 opacity-0"\>  
+        BUILDING SOFTWARE. BUILDING FUTURE.  
+      \</p\>  
+    \</div\>
+
+    \<div class\="relative z-10 flex justify-between items-end"\>  
+      \<span class\="font-mono text-xs text-neutral-subtle"\>GITLINK // XENON // ONE PERCENT\</span\>  
+      \<span id\="preloader-counter" class\="font-mono font-bold text-5xl lg:text-7xl text-neutral-white"\>000%\</span\>  
+    \</div\>  
+  \</div\>
+
+  \<\!-- AMBIENT 3D VOLUMETRIC CANVAS (BACKGROUND ONLY — NO 3D HOVER) \--\>  
+  \<canvas id\="sixo-ambient-3d" class\="fixed inset-0 w-full h-full pointer-events-none z-0"\>\</canvas\>
+
+  \<\!-- SECTION 01: GLOBAL STICKY HEADER \--\>  
+  \<header id\="global-nav" class\="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/80 backdrop-blur-xl border-b border-neutral-subtle/20"\>  
+    \<div class\="max-w-\[1440px\] mx-auto px-6 lg:px-12 h-full flex items-center justify-between"\>  
+      \<a href\="index.html" class\="flex items-center gap-3 group"\>  
+        \<span class\="font-display font-bold tracking-\[0.32em\] text-sm text-neutral-white"\>SIXO\<span class\="text-sixo-orange"\>LAB\</span\>\</span\>  
+        \<span class\="h-4 w-\[1px\] bg-neutral-subtle/40"\>\</span\>  
+        \<span class\="font-mono text-\[10px\] tracking-widest text-neutral-gray uppercase hidden sm:inline-block"\>LLC // GROUP\</span\>  
+      \</a\>  
+      \<nav class\="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray"\>  
+        \<a href\="index.html" class\="text-neutral-white flex items-center gap-1.5"\>\<span class\="w-1.5 h-1.5 rounded-full bg-sixo-orange"\>\</span\>Overview\</a\>  
+        \<a href\="ecosystem.html" class\="hover:text-neutral-white transition-colors"\>The Ecosystem\</a\>  
+        \<a href\="services.html" class\="hover:text-neutral-white transition-colors"\>Capabilities (53)\</a\>  
+        \<a href\="process.html" class\="hover:text-neutral-white transition-colors"\>Process & Models\</a\>  
+        \<a href\="\#case-studies" class\="hover:text-neutral-white transition-colors"\>Case Studies\</a\>  
+      \</nav\>  
+      \<a href\="contact.html" class\="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300"\>  
+        \<span class\="w-1.5 h-1.5 rounded-full bg-sixo-orange"\>\</span\>  
+        \<span\>Initiate Discovery\</span\>  
+      \</a\>  
+    \</div\>  
+  \</header\>
+
+  \<\!-- SECTION 02: HERO SECTION \--\>  
+  \<main class\="relative z-10 max-w-\[1440px\] mx-auto border-x border-neutral-subtle/15"\>  
+    \<section id\="hero" class\="min-h-screen pt-36 pb-20 px-6 lg:px-12 flex flex-col justify-between border-b border-neutral-subtle/20"\>  
+      \<div class\="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto"\>  
+        \<div class\="lg:col-span-8"\>  
+          \<div class\="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-carbon border border-sixo-orange/35 mb-8"\>  
+            \<span class\="w-2 h-2 rounded-full bg-sixo-orange animate-ping"\>\</span\>  
+            \<span class\="font-mono text-xs tracking-\[0.16em\] uppercase text-neutral-white"\>SIXOLAB LLC — PARENT HOLDING ECOSYSTEM // EST. 2026\</span\>  
+          \</div\>  
+          \<h1 class\="font-display font-bold text-4xl sm:text-6xl lg:text-\[72px\] leading-\[1.05\] tracking-\[-0.03em\] text-neutral-white mb-6"\>  
+            \<span class\="block overflow-hidden"\>\<span class\="hero-line block"\>One group.\</span\>\</span\>  
+            \<span class\="block overflow-hidden"\>\<span class\="hero-line block"\>Three specialists.\</span\>\</span\>  
+            \<span class\="block overflow-hidden"\>\<span class\="hero-line block bg-sixo-accent bg-clip-text text-transparent"\>Build. Create. Produce.\</span\>\</span\>  
+          \</h1\>  
+          \<p class\="font-sans text-lg lg:text-xl text-neutral-gray max-w-2xl leading-relaxed mb-6"\>  
+            Sixolab LLC is the parent organization overseeing a multidisciplinary ecosystem spanning technology, creative, branding, media, and commercial production. It provides the strategic, operational, and business framework that connects its specialized companies—giving clients one relationship and the right specialist for every part of the work.  
+          \</p\>  
+          \<p class\="font-mono text-xs tracking-\[0.24em\] uppercase text-neutral-subtle mb-10"\>  
+            BUILDING SOFTWARE. BUILDING FUTURE. \<span class\="text-sixo-orange"\>//\</span\> CONNECT & OPERATE THE ECOSYSTEM  
+          \</p\>  
+          \<div class\="flex flex-wrap gap-4"\>  
+            \<a href\="contact.html" class\="magnetic-btn inline-flex items-center gap-3 px-8 py-4 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-sm shadow-orange-glow hover:shadow-orange-glow-lg transition-all duration-300"\>  
+              \<span\>Scope an Ecosystem Project\</span\>  
+              \<span\>→\</span\>  
+            \</a\>  
+            \<a href\="\#ecosystem-triad" class\="magnetic-btn inline-flex items-center gap-3 px-8 py-4 rounded-full bg-carbon border border-neutral-subtle/30 text-neutral-white font-display font-semibold text-sm hover:border-sixo-orange/60 transition-all duration-300"\>  
+              \<span\>Explore the 3 Companies\</span\>  
+            \</a\>  
+          \</div\>  
+        \</div\>  
+      \</div\>
+
+      \<\!-- Hero Bottom Telemetry Bar \--\>  
+      \<div class\="grid grid-cols-1 md:grid-cols-4 border-t border-neutral-subtle/20 pt-8 mt-16 gap-6"\>  
+        \<div class\="sixo-spotlight-card p-5 rounded-xl"\>  
+          \<span class\="font-mono text-\[11px\] text-sixo-orange uppercase"\>00 // PARENT COMPANY\</span\>  
+          \<h2 class\="text-base font-display font-semibold text-neutral-white mt-1"\>Sixolab LLC\</h2\>  
+          \<p class\="text-xs text-neutral-gray mt-1"\>Connect & Operate — Strategy, Ventures & Multi-Company Governance\</p\>  
+        \</div\>  
+        \<div class\="sixo-spotlight-card p-5 rounded-xl"\>  
+          \<span class\="font-mono text-\[11px\] text-sixo-orange uppercase"\>01 // TECHNOLOGY\</span\>  
+          \<h2 class\="text-base font-display font-semibold text-neutral-white mt-1"\>Gitlink IT Solutions\</h2\>  
+          \<p class\="text-xs text-neutral-gray mt-1"\>BUILD — Software, Web & Mobile Apps, AI, Automation & Platforms\</p\>  
+        \</div\>  
+        \<div class\="sixo-spotlight-card p-5 rounded-xl"\>  
+          \<span class\="font-mono text-\[11px\] text-sixo-orange uppercase"\>02 // CREATIVE\</span\>  
+          \<h2 class\="text-base font-display font-semibold text-neutral-white mt-1"\>Xenon Studios\</h2\>  
+          \<p class\="text-xs text-neutral-gray mt-1"\>CREATE — Brand Strategy, Identity, Design, UI/UX & Campaign Creative\</p\>  
+        \</div\>  
+        \<div class\="sixo-spotlight-card p-5 rounded-xl"\>  
+          \<span class\="font-mono text-\[11px\] text-sixo-orange uppercase"\>03 // PRODUCTION\</span\>  
+          \<h2 class\="text-base font-display font-semibold text-neutral-white mt-1"\>One Percent\</h2\>  
+          \<p class\="text-xs text-neutral-gray mt-1"\>PRODUCE — TVCs, Brand Films, Photography, Post-Production & VFX\</p\>  
+        \</div\>  
+      \</div\>  
+    \</section\>
+
+    \<\!-- ELASTIC SVG BEZIER DIVIDER (CUBERTO-INSPIRED) \--\>  
+    \<div class\="w-full h-10 overflow-hidden bg-obsidian flex items-center"\>  
+      \<svg class\="w-full h-10 sixo-elastic-svg" viewBox\="0 0 1440 40" preserveAspectRatio\="none"\>  
+        \<path class\="sixo-elastic-path" d\="M 0 20 Q 720 20 1440 20" stroke\="\#737373" stroke-opacity\="0.3" stroke-width\="1" fill\="none" /\>  
+      \</svg\>  
+    \</div\>  
+  \</main\>
+
+  \<\!-- GSAP & SCROLLTRIGGER ENGINE \--\>  
+  \<script src\="https\://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"\>\</script\>  
+  \<script src\="https\://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"\>\</script\>  
+  \<script\>  
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1\. MULTI-STAGE KNIGHT & S-O-L PRELOADER TIMELINE  
+    const preloaderTl \= gsap.timeline({ defaults: { ease: "power3.inOut" } });  
+    const counterObj \= { val: 0 };  
+    const counterEl \= document.getElementById("preloader-counter");  
+    const statusEl \= document.getElementById("preloader-status");  
+    const calloutEl \= document.getElementById("anatomy-callout");
+
+    preloaderTl  
+      .to(counterObj, {  
+        val: 100,  
+        duration: 2.3,  
+        ease: "power2.inOut",  
+        onUpdate: () \=\> {  
+          counterEl.textContent \= String(Math.floor(counterObj.val)).padStart(3, "0") \+ "%";  
+        }  
+      }, 0)  
+      .to("\#path-l-base", { strokeDashoffset: 0, duration: 0.55 }, 0.2)  
+      .call(() \=\> {  
+        calloutEl.textContent \= "\[ O — SPACE : ECOSYSTEM CORE \]";  
+        statusEl.textContent \= "\[ 01 // GITLINK IT SOLUTIONS : BUILD \]";  
+      }, null, 0.7)  
+      .to("\#path-o-space", { strokeDashoffset: 0, duration: 0.6 }, 0.7)  
+      .call(() \=\> {  
+        calloutEl.textContent \= "\[ S — FLOW : CONTINUITY \]";  
+        statusEl.textContent \= "\[ 02 // XENON STUDIOS : CREATE \]";  
+      }, null, 1.25)  
+      .to("\#path-s-flow", { strokeDashoffset: 0, duration: 0.55 }, 1.25)  
+      .call(() \=\> {  
+        calloutEl.textContent \= "\[ KNIGHT — STRATEGY & FORESIGHT \]";  
+        statusEl.textContent \= "\[ 03 // ONE PERCENT : PRODUCE \]";  
+      }, null, 1.75)  
+      .to("\#path-knight-strategy", { strokeDashoffset: 0, duration: 0.55 }, 1.75)  
+      .to("\#preloader-wordmark", { y: "0%", duration: 0.6, ease: "power4.out" }, 1.85)  
+      .to("\#preloader-tagline", { opacity: 1, duration: 0.4 }, 2.1)  
+      .to("\#modular-grid-circles", { opacity: 0, scale: 1.15, duration: 0.4 }, 2.2)  
+      .to("\#sixo-preloader \> .relative", { opacity: 0, y: \-20, duration: 0.35 }, 2.55)  
+      .to("\#shutter-top", { yPercent: \-100, duration: 0.85, ease: "expo.inOut" }, 2.65)  
+      .to("\#shutter-bottom", {  
+        yPercent: 100,  
+        duration: 0.85,  
+        ease: "expo.inOut",  
+        onComplete: () \=\> {  
+          document.getElementById("sixo-preloader").style.display \= "none";  
+        }  
+      }, 2.65)  
+      .from(".hero-line", { yPercent: 110, duration: 0.9, stagger: 0.12, ease: "power4.out" }, 2.75);
+
+    // 2\. 2D PLANAR SPOTLIGHT TRACKER, CURSOR & MAGNETIC BUTTONS (ZERO 3D TILT)  
+    const cursorDot \= document.getElementById("sixo-cursor-dot");  
+    const cursorRing \= document.getElementById("sixo-cursor-ring");  
+    const dotX \= gsap.quickTo(cursorDot, "x", { duration: 0.08, ease: "power3.out" });  
+    const dotY \= gsap.quickTo(cursorDot, "y", { duration: 0.08, ease: "power3.out" });  
+    const ringX \= gsap.quickTo(cursorRing, "x", { duration: 0.24, ease: "power3.out" });  
+    const ringY \= gsap.quickTo(cursorRing, "y", { duration: 0.24, ease: "power3.out" });
+
+    window.addEventListener("mousemove", (e) \=\> {  
+      dotX(e.clientX);  
+      dotY(e.clientY);  
+      ringX(e.clientX);  
+      ringY(e.clientY);  
+    });
+
+    document.querySelectorAll(".sixo-spotlight-card").forEach((card) \=\> {  
+      card.addEventListener("mousemove", (e) \=\> {  
+        const rect \= card.getBoundingClientRect();  
+        card.style.setProperty("--mouse-x", \`\${e.clientX \- rect.left}px\`);  
+        card.style.setProperty("--mouse-y", \`\${e.clientY \- rect.top}px\`);  
+      });  
+    });
+
+    document.querySelectorAll(".magnetic-btn").forEach((btn) \=\> {  
+      const xTo \= gsap.quickTo(btn, "x", { duration: 0.4, ease: "power3.out" });  
+      const yTo \= gsap.quickTo(btn, "y", { duration: 0.4, ease: "power3.out" });  
+      btn.addEventListener("mousemove", (e) \=\> {  
+        const rect \= btn.getBoundingClientRect();  
+        xTo((e.clientX \- (rect.left \+ rect.width / 2)) \* 0.22);  
+        yTo((e.clientY \- (rect.top \+ rect.height / 2)) \* 0.22);  
+      });  
+      btn.addEventListener("mouseleave", () \=\> {  
+        xTo(0);  
+        yTo(0);  
+      });  
+    });
+
+    // 3\. ELASTIC SVG BEZIER STRING PHYSICS  
+    document.querySelectorAll(".sixo-elastic-svg").forEach((svg) \=\> {  
+      const path \= svg.querySelector(".sixo-elastic-path");  
+      const ctrl \= { y: 20 };  
+      svg.addEventListener("mousemove", (e) \=\> {  
+        const rect \= svg.getBoundingClientRect();  
+        ctrl.y \= (e.clientY \- rect.top);  
+        path.setAttribute("d", \`M 0 20 Q 720 \${ctrl.y} 1440 20\`);  
+        path.setAttribute("stroke", "\#FF5A1F");  
+      });  
+      svg.addEventListener("mouseleave", () \=\> {  
+        gsap.to(ctrl, {  
+          y: 20,  
+          duration: 1.2,  
+          ease: "elastic.out(1, 0.25)",  
+          onUpdate: () \=\> {  
+            path.setAttribute("d", \`M 0 20 Q 720 \${ctrl.y} 1440 20\`);  
+          },  
+          onComplete: () \=\> path.setAttribute("stroke", "\#737373")  
+        });  
+      });  
+    });
+
+    // 4\. AMBIENT 3D VOLUMETRIC RIBBON & CRIMSON LIGHT-BEAM CANVAS  
+    const canvas \= document.getElementById("sixo-ambient-3d");  
+    const ctx \= canvas.getContext("2d");  
+    let width, height, time \= 0;
+
+    function resizeCanvas() {  
+      width \= canvas.width \= window.innerWidth;  
+      height \= canvas.height \= window.innerHeight;  
+    }  
+    window.addEventListener("resize", resizeCanvas);  
+    resizeCanvas();
+
+    gsap.ticker.add(() \=\> {  
+      time \+= 0.008;  
+      ctx.clearRect(0, 0, width, height);
+
+      const grad \= ctx.createRadialGradient(width \* 0.72, height \* 0.18, 10, width \* 0.55, height \* 0.45, width \* 0.65);  
+      grad.addColorStop(0, "rgba(255, 90, 31, 0.11)");  
+      grad.addColorStop(0.35, "rgba(107, 15, 18, 0.22)");  
+      grad.addColorStop(0.7, "rgba(48, 5, 7, 0.14)");  
+      grad.addColorStop(1, "rgba(8, 8, 8, 0)");  
+      ctx.fillStyle \= grad;  
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.strokeStyle \= "rgba(245, 245, 245, 0.055)";  
+      ctx.lineWidth \= 1;  
+      const cx \= width \* 0.68;  
+      const cy \= height \* 0.48;  
+      const radius \= Math.min(width, height) \* 0.26;
+
+      for (let ring \= 0; ring \< 3; ring++) {  
+        ctx.beginPath();  
+        for (let i \= 0; i \<= 64; i++) {  
+          const theta \= (i / 64) \* Math.PI \* 2;  
+          const x3d \= Math.cos(theta \+ time \+ ring \* 0.4) \* radius;  
+          const y3d \= Math.sin(theta \* 2 \+ time \* 0.8) \* (radius \* 0.55);  
+          const z3d \= Math.sin(theta \+ time \+ ring) \* 140;  
+          const scale \= 420 / (420 \+ z3d);  
+          const px \= cx \+ x3d \* scale;  
+          const py \= cy \+ y3d \* scale;  
+          if (i \=== 0) ctx.moveTo(px, py);  
+          else ctx.lineTo(px, py);  
+        }  
+        ctx.stroke();  
+      }  
+    });  
+  \</script\>  
+\</body\>  
+\</html\>
+
+## **Architectural Synthesis & Deployment Governance**
+
+By uniting the **70 / 20 / 10 Obsidian, Crimson, and Sixo Orange color architecture** with a **strictly non-3D-hover 2D planar physics engine**, a **4-stage anatomical Knight/S-O-L SVG preloader**, and a **dual-layer capability taxonomy**, the Sixolab LLC website resolves the core challenge of holding-group web design1. Enterprise buyers, startup founders, and institutional partners arriving at www\.sixolab.com immediately grasp the clarity of the top-level **Build (Gitlink IT Solutions) • Create (Xenon Studios) • Produce (One Percent)** triad while retaining immediate, frictionless access to all 53 underlying engineering, creative, commercial production, and operational services under a single point of accountability1.
+
+#### **Works cited**
+
+> 1. Sixolab\_LLC\_Group\_Ecosystem\_Documentation.pdf  
+> 2. 20 Best Startup Web Design Agencies to Help Your Business Grow, [https\://www\.saasfactor.co/blogs/startup-web-design-agency](https://www.saasfactor.co/blogs/startup-web-design-agency)  
+> 3. What are your favorite web design agency websites? (2023) \- Reddit, [https\://www\.reddit.com/r/web\_design/comments/17wykj2/what\_are\_your\_favorite\_web\_design\_agency\_websites/](https://www.reddit.com/r/web_design/comments/17wykj2/what_are_your_favorite_web_design_agency_websites/)  
+> 4. What are our brand guidelines \- Resend, [https\://resend.com/handbook/design/what-are-our-brand-guidelines](https://resend.com/handbook/design/what-are-our-brand-guidelines)  
+> 5. Design System Analysis: Resend \- getdesign.md, [https\://getdesign.md/resend/design-md](https://getdesign.md/resend/design-md)  
+> 6. Resend Colors, Fonts and Design Prompt \- Siteprint, [https\://siteprint.app/design/resend/](https://siteprint.app/design/resend/)  
+> 7. resend/design-skills: Resend's official brand identity and ... \- GitHub, [https\://github.com/resend/design-skills](https://github.com/resend/design-skills)  
+> 8. Rebranding Resend, [https\://resend.com/blog/rebranding-resend](https://resend.com/blog/rebranding-resend)  
+> 9. Graphite Merge Queue (Grade A) \- Claude Skill \| Skills Directory, [https\://www\.skillsdirectory.com/skills/pleaseai-graphite-merge-queue](https://www.skillsdirectory.com/skills/pleaseai-graphite-merge-queue)  
+> 10. Jim Raptis (@jimraptis.com) \- Bluesky, [https\://bsky.app/profile/jimraptis.com](https://bsky.app/profile/jimraptis.com)  
+> 11. Huly.io website update \- v0 by Vercel, [https\://v0.app/chat/huly-io-website-update-wBfnzNoJEX9](https://v0.app/chat/huly-io-website-update-wBfnzNoJEX9)  
+> 12. How to Customize Open Source React Components (Bolt Rebuilds), [https\://bolt.new/blog/how-to-customize-open-source-react-components](https://bolt.new/blog/how-to-customize-open-source-react-components)  
+> 13. Mission Control \| AI-native design and branding agency for startups, [https\://missioncontrol.co/](https://missioncontrol.co/)  
+> 14. Best Fintech Brand Design Agencies — October 2026, [https\://topbrandagencies.com/fintech/](https://topbrandagencies.com/fintech/)  
+> 15. BuildFast \- Tutorials on Three.js, Framer Motion, and Next.js, [https\://www\.buildfast.es/](https://www.buildfast.es/)  
+> 16. Cuberto \- GitHub, [https\://github.com/cuberto](https://github.com/cuberto)  
+> 17. Fantasy \| AI-Native Digital Product Design Agency, [https\://fantasy.co/](https://fantasy.co/)  
+> 18. Services \- GitLink IT Solutions, [https\://gitlinkitsolutions.com/services](https://gitlinkitsolutions.com/services)  
+> 19. Others Services \| GitLink IT Solutions, [https\://gitlinkitsolutions.com/services/others](https://gitlinkitsolutions.com/services/others)  
+> 20. GitLink IT Solutions \| Your Trusted IT Partner, [https\://gitlinkitsolutions.com/](https://gitlinkitsolutions.com/)  
+> 21. AI Automation – Proven 10× Revenue Boost with Xenon Studios, [http\://www\.xenonstudios.bd/](http://www.xenonstudios.bd/)  
+> 22. Projects \| GitLink IT Solutions, [https\://gitlinkitsolutions.com/projects](https://gitlinkitsolutions.com/projects)  
+> 23. About Us \- GitLink IT Solutions, [https\://gitlinkitsolutions.com/about-us](https://gitlinkitsolutions.com/about-us)  
+> 24. resend.com — design system extracted \- Reseed, [https\://www\.reseedapp.com/demo/resend](https://www.reseedapp.com/demo/resend)  
+> 25. Tailwind CSS Animations: Tutorial and 40+ Examples \- Prismic, [https\://prismic.io/blog/tailwind-animations](https://prismic.io/blog/tailwind-animations)  
+> 26. GSAP DrawSVG Tutorial: Animate SVG Paths Step by Step, [https\://navtechsolution.com/blog/gsap-drawsvg-tutorial/](https://navtechsolution.com/blog/gsap-drawsvg-tutorial/)  
+> 27. svg-animation \- Claude Skill \| AI Agent Skills, [https\://aiagentskills.net/skill/iart-ai-web-animation-skills-svg-animation](https://aiagentskills.net/skill/iart-ai-web-animation-skills-svg-animation)  
+> 28. liderbektas/logo-draw-animation: Turn any SVG into a self ... \- GitHub, [https\://github.com/liderbektas/logo-draw-animation](https://github.com/liderbektas/logo-draw-animation)  
+> 29. Website Development Services \- GitLink IT Solutions, [https\://gitlinkitsolutions.com/services/website-development](https://gitlinkitsolutions.com/services/website-development)  
+> 30. Munthasir Rahman (@munthasir.devs) • Facebook, [https\://www\.facebook.com/836419776231971/](https://www.facebook.com/836419776231971/)
+
+[image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAATCAYAAACdkl3yAAAA7UlEQVR4Xo2SMQ7CMAxFHYmNDoiNEYkLcAfugARXqJiRuEnZmbgHJ+AqzPw0CbXjn4ovuW7+cxxHrUhUGJ9EGlRFbE/TYyCryRlgdU7NjcUjXSaLbTQmK7Wc9E/SU/iJLPD8X80Uu3PsMVl6SZrBOukFLYpeiynrYJa+tjieFGXSIXa2zB1fRtJIG7/0RCyNYzQzVDVAj+cDsS7WAnFBDKBDGLOkHJKXmON35Dfig7iVZivEhkZovIvs0eyFfJV0Rfu3ztxMK+Jju2gEE3V1mSNtkeOXYyfnNw+YzrUh/Gq2Czmsq4bXrFarGVOQL9sBEUq/EpZxAAAAAElFTkSuQmCC>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direct Engagement & Scope Configurator | SIXOLAB LLC</title>
+  <meta name="description" content="Initiate a direct executive engagement or multi-vertical project inquiry with Sixolab LLC, Gitlink IT Solutions, Xenon Studios, or One Percent." />
+  <link rel="canonical" href="https://www.sixolab.com/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            carbon: '#111111',
+            sixo: {
+              orange: '#FF5A1F',
+              glow: '#FF7A30',
+              crimson: '#6B0F12',
+              wine: '#300507',
+            },
+            neutral: {
+              white: '#F5F5F5',
+              gray: '#A1A1AA',
+              subtle: '#737373',
+              disabled: '#525252',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-obsidian text-neutral-white antialiased selection:bg-sixo-orange selection:text-obsidian relative min-h-screen overflow-x-hidden">
+
+  <!-- Ambient 3D Volumetric Canvas (Background Only — Zero 3D Tilt) -->
+  <canvas id="sixo-ambient-3d" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Custom 2D Planar Cursor Follower -->
+  <div id="sixo-cursor-dot" class="fixed top-0 left-0 w-2 h-2 rounded-full bg-sixo-orange pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 opacity-0 lg:opacity-100"></div>
+  <div id="sixo-cursor-ring" class="fixed top-0 left-0 w-8 h-8 rounded-full border border-sixo-orange/50 pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2 opacity-0 lg:opacity-100 transition-transform duration-100"></div>
+
+  <!-- Clipboard Toast Notification -->
+  <div id="clipboard-toast" class="fixed bottom-6 right-6 z-50 bg-sixo-orange text-obsidian px-5 py-3 rounded-full font-mono text-xs font-bold shadow-2xl flex items-center gap-2 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
+    <svg class="w-4 h-4 text-obsidian" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+    <span>Direct Channel Copied to Clipboard</span>
+  </div>
+
+  <!-- Fullscreen Knight & S-O-L Preloader (3.2s Full / 0.45s Shutter Wipe Bypass) -->
+  <div id="sixo-preloader" class="fixed inset-0 z-50 pointer-events-auto flex items-center justify-center">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/20 z-10"></div>
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian border-t border-neutral-subtle/20 z-10"></div>
+    <div class="relative z-20 flex flex-col items-center max-w-sm px-6 text-center">
+      <div class="w-24 h-24 mb-6 relative">
+        <svg viewBox="0 0 100 100" class="w-full h-full text-neutral-white">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="#300507" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <path id="path-l-base" d="M 30,76 L 70,76 L 70,68 L 38,68 L 38,30 L 30,30 Z" fill="none" stroke="#6B0F12" stroke-width="2.5" stroke-dasharray="200" stroke-dashoffset="200"/>
+          <circle id="path-o-space" cx="50" cy="50" r="22" fill="none" stroke="#FF5A1F" stroke-width="2" stroke-dasharray="140" stroke-dashoffset="140"/>
+          <path id="path-s-flow" d="M 64,36 C 64,30 50,30 50,42 C 50,56 36,56 36,68 C 36,74 52,74 52,62" fill="none" stroke="#F5F5F5" stroke-width="2" stroke-dasharray="150" stroke-dashoffset="150"/>
+          <path id="path-knight-strategy" d="M 44,22 C 48,18 56,18 60,22 C 64,26 62,34 58,38 C 66,42 66,54 62,60 L 38,60 C 36,46 42,32 44,22 Z" fill="none" stroke="#FF7A30" stroke-width="2" stroke-dasharray="180" stroke-dashoffset="180"/>
+        </svg>
+      </div>
+      <div id="preloader-counter" class="font-mono text-2xl font-bold text-neutral-white tracking-widest mb-1">000%</div>
+      <div id="preloader-status" class="font-mono text-[10px] text-sixo-orange uppercase tracking-wider mb-2">[ INITIALIZING DIRECT INTAKE ]</div>
+      <div id="anatomy-callout" class="font-mono text-[9px] text-neutral-gray tracking-tight">[ HOLDING GOVERNANCE ]</div>
+    </div>
+  </div>
+
+  <!-- Global Sticky Navigation Bar -->
+  <header id="global-nav" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 backdrop-blur-md bg-obsidian/80 border-b border-neutral-subtle/20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Sixolab LLC Home">
+        <div class="w-8 h-8 rounded-lg bg-carbon border border-neutral-subtle/30 flex items-center justify-center p-1 group-hover:border-sixo-orange transition-colors">
+          <svg viewBox="0 0 100 100" class="w-full h-full">
+            <path d="M 30,76 L 70,76 L 70,68 L 38,68 L 38,30 L 30,30 Z" fill="#6B0F12"/>
+            <circle cx="50" cy="50" r="18" fill="none" stroke="#FF5A1F" stroke-width="4"/>
+            <path d="M 46,24 C 50,20 56,20 60,24 C 63,28 61,35 58,38 C 64,42 64,52 60,58 L 40,58 C 38,46 44,32 46,24 Z" fill="#F5F5F5"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-sm tracking-wider text-neutral-white">SIXOLAB</span>
+          <span class="font-mono text-[9px] text-neutral-gray tracking-widest">CONNECT & OPERATE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Ecosystem Mega-Menu Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider">
+        <a href="ecosystem.html" class="text-neutral-gray hover:text-neutral-white transition-colors">The Ecosystem</a>
+        <a href="gitlink.html" class="text-neutral-gray hover:text-neutral-white transition-colors">Gitlink (Build)</a>
+        <a href="xenon.html" class="text-neutral-gray hover:text-neutral-white transition-colors">Xenon (Create)</a>
+        <a href="one-percent.html" class="text-neutral-gray hover:text-neutral-white transition-colors">One Percent (Produce)</a>
+        <a href="services.html" class="text-neutral-gray hover:text-neutral-white transition-colors">53 Capabilities</a>
+        <a href="process.html" class="text-neutral-gray hover:text-neutral-white transition-colors">Process & Terms</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html" class="magnetic-btn px-5 py-2.5 rounded-full bg-sixo-orange text-obsidian font-display font-bold text-xs tracking-wide">
+          Direct Intake
+        </a>
+        <button id="mobile-menu-trigger" class="md:hidden text-neutral-white p-2" aria-label="Toggle Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-carbon border-b border-neutral-subtle/20 px-6 py-6 space-y-4">
+      <a href="ecosystem.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">The Ecosystem</a>
+      <a href="gitlink.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Gitlink IT Solutions (Build)</a>
+      <a href="xenon.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Xenon Studios (Create)</a>
+      <a href="one-percent.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">One Percent (Produce)</a>
+      <a href="services.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Master 53 Capabilities</a>
+      <a href="process.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Process, Models & Terms</a>
+      <a href="contact.html" class="block font-mono text-xs uppercase text-sixo-orange py-1">Direct Intake Portal</a>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-28 pb-32">
+
+    <!-- PAGE HERO & TELEMETRY HEADER -->
+    <section class="max-w-[1440px] mx-auto px-6 lg:px-12 pt-12 pb-16">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-carbon border border-neutral-subtle/30 mb-6">
+          <span class="w-2 h-2 rounded-full bg-sixo-orange animate-pulse"></span>
+          <span class="font-mono text-xs text-sixo-orange tracking-widest uppercase">08 // EXECUTIVE INTAKE & DIRECT CHANNELS</span>
+        </div>
+        <h1 class="font-display font-extrabold text-4xl sm:text-6xl text-neutral-white tracking-tight leading-[1.08] mb-6">
+          Initiate An <span class="text-sixo-orange">Engagement.</span>
+        </h1>
+        <p class="text-neutral-gray text-base sm:text-lg max-w-2xl leading-relaxed mb-6">
+          Connect directly with the Sixolab executive desk or configure a tailored multi-vertical scope across Gitlink IT Solutions, Xenon Studios, and One Percent under unified master governance.
+        </p>
+
+        <!-- SLA Telemetry Bar -->
+        <div class="inline-flex flex-wrap items-center gap-4 p-3 rounded-2xl bg-carbon/80 border border-neutral-subtle/25 font-mono text-xs text-neutral-gray">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-sixo-glow"></span>
+            <span class="text-neutral-white">Executive SLA:</span>
+            <span class="text-sixo-orange font-bold">&lt; 6 Hours</span>
+          </div>
+          <span class="text-neutral-subtle hidden sm:inline">|</span>
+          <div class="flex items-center gap-2">
+            <span class="text-neutral-white">Mutual NDA:</span>
+            <span>Active Upon Transmission</span>
+          </div>
+          <span class="text-neutral-subtle hidden sm:inline">|</span>
+          <div class="flex items-center gap-2">
+            <span class="text-neutral-white">Routing:</span>
+            <span>Parent Office & Vertical Leads</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SPLIT-SCREEN DIRECTORY & CONFIGURATOR -->
+    <section class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <!-- ===================================================================
+             LEFT COLUMN (5 COLS): DIRECTORY & AGENCY CHANNELS
+             =================================================================== -->
+        <div class="lg:col-span-5 space-y-6">
+
+          <!-- Holding Desk Card -->
+          <div class="sixo-spotlight-card bg-carbon border border-sixo-crimson/40 rounded-3xl p-8 relative overflow-hidden specular-top-border">
+            <div class="flex items-center justify-between pb-6 mb-6 border-b border-neutral-subtle/20">
+              <div>
+                <span class="font-mono text-[10px] text-sixo-orange uppercase tracking-widest block">HOLDING COMPANY OFFICE</span>
+                <h3 class="font-display font-bold text-2xl text-neutral-white mt-1">Sixolab LLC</h3>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-sixo-wine/60 border border-sixo-crimson/50 text-sixo-glow text-[10px] font-mono">GLOBAL HQ</span>
+            </div>
+
+            <p class="text-xs text-neutral-gray leading-relaxed mb-6">
+              Primary governance, multi-vertical master contracts, venture development, strategic partnerships, and holding-level executive oversight.
+            </p>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-obsidian border border-neutral-subtle/20">
+                <span class="text-neutral-subtle">Executive Inquiries:</span>
+                <button data-copy-text="executive@sixolab.com" class="text-neutral-white hover:text-sixo-orange flex items-center gap-1.5 transition-colors group">
+                  <span>executive@sixolab.com</span>
+                  <svg class="w-3.5 h-3.5 text-neutral-subtle group-hover:text-sixo-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+
+              <div class="flex items-center justify-between p-3 rounded-xl bg-obsidian border border-neutral-subtle/20">
+                <span class="text-neutral-subtle">Direct Telephone:</span>
+                <button data-copy-text="+18007496522" class="text-neutral-white hover:text-sixo-orange flex items-center gap-1.5 transition-colors group">
+                  <span>+1 (800) SIXO-LAB</span>
+                  <svg class="w-3.5 h-3.5 text-neutral-subtle group-hover:text-sixo-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+
+              <div class="flex items-center justify-between p-3 rounded-xl bg-obsidian border border-neutral-subtle/20">
+                <span class="text-neutral-subtle">Corporate Base:</span>
+                <span class="text-neutral-white">Delaware & Wyoming, USA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Child Vertical Channels -->
+          <div class="space-y-4">
+            <h4 class="font-mono text-xs uppercase text-neutral-subtle tracking-widest px-2">SPECIALIST VERTICAL DIRECT CHANNELS</h4>
+
+            <!-- Gitlink IT Solutions -->
+            <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20 hover:border-sixo-orange/40 transition-colors">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-[10px] text-sixo-orange font-bold">01 // BUILD</span>
+                  <h5 class="font-display font-bold text-sm text-neutral-white">Gitlink IT Solutions</h5>
+                </div>
+                <a href="https://gitlinkitsolutions.com" target="_blank" rel="noopener" class="text-neutral-subtle hover:text-sixo-orange text-xs font-mono flex items-center gap-1">
+                  gitlinkitsolutions.com ↗
+                </a>
+              </div>
+              <p class="text-xs text-neutral-gray mb-3">Custom software, AI integrations, SaaS architecture, web applications, and enterprise systems.</p>
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-neutral-subtle">Direct Engineering Desk:</span>
+                <button data-copy-text="engineering@gitlinkitsolutions.com" class="text-sixo-glow hover:text-neutral-white flex items-center gap-1">
+                  engineering@gitlinkitsolutions.com
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Xenon Studios -->
+            <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20 hover:border-sixo-orange/40 transition-colors">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-[10px] text-sixo-orange font-bold">02 // CREATE</span>
+                  <h5 class="font-display font-bold text-sm text-neutral-white">Xenon Studios</h5>
+                </div>
+                <a href="https://xenonstudios.bd" target="_blank" rel="noopener" class="text-neutral-subtle hover:text-sixo-orange text-xs font-mono flex items-center gap-1">
+                  xenonstudios.bd ↗
+                </a>
+              </div>
+              <p class="text-xs text-neutral-gray mb-3">Brand strategy, visual identity systems, digital UI/UX design systems, motion graphics, and content design.</p>
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-neutral-subtle">Direct Creative Desk:</span>
+                <button data-copy-text="creative@xenonstudios.bd" class="text-sixo-glow hover:text-neutral-white flex items-center gap-1">
+                  creative@xenonstudios.bd
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- One Percent -->
+            <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20 hover:border-sixo-orange/40 transition-colors">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-[10px] text-sixo-orange font-bold">03 // PRODUCE</span>
+                  <h5 class="font-display font-bold text-sm text-neutral-white">One Percent</h5>
+                </div>
+                <span class="text-neutral-subtle text-xs font-mono">COMMERCIAL PRODUCTION</span>
+              </div>
+              <p class="text-xs text-neutral-gray mb-3">Television commercials, narrative advertising films, brand films, product cinema, 4K/8K post-production, VFX & audio.</p>
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-neutral-subtle">Direct Production Desk:</span>
+                <button data-copy-text="production@onepercent.film" class="text-sixo-glow hover:text-neutral-white flex items-center gap-1">
+                  production@onepercent.film
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Protocol & Triage Notice -->
+          <div class="p-6 rounded-2xl bg-obsidian border border-neutral-subtle/20 font-mono text-[11px] text-neutral-gray leading-relaxed">
+            <span class="text-sixo-orange block font-bold mb-2">[ CENTRAL INTAKE PROTOCOL ]</span>
+            Inquiries submitted via this portal are triaged across executive and engineering leadership. If your requirements span more than one vertical, a single Master Services Agreement (MSA) is structured with direct accountability from Sixolab LLC.
+          </div>
+        </div>
+
+
+        <!-- ===================================================================
+             RIGHT COLUMN (7 COLS): 4-STEP INTERACTIVE SCOPE CONFIGURATOR
+             =================================================================== -->
+        <div class="lg:col-span-7">
+
+          <!-- Configurator Form Container -->
+          <div class="sixo-spotlight-card bg-carbon border border-neutral-subtle/25 rounded-3xl p-8 lg:p-12 relative overflow-hidden specular-top-border">
+
+            <!-- Multi-Company Dynamic Alert Banner -->
+            <div id="multi-company-alert" class="hidden mb-8 p-4 rounded-xl bg-sixo-wine/80 border border-sixo-crimson text-xs font-mono text-sixo-glow leading-relaxed">
+              <div class="flex items-center gap-2 font-bold mb-1 text-sixo-orange">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span>[ MULTI-COMPANY ENGAGEMENT ACTIVE ]</span>
+              </div>
+              Your selected scope requires inter-company coordination. Sixolab LLC will structure a Unified Master Agreement with single-point executive governance and coordinated SLA delivery.
+            </div>
+
+            <form id="scope-configurator-form" class="space-y-10">
+
+              <!-- STEP 1: SELECT VERTICALS -->
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="font-mono text-xs text-sixo-orange font-bold">STEP 01</span>
+                  <h3 class="font-display font-bold text-lg text-neutral-white">Select Operating Verticals</h3>
+                </div>
+                <p class="text-xs text-neutral-gray mb-4">Select all verticals that apply to your project. Choosing two or more automatically activates holding-level coordination.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+                  <label class="flex items-start gap-3 p-3.5 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="vertical" value="gitlink" class="mt-0.5 accent-sixo-orange w-4 h-4 rounded cursor-pointer" />
+                    <div>
+                      <span class="text-neutral-white font-bold block">BUILD: Gitlink IT</span>
+                      <span class="text-neutral-gray text-[11px]">Software, Web Apps, AI & Cloud</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3 p-3.5 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="vertical" value="xenon" class="mt-0.5 accent-sixo-orange w-4 h-4 rounded cursor-pointer" />
+                    <div>
+                      <span class="text-neutral-white font-bold block">CREATE: Xenon Studios</span>
+                      <span class="text-neutral-gray text-[11px]">Branding, UI/UX, Design Systems</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3 p-3.5 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="vertical" value="onepercent" class="mt-0.5 accent-sixo-orange w-4 h-4 rounded cursor-pointer" />
+                    <div>
+                      <span class="text-neutral-white font-bold block">PRODUCE: One Percent</span>
+                      <span class="text-neutral-gray text-[11px]">Films, TVCs, 4K/8K Post-Production</span>
+                    </div>
+                  </label>
+
+                  <label class="flex items-start gap-3 p-3.5 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="vertical" value="sixolab" class="mt-0.5 accent-sixo-orange w-4 h-4 rounded cursor-pointer" />
+                    <div>
+                      <span class="text-neutral-white font-bold block">OPERATE: Sixolab LLC</span>
+                      <span class="text-neutral-gray text-[11px]">Strategy, Governance & Advisory</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 2: ENGAGEMENT MODEL & BUDGET -->
+              <div class="pt-6 border-t border-neutral-subtle/20">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="font-mono text-xs text-sixo-orange font-bold">STEP 02</span>
+                  <h3 class="font-display font-bold text-lg text-neutral-white">Engagement Structure & Target Budget</h3>
+                </div>
+
+                <!-- Model Radio Selector -->
+                <div class="mb-6">
+                  <label class="block text-xs font-mono text-neutral-subtle uppercase mb-2">Preferred Engagement Model</label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+                    <label class="p-3 rounded-lg bg-obsidian border border-neutral-subtle/20 text-center cursor-pointer hover:border-sixo-orange/50 transition-colors">
+                      <input type="radio" name="model" value="dedicated" class="hidden peer" checked />
+                      <span class="block text-neutral-gray peer-checked:text-sixo-orange peer-checked:font-bold">Dedicated Squad</span>
+                    </label>
+                    <label class="p-3 rounded-lg bg-obsidian border border-neutral-subtle/20 text-center cursor-pointer hover:border-sixo-orange/50 transition-colors">
+                      <input type="radio" name="model" value="milestone" class="hidden peer" />
+                      <span class="block text-neutral-gray peer-checked:text-sixo-orange peer-checked:font-bold">Fixed Milestone</span>
+                    </label>
+                    <label class="p-3 rounded-lg bg-obsidian border border-neutral-subtle/20 text-center cursor-pointer hover:border-sixo-orange/50 transition-colors">
+                      <input type="radio" name="model" value="advisory" class="hidden peer" />
+                      <span class="block text-neutral-gray peer-checked:text-sixo-orange peer-checked:font-bold">Retainer / Advisory</span>
+                    </label>
+                    <label class="p-3 rounded-lg bg-obsidian border border-neutral-subtle/20 text-center cursor-pointer hover:border-sixo-orange/50 transition-colors">
+                      <input type="radio" name="model" value="hybrid" class="hidden peer" />
+                      <span class="block text-neutral-gray peer-checked:text-sixo-orange peer-checked:font-bold">Hybrid Triad</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Budget Range Radio Selector -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-mono text-neutral-subtle uppercase mb-2">Target Investment (USD)</label>
+                    <select name="budget" class="w-full bg-obsidian border border-neutral-subtle/20 rounded-xl px-4 py-3 text-xs text-neutral-white font-mono focus:border-sixo-orange focus:outline-none">
+                      <option value="under-25k">&lt; $25,000 USD (Single Vertical / Focused Sprint)</option>
+                      <option value="25k-75k" selected>$25,000 – $75,000 USD (Comprehensive Launch / Dual Vertical)</option>
+                      <option value="75k-200k">$75,000 – $200,000 USD (Enterprise Platform / Triad Scope)</option>
+                      <option value="over-200k">$200,000+ USD (Global Scale / Full Holding Integration)</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-xs font-mono text-neutral-subtle uppercase mb-2">Estimated Launch Horizon</label>
+                    <select name="horizon" class="w-full bg-obsidian border border-neutral-subtle/20 rounded-xl px-4 py-3 text-xs text-neutral-white font-mono focus:border-sixo-orange focus:outline-none">
+                      <option value="urgent">Urgent (&lt; 30 Days)</option>
+                      <option value="standard" selected>Standard (1 – 3 Months)</option>
+                      <option value="strategic">Strategic Roadmap (3 – 6 Months)</option>
+                      <option value="rfp">Formal RFP / Enterprise Procurement</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: DECISION-MAKER DETAILS & CAPABILITIES PREFILL -->
+              <div class="pt-6 border-t border-neutral-subtle/20">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="font-mono text-xs text-sixo-orange font-bold">STEP 03</span>
+                  <h3 class="font-display font-bold text-lg text-neutral-white">Decision-Maker & Brief Details</h3>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Full Name *</label>
+                      <input type="text" id="f-name" required placeholder="e.g. Johnathan Vance" class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl px-4 py-3 text-xs text-neutral-white placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none" />
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Corporate Work Email *</label>
+                      <input type="email" id="f-email" required placeholder="e.g. vance@enterprise.com" class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl px-4 py-3 text-xs text-neutral-white placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none" />
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Company / Organization *</label>
+                      <input type="text" id="f-org" required placeholder="e.g. Vance Global Holdings" class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl px-4 py-3 text-xs text-neutral-white placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none" />
+                    </div>
+
+                    <div>
+                      <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Direct Phone / WhatsApp</label>
+                      <input type="tel" id="f-phone" placeholder="e.g. +1 (555) 019-2831" class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl px-4 py-3 text-xs text-neutral-white placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none" />
+                    </div>
+                  </div>
+
+                  <!-- Capabilities Field (Auto-Populated from Services Directory or Manual) -->
+                  <div>
+                    <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Selected Capabilities (Auto-populated from Directory or Manual Entry)</label>
+                    <input type="text" id="f-capabilities" placeholder="e.g. Custom Software Development, Brand Identity, Commercial Production" class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl px-4 py-3 text-xs text-sixo-orange placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none font-mono" />
+                    <span class="text-[10px] font-mono text-neutral-subtle mt-1 block">Items selected in the 53 Capabilities Directory are automatically attached here.</span>
+                  </div>
+
+                  <!-- Brief Textarea -->
+                  <div>
+                    <label class="block text-xs font-mono text-neutral-subtle uppercase mb-1.5">Project Brief / Business Objective *</label>
+                    <textarea id="f-brief" rows="4" required placeholder="Outline the core objective, challenges, target launch timeframe, or specific deliverables required..." class="w-full bg-obsidian border border-neutral-subtle/25 rounded-xl p-4 text-xs text-neutral-white placeholder:text-neutral-subtle/60 focus:border-sixo-orange focus:outline-none resize-none"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 4: TRANSMIT -->
+              <div class="pt-6 border-t border-neutral-subtle/20 space-y-4">
+                <button type="submit" class="magnetic-btn w-full py-4 rounded-xl bg-sixo-orange text-obsidian font-display font-bold text-sm tracking-wide uppercase hover:bg-sixo-glow transition-colors flex items-center justify-center gap-2">
+                  <span>Initialize Engagement Request</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+
+                <div class="text-center font-mono text-[10px] text-neutral-subtle">
+                  <span>🔒 Protected by Sixolab LLC mutual non-disclosure standards. Transmitted under encrypted protocols.</span>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Holographic Submission Confirmation Modal -->
+            <div id="submission-telemetry-modal" class="hidden text-center py-8 space-y-6">
+              <div class="w-16 h-16 rounded-full bg-sixo-orange/20 border border-sixo-orange flex items-center justify-center mx-auto text-sixo-orange">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+
+              <div>
+                <span class="font-mono text-xs text-sixo-orange uppercase tracking-widest block mb-1">[ INTAKE TICKET GENERATED ]</span>
+                <h3 class="font-display font-bold text-3xl text-neutral-white">Transmission Acknowledged</h3>
+                <p class="text-xs text-neutral-gray mt-2 max-w-md mx-auto">
+                  Thank you, <span id="modal-client-name" class="text-neutral-white font-bold">Partner</span> from <span id="modal-client-org" class="text-neutral-white font-bold">Organization</span>. Your brief has entered the Sixolab LLC executive review queue.
+                </p>
+              </div>
+
+              <!-- Telemetry Ticket Slab -->
+              <div class="max-w-md mx-auto p-6 rounded-2xl bg-obsidian border border-neutral-subtle/25 text-left font-mono text-xs space-y-3">
+                <div class="flex justify-between items-center pb-3 border-b border-neutral-subtle/20">
+                  <span class="text-neutral-subtle">TICKET ID:</span>
+                  <span class="text-sixo-orange font-bold">SIXO-REQ-8492-X</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-neutral-subtle">EXECUTIVE SLA:</span>
+                  <span class="text-neutral-white">&lt; 6 Hours Direct Review</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-neutral-subtle">ROUTED LEADS:</span>
+                  <span class="text-neutral-white">Sixolab Principal + Tech Lead</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-neutral-subtle">CONFIDENTIALITY:</span>
+                  <span class="text-sixo-glow">Mutual NDA Active</span>
+                </div>
+              </div>
+
+              <div class="flex justify-center gap-4 pt-4">
+                <button onclick="window.print()" class="px-5 py-2.5 rounded-full bg-carbon border border-neutral-subtle/30 text-xs font-mono text-neutral-white hover:border-sixo-orange transition-colors">
+                  Print Telemetry Receipt
+                </button>
+                <a href="index.html" class="px-5 py-2.5 rounded-full bg-sixo-orange text-obsidian text-xs font-display font-bold hover:bg-sixo-glow transition-colors">
+                  Return to Ecosystem
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Edge-to-Edge Elastic Bezier Divider -->
+    <div class="sixo-elastic-divider my-24" data-color="#6B0F12">
+      <svg class="w-full h-12 overflow-visible" preserveAspectRatio="none">
+        <path d="M 0,24 Q 720,24 1440,24" stroke="#6B0F12" stroke-width="1" fill="none" opacity="0.35"/>
+      </svg>
+    </div>
+
+    <!-- GLOBAL ARCHITECTURAL FOOTER -->
+    <footer id="global-footer" class="border-t border-neutral-subtle/20 bg-carbon pt-20 pb-12 relative overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-neutral-subtle/20">
+
+          <!-- Col 1: Brand & Holding Identity -->
+          <div class="lg:col-span-1">
+            <a href="index.html" class="flex items-center gap-2 mb-4">
+              <span class="font-display font-extrabold text-lg tracking-wider text-neutral-white">SIXOLAB</span>
+              <span class="font-mono text-[10px] text-sixo-orange">LLC</span>
+            </a>
+            <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+              Connect & Operate. Holding company governing specialized operating entities across software engineering, brand identity, and film production.
+            </p>
+            <div class="font-mono text-[10px] text-neutral-subtle space-y-1">
+              <p>Registered Holding Company</p>
+              <p>Delaware & Wyoming, USA</p>
+            </div>
+          </div>
+
+          <!-- Col 2: The Operating Triad -->
+          <div>
+            <h4 class="font-mono text-xs uppercase text-sixo-orange mb-4 tracking-wider">OPERATING VERTICALS</h4>
+            <ul class="space-y-2.5 text-xs text-neutral-gray">
+              <li><a href="gitlink.html" class="hover:text-neutral-white transition-colors">Gitlink IT Solutions (Build)</a></li>
+              <li><a href="xenon.html" class="hover:text-neutral-white transition-colors">Xenon Studios (Create)</a></li>
+              <li><a href="one-percent.html" class="hover:text-neutral-white transition-colors">One Percent (Produce)</a></li>
+              <li><a href="ecosystem.html" class="hover:text-neutral-white transition-colors">Holding & Governance Model</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Master Directory -->
+          <div>
+            <h4 class="font-mono text-xs uppercase text-sixo-orange mb-4 tracking-wider">DIRECTORY & SCOPE</h4>
+            <ul class="space-y-2.5 text-xs text-neutral-gray">
+              <li><a href="services.html" class="hover:text-neutral-white transition-colors">Master 53 Capabilities</a></li>
+              <li><a href="services.html#gitlink-table" class="hover:text-neutral-white transition-colors">Technology Services (15)</a></li>
+              <li><a href="services.html#xenon-table" class="hover:text-neutral-white transition-colors">Creative Services (12)</a></li>
+              <li><a href="services.html#onepercent-table" class="hover:text-neutral-white transition-colors">Production Services (19)</a></li>
+              <li><a href="services.html#sixolab-table" class="hover:text-neutral-white transition-colors">Governance Domains (9)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Process & Governance -->
+          <div>
+            <h4 class="font-mono text-xs uppercase text-sixo-orange mb-4 tracking-wider">PROCESS & CRITERIA</h4>
+            <ul class="space-y-2.5 text-xs text-neutral-gray">
+              <li><a href="process.html" class="hover:text-neutral-white transition-colors">5-Step Delivery Process</a></li>
+              <li><a href="process.html#general-criteria" class="hover:text-neutral-white transition-colors">General Criteria (5)</a></li>
+              <li><a href="process.html#payment-terms" class="hover:text-neutral-white transition-colors">Payment Terms & Schedules</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 5: Direct Routing -->
+          <div>
+            <h4 class="font-mono text-xs uppercase text-sixo-orange mb-4 tracking-wider">DIRECT CHANNELS</h4>
+            <ul class="space-y-2.5 text-xs text-neutral-gray">
+              <li><a href="contact.html?vertical=sixolab" class="hover:text-sixo-glow transition-colors">Sixolab Executive Desk</a></li>
+              <li><a href="contact.html?vertical=gitlink" class="hover:text-sixo-glow transition-colors">Gitlink Engineering Desk</a></li>
+              <li><a href="contact.html?vertical=xenon" class="hover:text-sixo-glow transition-colors">Xenon Creative Desk</a></li>
+              <li><a href="contact.html?vertical=onepercent" class="hover:text-sixo-glow transition-colors">One Percent Film Desk</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edge-To-Edge Wireframe Watermark -->
+      <div class="w-full overflow-hidden pt-12 pb-8 select-none pointer-events-none text-center">
+        <span class="font-display font-extrabold text-[12vw] leading-none tracking-widest text-transparent block"
+              style="-webkit-text-stroke: 1px rgba(115, 115, 115, 0.2);">
+          SIXOLAB
+        </span>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle">
+        <span>© 2026 SIXOLAB LLC. ALL RIGHTS RESERVED.</span>
+        <span>GITLINK IT SOLUTIONS • XENON STUDIOS • ONE PERCENT</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- External Script Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

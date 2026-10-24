@@ -1,0 +1,250 @@
+/* ==========================================================================
+   Sixolab LLC — Master Stylesheet & Design System
+   Strict 70 / 20 / 10 Dark-Mode-First Architecture & Zero-3D-Hover Policy
+   ========================================================================== */
+
+:root {
+  --bg-obsidian: #080808;
+  --bg-carbon: #111111;
+  --accent-orange: #FF5A1F;
+  --accent-glow: #FF7A30;
+  --ambient-crimson: #6B0F12;
+  --ambient-wine: #300507;
+  --text-white: #F5F5F5;
+  --text-gray: #A1A1AA;
+  --border-subtle: #737373;
+  --text-disabled: #525252;
+
+  --grad-bg: linear-gradient(135deg, #080808 0%, #300507 55%, #6B0F12 100%);
+  --grad-accent: linear-gradient(90deg, #FF5A1F 0%, #FF7A30 100%);
+  --grad-specular: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%);
+}
+
+html {
+  background-color: var(--bg-obsidian);
+  color: var(--text-white);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-white);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Resend-Inspired Fractal Noise Overlay (Prevents banding on dark gradients) */
+.sixo-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 4px;
+  border: 2px solid var(--bg-obsidian);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange);
+}
+
+::selection {
+  background-color: var(--accent-orange);
+  color: var(--bg-obsidian);
+}
+
+/* Typographic Hierarchy Utility Classes */
+.font-display {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Hairline Grid Crosshair intersections */
+.crosshair-node {
+  position: relative;
+}
+.crosshair-node::after {
+  content: "+";
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(115, 115, 115, 0.45);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Specular Card Top Highlights */
+.specular-top-border {
+  position: relative;
+}
+.specular-top-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--grad-specular);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 2D Planar Spotlight Card System (Zero 3D Hover Tilt) */
+.sixo-spotlight-card {
+  position: relative;
+  background: var(--bg-carbon);
+  border: 1px solid rgba(115, 115, 115, 0.2);
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.sixo-spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(255, 122, 48, 0.65),
+    rgba(107, 15, 18, 0.25) 45%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2D Magnetic Buttons */
+.magnetic-btn {
+  will-change: transform;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* 2D Planar Cursor Follower */
+#sixo-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out;
+}
+#sixo-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 122, 48, 0.45);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+#sixo-cursor-ring.is-hovering {
+  width: 64px;
+  height: 64px;
+  border-color: var(--accent-orange);
+  background-color: rgba(255, 90, 31, 0.12);
+}
+#sixo-cursor-ring.is-inspecting {
+  width: 80px;
+  height: 80px;
+  border-color: #F5F5F5;
+  background-color: rgba(245, 245, 245, 0.08);
+}
+
+/* Text Slot Roll for Interactive Links & Buttons */
+.btn-text-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 1.25em;
+  line-height: 1.25em;
+}
+.btn-text-wrap span {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-text-wrap .text-secondary {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: var(--accent-glow);
+}
+.group:hover .btn-text-wrap span:first-child,
+.magnetic-btn:hover .btn-text-wrap span:first-child {
+  transform: translateY(-100%);
+}
+.group:hover .btn-text-wrap .text-secondary,
+.magnetic-btn:hover .btn-text-wrap .text-secondary {
+  transform: translateY(-100%);
+}
+
+/* 2D Planar Sweep Fill on Hover */
+.sixo-sweep-row {
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+}
+.sixo-sweep-row::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(90deg, rgba(107, 15, 18, 0.35) 0%, rgba(24, 27, 24, 0.8) 100%);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.sixo-sweep-row:hover::before {
+  width: 100%;
+}
+.sixo-sweep-row:hover {
+  border-left-color: var(--accent-orange) !important;
+}
+
+/* Ambient Glow Shadows */
+.shadow-orange-glow {
+  box-shadow: 0 0 28px -4px rgba(255, 90, 31, 0.45), 0 0 12px -2px rgba(255, 122, 48, 0.3);
+}
+.shadow-orange-glow-lg {
+  box-shadow: 0 0 45px -5px rgba(255, 90, 31, 0.65), 0 0 20px -2px rgba(255, 122, 48, 0.45);
+}
+.shadow-crimson-ambient {
+  box-shadow: 0 20px 60px -15px rgba(107, 15, 18, 0.4);
+}
+
+/* Pulse animation */
+@keyframes sixoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.9); }
+}
+.animate-sixo-pulse {
+  animation: sixoPulse 2.5s infinite ease-in-out;
+}

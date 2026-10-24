@@ -1,0 +1,18 @@
+<svg id="sixo-brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" fill="none">
+  <!-- Modular Grid Circles (Dashed) -->
+  <g id="modular-grid-circles" stroke="#737373" stroke-width="0.75" stroke-dasharray="3 3" opacity="0.35">
+    <circle cx="100" cy="70" r="42" />
+    <circle cx="100" cy="130" r="46" />
+    <circle cx="132" cy="82" r="28" />
+    <line x1="20" y1="100" x2="180" y2="100" />
+    <line x1="100" y1="20" x2="100" y2="180" />
+  </g>
+  <!-- L — BASE : Foundation Stroke -->
+  <path id="path-l-base" d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="16" stroke-linecap="round" />
+  <!-- O — SPACE : Central Aperture -->
+  <path id="path-o-space" d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="16" stroke-linecap="round" />
+  <!-- S — FLOW : Ascending Continuous Ribbon -->
+  <path id="path-s-flow" d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="16" stroke-linecap="round" />
+  <!-- KNIGHT — STRATEGY : Head & Crest in Sixo Orange -->
+  <path id="path-knight-strategy" d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

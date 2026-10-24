@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Process, Engagement Models & Payment Terms | SIXOLAB LLC</title>
+  <meta name="description" content="Explore the disciplined 5-step delivery process, general engagement criteria, and 6 transparent payment schedules across Sixolab LLC." />
+  <link rel="canonical" href="https://www.sixolab.com/process.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            carbon: '#111111',
+            sixo: {
+              orange: '#FF5A1F',
+              glow: '#FF7A30',
+              crimson: '#6B0F12',
+              wine: '#300507',
+            },
+            neutral: {
+              white: '#F5F5F5',
+              gray: '#A1A1AA',
+              subtle: '#737373',
+              disabled: '#525252',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          backgroundImage: {
+            'sixo-ambient': 'linear-gradient(135deg, #080808 0%, #300507 55%, #6B0F12 100%)',
+            'sixo-accent': 'linear-gradient(90deg, #FF5A1F 0%, #FF7A30 100%)',
+            'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%)',
+            'sixo-radial-crimson': 'radial-gradient(circle at 50% 0%, rgba(107, 15, 18, 0.55) 0%, rgba(48, 5, 7, 0.25) 45%, rgba(8, 8, 8, 0) 75%)',
+          },
+          boxShadow: {
+            'orange-glow': '0 0 28px -4px rgba(255, 90, 31, 0.45), 0 0 12px -2px rgba(255, 122, 48, 0.3)',
+            'orange-glow-lg': '0 0 45px -5px rgba(255, 90, 31, 0.65), 0 0 20px -2px rgba(255, 122, 48, 0.45)',
+            'crimson-ambient': '0 20px 60px -15px rgba(107, 15, 18, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="antialiased sixo-noise">
+
+  <div id="sixo-cursor-dot" class="hidden lg:block"></div>
+  <div id="sixo-cursor-ring" class="hidden lg:block"></div>
+
+  <div id="sixo-preloader" class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"></div>
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"></div>
+  </div>
+
+  <canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- GLOBAL STICKY HEADER -->
+  <header id="global-nav" class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-8 h-8 flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold tracking-[0.32em] text-sm text-neutral-white">
+            SIXO<span class="text-sixo-orange">LAB</span>
+          </span>
+          <span class="h-3.5 w-[1px] bg-neutral-subtle/35"></span>
+          <span class="font-mono text-[10px] tracking-widest text-neutral-subtle uppercase">PROCESS & TERMS</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
+        <a href="index.html" class="hover:text-neutral-white transition-colors">Overview</a>
+        <a href="ecosystem.html" class="hover:text-neutral-white transition-colors">The Ecosystem</a>
+        <a href="gitlink.html" class="hover:text-neutral-white transition-colors">Gitlink (BUILD)</a>
+        <a href="xenon.html" class="hover:text-neutral-white transition-colors">Xenon (CREATE)</a>
+        <a href="one-percent.html" class="hover:text-neutral-white transition-colors">One Percent (PRODUCE)</a>
+        <a href="services.html" class="hover:text-neutral-white transition-colors">Capabilities (53)</a>
+        <a href="process.html" class="text-neutral-white flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>Process & Models
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
+          <span>Initiate Discovery</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="relative z-10 max-w-[1440px] mx-auto border-x border-neutral-subtle/15 pt-28">
+
+    <!-- SECTION 7.1: PROCESS HERO & THE 5 STEPS -->
+    <section id="process-hero" class="pt-20 pb-20 px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-4xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-orange">
+          05 // THE PROCESS — ONE ECOSYSTEM. ONE STANDARD.
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-6xl text-neutral-white leading-tight mb-6">
+          Five Steps, Every Time. <span class="bg-sixo-accent bg-clip-text text-transparent">Nothing Guessed, Nothing Padded.</span>
+        </h1>
+        <p class="text-base sm:text-xl text-neutral-gray leading-relaxed mb-8">
+          Whether an engagement requires a single specialist company or all three working together, every project follows the same disciplined, milestone-driven pathway. Timelines and investment are defined after discovery.
+        </p>
+
+        <!-- Guarantee Pill Strip -->
+        <div class="flex flex-wrap gap-4 pt-4 border-t border-neutral-subtle/20">
+          <span class="px-4 py-2 rounded-xl bg-carbon border border-neutral-subtle/20 font-mono text-xs text-neutral-white">
+            <span class="text-sixo-orange">MODELS:</span> Project / Retainer / Multi-Company
+          </span>
+          <span class="px-4 py-2 rounded-xl bg-carbon border border-neutral-subtle/20 font-mono text-xs text-neutral-white">
+            <span class="text-sixo-orange">SCOPE:</span> Defined Per Project
+          </span>
+          <span class="px-4 py-2 rounded-xl bg-carbon border border-neutral-subtle/20 font-mono text-xs text-neutral-white">
+            <span class="text-sixo-orange">ACCOUNTABILITY:</span> One Point of Contact
+          </span>
+        </div>
+      </div>
+
+      <!-- 5 Interactive Steps with Expandable Checkpoints -->
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="sixo-spotlight-card p-6 lg:p-8 rounded-2xl bg-carbon">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 cursor-pointer" data-accordion-trigger>
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-1">PHASE // 01</span>
+              <h3 class="font-display font-bold text-2xl text-neutral-white">01. Discovery</h3>
+              <p class="text-sm text-neutral-gray mt-1 leading-relaxed">Goals, constraints, audience and success criteria.</p>
+            </div>
+            <span class="text-xs font-mono text-sixo-glow accordion-arrow transition-transform">Expand Deliverables →</span>
+          </div>
+          <div class="hidden pt-6 mt-6 border-t border-neutral-subtle/20 text-xs text-neutral-gray space-y-2">
+            <p><strong class="text-neutral-white font-mono">Sign-Off Artifact:</strong> Discovery Document & Feasibility Assessment.</p>
+            <p><strong class="text-neutral-white font-mono">Client Inputs:</strong> Business objectives, competitor benchmarks, user personas, and technical credentials.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="sixo-spotlight-card p-6 lg:p-8 rounded-2xl bg-carbon">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 cursor-pointer" data-accordion-trigger>
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-1">PHASE // 02</span>
+              <h3 class="font-display font-bold text-2xl text-neutral-white">02. Proposal</h3>
+              <p class="text-sm text-neutral-gray mt-1 leading-relaxed">Scope, deliverables, milestones and terms.</p>
+            </div>
+            <span class="text-xs font-mono text-sixo-glow accordion-arrow transition-transform">Expand Deliverables →</span>
+          </div>
+          <div class="hidden pt-6 mt-6 border-t border-neutral-subtle/20 text-xs text-neutral-gray space-y-2">
+            <p><strong class="text-neutral-white font-mono">Sign-Off Artifact:</strong> Written Statement of Work (SOW), Project Plan & Milestone Payment Schedule.</p>
+            <p><strong class="text-neutral-white font-mono">Client Inputs:</strong> Formal approval of commercial terms and appointment of named decision-maker.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="sixo-spotlight-card p-6 lg:p-8 rounded-2xl bg-carbon">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 cursor-pointer" data-accordion-trigger>
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-1">PHASE // 03</span>
+              <h3 class="font-display font-bold text-2xl text-neutral-white">03. Execution</h3>
+              <p class="text-sm text-neutral-gray mt-1 leading-relaxed">The right company builds, designs or shoots.</p>
+            </div>
+            <span class="text-xs font-mono text-sixo-glow accordion-arrow transition-transform">Expand Deliverables →</span>
+          </div>
+          <div class="hidden pt-6 mt-6 border-t border-neutral-subtle/20 text-xs text-neutral-gray space-y-2">
+            <p><strong class="text-neutral-white font-mono">Sign-Off Artifact:</strong> Working code staging builds, Figma design reviews, or shooting day dailies.</p>
+            <p><strong class="text-neutral-white font-mono">Governance:</strong> Dedicated Slack/Notion channel with weekly sprint demos.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="sixo-spotlight-card p-6 lg:p-8 rounded-2xl bg-carbon">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 cursor-pointer" data-accordion-trigger>
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-1">PHASE // 04</span>
+              <h3 class="font-display font-bold text-2xl text-neutral-white">04. Review</h3>
+              <p class="text-sm text-neutral-gray mt-1 leading-relaxed">Structured feedback at agreed checkpoints.</p>
+            </div>
+            <span class="text-xs font-mono text-sixo-glow accordion-arrow transition-transform">Expand Deliverables →</span>
+          </div>
+          <div class="hidden pt-6 mt-6 border-t border-neutral-subtle/20 text-xs text-neutral-gray space-y-2">
+            <p><strong class="text-neutral-white font-mono">Sign-Off Artifact:</strong> Consolidated feedback register and revision confirmation.</p>
+            <p><strong class="text-neutral-white font-mono">Quality Gate:</strong> Dedicated QA audit covering performance, security, and brand alignment.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="sixo-spotlight-card p-6 lg:p-8 rounded-2xl bg-carbon">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 cursor-pointer" data-accordion-trigger>
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-1">PHASE // 05</span>
+              <h3 class="font-display font-bold text-2xl text-neutral-white">05. Delivery</h3>
+              <p class="text-sm text-neutral-gray mt-1 leading-relaxed">Final assets, handover and support.</p>
+            </div>
+            <span class="text-xs font-mono text-sixo-glow accordion-arrow transition-transform">Expand Deliverables →</span>
+          </div>
+          <div class="hidden pt-6 mt-6 border-t border-neutral-subtle/20 text-xs text-neutral-gray space-y-2">
+            <p><strong class="text-neutral-white font-mono">Sign-Off Artifact:</strong> Production release, master source code repository transfer, 4K film master export, and support SLA commencement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7.2: THE 5 UNIVERSAL GENERAL CRITERIA -->
+    <section id="general-criteria" class="py-28 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 15 // GROUP DOCUMENTATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">General Criteria: What Makes a Project Run Well Across Every Company</h2>
+        <p class="text-neutral-gray text-base mt-2">Five foundational rules that guarantee execution velocity and project success.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- 01 A clear objective -->
+        <div class="p-6 rounded-r-2xl bg-obsidian border-l-4 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-1">CRITERION // 01</span>
+          <h3 class="font-display font-bold text-lg text-neutral-white mb-2">A clear objective</h3>
+          <p class="text-sm text-neutral-gray leading-relaxed">
+            "We build better when we know what success looks like." Whether launching a product or repositioning a brand, clarity of purpose drives speed and prevents scope drift.
+          </p>
+        </div>
+
+        <!-- 02 One decision-maker -->
+        <div class="p-6 rounded-r-2xl bg-obsidian border-l-4 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-1">CRITERION // 02</span>
+          <h3 class="font-display font-bold text-lg text-neutral-white mb-2">One decision-maker</h3>
+          <p class="text-sm text-neutral-gray leading-relaxed">
+            "Faster approvals, fewer conflicting rounds." Having a single designated point of contact with sign-off authority ensures momentum is never lost to committee hesitation.
+          </p>
+        </div>
+
+        <!-- 03 Timely feedback -->
+        <div class="p-6 rounded-r-2xl bg-obsidian border-l-4 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-1">CRITERION // 03</span>
+          <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Timely feedback</h3>
+          <p class="text-sm text-neutral-gray leading-relaxed">
+            "Schedules hold when review happens when agreed." Engineering and film production schedules depend on predictable review turnarounds at predetermined sprint gates.
+          </p>
+        </div>
+
+        <!-- 04 Access to assets and people -->
+        <div class="p-6 rounded-r-2xl bg-obsidian border-l-4 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-1">CRITERION // 04</span>
+          <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Access to assets and people</h3>
+          <p class="text-sm text-neutral-gray leading-relaxed">
+            "Brand files, systems, data and key stakeholders." Our specialists work as embedded extensions of your team, requiring direct access to context and tooling.
+          </p>
+        </div>
+
+        <!-- 05 Written scope -->
+        <div class="p-6 rounded-r-2xl bg-obsidian border-l-4 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-1">CRITERION // 05</span>
+          <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Written scope</h3>
+          <p class="text-sm text-neutral-gray leading-relaxed">
+            "Every engagement is documented before work begins, and changes are agreed in writing." Transparent documentation protects both budgets and timelines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7.3: CONTRACT METHODS & 6 PAYMENT TERMS -->
+    <section id="payment-terms" class="py-28 bg-obsidian px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">COMMERCIAL TRANSPARENCY</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Flexible Contract Methods & 6 Payment Schedules</h2>
+        <p class="text-neutral-gray text-base mt-2">Established commercial structures from gitlinkitsolutions.com designed for trust, cash-flow flexibility, and risk mitigation.</p>
+      </div>
+
+      <!-- 6 Contract Methods -->
+      <div class="mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-4">CONTRACT STRUCTURES</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">01. Project-Based / Fixed</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">Fixed deliverables, timeline and commercial investment defined upfront.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">02. Retainer / Subscription</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">Dedicated monthly engineering, creative or filming capacity.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">03. Multi-Company Launch</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">Unified agreement spanning technology, creative and video production.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">04. One-Time Sprint</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">Fast-turnaround audits, MVP wireframing, or TVC treatments.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">05. Maintenance & Support</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">SLA-backed uptime, security patches, backups and continuous improvements.</p>
+          </div>
+          <div class="p-6 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <h4 class="font-display font-bold text-base text-neutral-white mb-1">06. Venture & Partnership</h4>
+            <p class="text-xs text-neutral-gray leading-relaxed">Equity/revenue-share collaboration with Sixolab LLC on strategic ventures.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Transparent Payment Schedules -->
+      <div>
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-4">PAYMENT SCHEDULE OPTIONS</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 01 50/50 -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 01</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">50% Upfront, 50% Completion</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                Begin with 50% payment to start work, and pay the remaining 50% only after the final deliverable is reviewed and approved.
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex">
+              <div class="bg-sixo-orange w-1/2"></div>
+              <div class="bg-neutral-subtle/30 w-1/2"></div>
+            </div>
+          </div>
+
+          <!-- 02 Milestone Payments -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 02</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">Milestone Payments</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                Structured releases tied to reviewable project stages (e.g., 25% kick-off, 25% wireframes, 25% staging, 25% handover).
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex gap-1">
+              <div class="bg-sixo-orange w-1/4"></div>
+              <div class="bg-sixo-orange w-1/4"></div>
+              <div class="bg-sixo-orange w-1/4"></div>
+              <div class="bg-sixo-orange w-1/4"></div>
+            </div>
+          </div>
+
+          <!-- 03 Secure Escrow -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 03</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">Secure Escrow Payment</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                Funds are held safely by a trusted third-party escrow and released only after you verify and approve the completed deliverables.
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex">
+              <div class="bg-sixo-glow w-full"></div>
+            </div>
+          </div>
+
+          <!-- 04 Fixed Monthly -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 04</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">Fixed Monthly Retainer</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                Pay a fixed amount each month on a specific due date, providing predictable operational expenditure.
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex">
+              <div class="bg-sixo-orange w-full"></div>
+            </div>
+          </div>
+
+          <!-- 05 Monthly 50/50 Split -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 05</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">Monthly 50/50 Split</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                50% within the first 10 days of the month, and 50% within the last 10 days—balancing cash flow and continuous commitment.
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex">
+              <div class="bg-sixo-orange w-1/2"></div>
+              <div class="bg-sixo-wine w-1/2"></div>
+            </div>
+          </div>
+
+          <!-- 06 Tailored Plan -->
+          <div class="sixo-spotlight-card p-6 rounded-2xl bg-carbon flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-sixo-orange block mb-2">SCHEDULE // 06</span>
+              <h4 class="font-display font-bold text-lg text-neutral-white mb-2">Tailored Payment Schedule</h4>
+              <p class="text-xs text-neutral-gray leading-relaxed mb-4">
+                We'll design a completely custom payment plan together that aligns perfectly with your business cash flow and project milestones.
+              </p>
+            </div>
+            <div class="w-full bg-obsidian h-2 rounded-full overflow-hidden flex">
+              <div class="bg-gradient-to-r from-sixo-orange to-sixo-glow w-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
+        <span>© 2026 SIXOLAB LLC. ALL RIGHTS RESERVED.</span>
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="hover:text-neutral-white">Overview</a>
+          <a href="services.html" class="hover:text-neutral-white">Capabilities (53)</a>
+          <a href="contact.html" class="text-sixo-orange hover:underline">Start a Discovery Session →</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

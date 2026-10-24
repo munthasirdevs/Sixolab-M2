@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xenon Studios — Creative & Branding Vertical (CREATE) | SIXOLAB LLC</title>
+  <meta name="description" content="Xenon Studios is the creative and branding sister concern of Sixolab LLC: brand strategy, visual identity systems, UI/UX, motion design, and digital experiences." />
+  <link rel="canonical" href="https://www.sixolab.com/xenon.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            carbon: '#111111',
+            sixo: {
+              orange: '#FF5A1F',
+              glow: '#FF7A30',
+              crimson: '#6B0F12',
+              wine: '#300507',
+            },
+            neutral: {
+              white: '#F5F5F5',
+              gray: '#A1A1AA',
+              subtle: '#737373',
+              disabled: '#525252',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          backgroundImage: {
+            'sixo-ambient': 'linear-gradient(135deg, #080808 0%, #300507 55%, #6B0F12 100%)',
+            'sixo-accent': 'linear-gradient(90deg, #FF5A1F 0%, #FF7A30 100%)',
+            'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%)',
+            'sixo-radial-crimson': 'radial-gradient(circle at 50% 0%, rgba(107, 15, 18, 0.55) 0%, rgba(48, 5, 7, 0.25) 45%, rgba(8, 8, 8, 0) 75%)',
+          },
+          boxShadow: {
+            'orange-glow': '0 0 28px -4px rgba(255, 90, 31, 0.45), 0 0 12px -2px rgba(255, 122, 48, 0.3)',
+            'orange-glow-lg': '0 0 45px -5px rgba(255, 90, 31, 0.65), 0 0 20px -2px rgba(255, 122, 48, 0.45)',
+            'crimson-ambient': '0 20px 60px -15px rgba(107, 15, 18, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="antialiased sixo-noise">
+
+  <div id="sixo-cursor-dot" class="hidden lg:block"></div>
+  <div id="sixo-cursor-ring" class="hidden lg:block"></div>
+
+  <div id="sixo-preloader" class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"></div>
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"></div>
+  </div>
+
+  <canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- GLOBAL STICKY HEADER -->
+  <header id="global-nav" class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-8 h-8 flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold tracking-[0.32em] text-sm text-neutral-white">
+            SIXO<span class="text-sixo-orange">LAB</span>
+          </span>
+          <span class="h-3.5 w-[1px] bg-neutral-subtle/35"></span>
+          <span class="font-mono text-[10px] tracking-widest text-neutral-subtle uppercase">XENON // CREATE</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
+        <a href="index.html" class="hover:text-neutral-white transition-colors">Overview</a>
+        <a href="ecosystem.html" class="hover:text-neutral-white transition-colors">The Ecosystem</a>
+        <a href="gitlink.html" class="hover:text-neutral-white transition-colors">Gitlink (BUILD)</a>
+        <a href="xenon.html" class="text-neutral-white flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow"></span>Xenon (CREATE)
+        </a>
+        <a href="one-percent.html" class="hover:text-neutral-white transition-colors">One Percent (PRODUCE)</a>
+        <a href="services.html" class="hover:text-neutral-white transition-colors">Capabilities (53)</a>
+        <a href="process.html" class="hover:text-neutral-white transition-colors">Process & Models</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html?vertical=xenon" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow"></span>
+          <span>Scope with Xenon</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="relative z-10 max-w-[1440px] mx-auto border-x border-neutral-subtle/15 pt-28">
+
+    <!-- SECTION 4.1: XENON HERO -->
+    <section id="xenon-hero" class="pt-20 pb-20 px-6 lg:px-12 border-b border-neutral-subtle/20 relative">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-glow">
+          03 // CREATIVE & BRANDING VERTICAL — ROLE: CREATE — FOCUS: BRAND & EXPERIENCE
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-6xl text-neutral-white leading-tight mb-6">
+          Xenon Studios: <span class="bg-sixo-accent bg-clip-text text-transparent">Create the Brand & Creative.</span>
+        </h1>
+        <p class="text-base sm:text-xl text-neutral-gray leading-relaxed mb-8">
+          Xenon Studios is the creative and branding sister concern within the Sixolab ecosystem. It handles how businesses, products and ideas look, communicate and feel. Brand is perception, and visuals exist to reinforce positioning. Xenon starts with strategy, then builds the identity, design and creative experiences that make a brand memorable.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 mb-10">
+          <a href="contact.html?vertical=xenon" class="magnetic-btn px-8 py-4 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-sm shadow-orange-glow hover:shadow-orange-glow-lg transition-all">
+            Submit Brand Brief to Xenon →
+          </a>
+          <div class="px-5 py-3 rounded-full bg-carbon border border-neutral-subtle/30 font-mono text-xs text-neutral-white">
+            FOCUSED • STRUCTURED • PURPOSE-DRIVEN
+          </div>
+          <span class="font-mono text-xs text-neutral-subtle">DESK: connect@xenonstudios.bd</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4.2: 12 BRAND & EXPERIENCE CAPABILITIES -->
+    <section id="xenon-capabilities" class="py-24 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-glow uppercase tracking-wider block mb-2">PAGE 10 // GROUP DOCUMENTATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">12 Brand & Experience Capabilities</h2>
+        <p class="text-neutral-gray text-base mt-2">Strategic thinking and considered craft that make products recognized, trusted, and remembered.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 01 Brand Strategy -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 01</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Positioning Architecture</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Brand Strategy</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Positioning, audience, messaging and personality: the thinking that comes before any visual.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Brand Foundation Deck</span>
+        </div>
+
+        <!-- 02 Creative Direction -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 02</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Cross-Channel Vision</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Creative Direction</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">One creative vision guiding every touchpoint, campaign and piece of content.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Unified Creative Treatment</span>
+        </div>
+
+        <!-- 03 Brand Identity -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 03</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Visual Identity Systems</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Brand Identity</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Logo, typography, color and tone assembled into an identity that is recognizable and ownable.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Brand Identity Bible & Assets</span>
+        </div>
+
+        <!-- 04 Graphic Design -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 04</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Print, Digital & Packaging</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Graphic Design</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Print and digital collateral, packaging and marketing material with premium finish.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Production-Ready Print & Packaging</span>
+        </div>
+
+        <!-- 05 UI/UX -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 05</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Product Interface Design</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">UI/UX</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Research-led interface and experience design for apps, platforms and digital products.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Interactive Figma Prototypes</span>
+        </div>
+
+        <!-- 06 Web Design -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 06</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">High-Conversion Web UI</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Web Design</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Websites and landing pages designed to carry the brand and convert the visitor.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Design-To-Code Web Specs</span>
+        </div>
+
+        <!-- 07 Motion Design -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 07</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Kinetic Identity & UI Motion</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Motion Design</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Animated identities, explainers and interface motion where every movement has a reason.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Lottie, SVG & MP4 Motion Assets</span>
+        </div>
+
+        <!-- 08 Campaign Creative -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 08</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Integrated Campaign Assets</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Campaign Creative</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Concepts and assets built around a single campaign objective across channels.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Omnichannel Ad Creative Bundles</span>
+        </div>
+
+        <!-- 09 Social Media Creative -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 09</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Social Visual Systems</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Social Media Creative</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Platform-native content systems that keep a brand consistent and noticed.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Reusable Social Content Templates</span>
+        </div>
+
+        <!-- 10 Digital Experiences -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 10</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Immersive Web Storytelling</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Digital Experiences</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Interactive, immersive and web-based experiences that bring a brand to life.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: WebGL & GSAP Interactive Sites</span>
+        </div>
+
+        <!-- 11 Content Design -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 11</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Pitch Decks & Editorial</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Content Design</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Decks, editorial and presentations structured and designed to communicate clearly.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: High-Stakes Investor & Sales Decks</span>
+        </div>
+
+        <!-- 12 Visual Systems -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-mono text-xs text-sixo-glow">CREATIVE // 12</span>
+              <span class="font-mono text-[10px] text-neutral-subtle">Design Tokens & Guidelines</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Visual Systems</h3>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-4">Scalable design systems and guidelines so every future asset stays on brand.</p>
+          </div>
+          <span class="text-[11px] font-mono text-sixo-orange">Deliverable: Comprehensive UI Component Libraries</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4.3: XENON ENGAGEMENT CRITERIA -->
+    <section id="xenon-criteria" class="py-28 bg-obsidian px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-glow uppercase tracking-wider block mb-2">PAGE 11 // GROUP DOCUMENTATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Engagement Criteria: Working with Xenon Studios</h2>
+        <p class="text-neutral-gray text-base mt-2">Clear collaboration criteria for brand strategy, identity and digital product design.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-8 rounded-2xl bg-carbon border-t-2 border-sixo-glow">
+          <span class="font-mono text-xs text-sixo-glow block mb-2">CRITERIA // 01</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">Best Fit For</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>New businesses that need a strong identity from day one.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Established brands repositioning or modernizing visual touchpoints.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Product teams that need considered UI/UX and scalable design systems.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-carbon border-t-2 border-sixo-glow">
+          <span class="font-mono text-xs text-sixo-glow block mb-2">CRITERIA // 02</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">What We Need From You</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>A brief covering business goals, audience and competitors.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Visual references: what you love and what you refuse to look like.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Existing brand assets, vector logos and typography if any.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>One primary approver and consolidated feedback per review round.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-carbon border-t-2 border-sixo-glow">
+          <span class="font-mono text-xs text-sixo-glow block mb-2">CRITERIA // 03</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">What You Receive</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>A strategy and creative direction document.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Concept routes presented with clear architectural rationale.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Final production files in every format required for multi-channel use.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Brand guidelines and design token tokens for consistent future use.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-carbon border-t-2 border-sixo-glow">
+          <span class="font-mono text-xs text-sixo-glow block mb-2">CRITERIA // 04</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">How We Engage</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Discovery session to align on market positioning.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Concept presentation, followed by iterative development.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>A defined number of revision rounds per phase.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-glow mt-2 shrink-0"></span>
+              <span>Structured handover of all master Figma and vector assets.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
+        <span>© 2026 XENON STUDIOS • A SIXOLAB LLC COMPANY.</span>
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="hover:text-neutral-white">Overview</a>
+          <a href="gitlink.html" class="hover:text-neutral-white">Gitlink IT Solutions</a>
+          <a href="one-percent.html" class="hover:text-neutral-white">One Percent</a>
+          <a href="contact.html?vertical=xenon" class="text-sixo-glow hover:underline">Start Xenon Brief →</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

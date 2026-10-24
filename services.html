@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Capabilities Directory (53 Services) | SIXOLAB LLC</title>
+  <meta name="description" content="Explore all 53 engineering, creative, visual production, and holding governance capabilities across the Sixolab LLC ecosystem." />
+  <link rel="canonical" href="https://www.sixolab.com/services.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            carbon: '#111111',
+            sixo: {
+              orange: '#FF5A1F',
+              glow: '#FF7A30',
+              crimson: '#6B0F12',
+              wine: '#300507',
+            },
+            neutral: {
+              white: '#F5F5F5',
+              gray: '#A1A1AA',
+              subtle: '#737373',
+              disabled: '#525252',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          backgroundImage: {
+            'sixo-ambient': 'linear-gradient(135deg, #080808 0%, #300507 55%, #6B0F12 100%)',
+            'sixo-accent': 'linear-gradient(90deg, #FF5A1F 0%, #FF7A30 100%)',
+            'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%)',
+            'sixo-radial-crimson': 'radial-gradient(circle at 50% 0%, rgba(107, 15, 18, 0.55) 0%, rgba(48, 5, 7, 0.25) 45%, rgba(8, 8, 8, 0) 75%)',
+          },
+          boxShadow: {
+            'orange-glow': '0 0 28px -4px rgba(255, 90, 31, 0.45), 0 0 12px -2px rgba(255, 122, 48, 0.3)',
+            'orange-glow-lg': '0 0 45px -5px rgba(255, 90, 31, 0.65), 0 0 20px -2px rgba(255, 122, 48, 0.45)',
+            'crimson-ambient': '0 20px 60px -15px rgba(107, 15, 18, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="antialiased sixo-noise">
+
+  <div id="sixo-cursor-dot" class="hidden lg:block"></div>
+  <div id="sixo-cursor-ring" class="hidden lg:block"></div>
+
+  <div id="sixo-preloader" class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"></div>
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"></div>
+  </div>
+
+  <canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- GLOBAL STICKY HEADER -->
+  <header id="global-nav" class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-8 h-8 flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold tracking-[0.32em] text-sm text-neutral-white">
+            SIXO<span class="text-sixo-orange">LAB</span>
+          </span>
+          <span class="h-3.5 w-[1px] bg-neutral-subtle/35"></span>
+          <span class="font-mono text-[10px] tracking-widest text-neutral-subtle uppercase">CAPABILITIES (53)</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
+        <a href="index.html" class="hover:text-neutral-white transition-colors">Overview</a>
+        <a href="ecosystem.html" class="hover:text-neutral-white transition-colors">The Ecosystem</a>
+        <a href="gitlink.html" class="hover:text-neutral-white transition-colors">Gitlink (BUILD)</a>
+        <a href="xenon.html" class="hover:text-neutral-white transition-colors">Xenon (CREATE)</a>
+        <a href="one-percent.html" class="hover:text-neutral-white transition-colors">One Percent (PRODUCE)</a>
+        <a href="services.html" class="text-neutral-white flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>Capabilities (53)
+        </a>
+        <a href="process.html" class="hover:text-neutral-white transition-colors">Process & Models</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
+          <span>Initiate Discovery</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="relative z-10 max-w-[1440px] mx-auto border-x border-neutral-subtle/15 pt-28">
+
+    <!-- SECTION 6.1: DIRECTORY HERO & STICKY FILTER BAR -->
+    <section id="services-filter" class="pt-20 pb-12 px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-4xl mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-orange">
+          MASTER CAPABILITY TAXONOMY // 53 SPECIALIZED SERVICES
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-6xl text-neutral-white leading-tight mb-6">
+          Every Discipline. <span class="bg-sixo-accent bg-clip-text text-transparent">One Coherent Standard.</span>
+        </h1>
+        <p class="text-base sm:text-xl text-neutral-gray leading-relaxed">
+          The unified operational directory of Sixolab LLC, Gitlink IT Solutions, Xenon Studios, and One Percent. Search and select any capability to construct a customized project brief.
+        </p>
+      </div>
+
+      <!-- Controls Deck: Filter Pills & Instant Search -->
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 pt-6 border-t border-neutral-subtle/20">
+        <!-- Filter Pills -->
+        <div class="flex flex-wrap gap-2">
+          <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-sixo-orange text-obsidian shadow-orange-glow transition-all" data-service-filter="all">
+            All Capabilities (53)
+          </button>
+          <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="sixolab">
+            Sixolab Governance (9)
+          </button>
+          <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="gitlink">
+            Gitlink // BUILD (15)
+          </button>
+          <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="xenon">
+            Xenon // CREATE (12)
+          </button>
+          <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="onepercent">
+            One Percent // PRODUCE (19)
+          </button>
+        </div>
+
+        <!-- Real-Time Search Input -->
+        <div class="w-full lg:w-80 relative">
+          <input
+            type="text"
+            id="services-search-input"
+            placeholder="Search software, AI, UI/UX, TVC, SEO..."
+            class="w-full px-4 py-2.5 rounded-xl bg-carbon border border-neutral-subtle/30 text-neutral-white placeholder-neutral-subtle text-xs font-mono focus:border-sixo-orange focus:outline-none"
+          />
+          <svg class="w-4 h-4 text-neutral-subtle absolute right-3.5 top-3 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6.2: THE 53-ROW ARCHITECTURAL SERVICE MATRIX -->
+    <section id="services-table" class="py-12 px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-neutral-subtle/30 font-mono text-xs text-neutral-subtle uppercase">
+              <th class="py-4 px-6">ID & Code</th>
+              <th class="py-4 px-6">Capability Title</th>
+              <th class="py-4 px-6">Scope & Deliverable Description</th>
+              <th class="py-4 px-6">Specialist Concern</th>
+              <th class="py-4 px-6 text-right">Project Scope Action</th>
+            </tr>
+          </thead>
+          <tbody id="services-table-body" class="divide-y divide-neutral-subtle/15">
+            <!-- Rendered dynamically by script.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FLOATING PROJECT SCOPE BASKET TRAY -->
+    <div id="scope-basket-tray" class="fixed bottom-8 right-8 z-40 bg-carbon/95 backdrop-blur-xl border border-sixo-orange/60 rounded-2xl p-5 shadow-orange-glow-lg flex items-center gap-6 transition-all duration-300 translate-y-32 opacity-0">
+      <div>
+        <span class="font-mono text-[10px] text-sixo-orange uppercase block">PROJECT SCOPE BUILDER</span>
+        <div class="text-sm font-display font-bold text-neutral-white mt-0.5">
+          <span id="scope-basket-count" class="text-sixo-orange font-mono text-base">0</span> Capabilities Selected
+        </div>
+      </div>
+      <a id="scope-basket-cta" href="contact.html" class="magnetic-btn px-6 py-3 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-xs shadow-orange-glow whitespace-nowrap">
+        Configure Brief →
+      </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
+        <span>© 2026 SIXOLAB LLC. ALL RIGHTS RESERVED.</span>
+        <div class="flex items-center gap-6">
+          <a href="index.html" class="hover:text-neutral-white">Overview</a>
+          <a href="ecosystem.html" class="hover:text-neutral-white">The Ecosystem</a>
+          <a href="process.html" class="hover:text-neutral-white">Process & Models</a>
+          <a href="contact.html" class="text-sixo-orange hover:underline">Direct Intake Portal →</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

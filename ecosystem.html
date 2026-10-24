@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ecosystem & Holding Model | SIXOLAB LLC</title>
+  <meta name="description" content="Explore the Sixolab LLC parent holding architecture governing Gitlink IT Solutions (BUILD), Xenon Studios (CREATE), and One Percent (PRODUCE)." />
+  <link rel="canonical" href="https://www.sixolab.com/ecosystem.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#080808',
+            carbon: '#111111',
+            sixo: {
+              orange: '#FF5A1F',
+              glow: '#FF7A30',
+              crimson: '#6B0F12',
+              wine: '#300507',
+            },
+            neutral: {
+              white: '#F5F5F5',
+              gray: '#A1A1AA',
+              subtle: '#737373',
+              disabled: '#525252',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          backgroundImage: {
+            'sixo-ambient': 'linear-gradient(135deg, #080808 0%, #300507 55%, #6B0F12 100%)',
+            'sixo-accent': 'linear-gradient(90deg, #FF5A1F 0%, #FF7A30 100%)',
+            'sixo-specular-top': 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,122,48,0.55) 50%, rgba(255,255,255,0) 100%)',
+            'sixo-radial-crimson': 'radial-gradient(circle at 50% 0%, rgba(107, 15, 18, 0.55) 0%, rgba(48, 5, 7, 0.25) 45%, rgba(8, 8, 8, 0) 75%)',
+          },
+          boxShadow: {
+            'orange-glow': '0 0 28px -4px rgba(255, 90, 31, 0.45), 0 0 12px -2px rgba(255, 122, 48, 0.3)',
+            'orange-glow-lg': '0 0 45px -5px rgba(255, 90, 31, 0.65), 0 0 20px -2px rgba(255, 122, 48, 0.45)',
+            'crimson-ambient': '0 20px 60px -15px rgba(107, 15, 18, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="antialiased sixo-noise">
+
+  <!-- 2D Planar Cursor Follower -->
+  <div id="sixo-cursor-dot" class="hidden lg:block"></div>
+  <div id="sixo-cursor-ring" class="hidden lg:block"></div>
+
+  <!-- Preloader (Rapid bypass on internal navigation) -->
+  <div id="sixo-preloader" class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"></div>
+    <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"></div>
+  </div>
+
+  <canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- GLOBAL STICKY HEADER -->
+  <header id="global-nav" class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-8 h-8 flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-full h-full">
+            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
+            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="font-display font-bold tracking-[0.32em] text-sm text-neutral-white">
+            SIXO<span class="text-sixo-orange">LAB</span>
+          </span>
+          <span class="h-3.5 w-[1px] bg-neutral-subtle/35"></span>
+          <span class="font-mono text-[10px] tracking-widest text-neutral-subtle uppercase">LLC // GROUP</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
+        <a href="index.html" class="hover:text-neutral-white transition-colors">Overview</a>
+        <div class="relative" id="eco-switcher-trigger">
+          <a href="ecosystem.html" class="text-neutral-white flex items-center gap-1.5 font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
+            <span>The Ecosystem</span>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+
+          <div id="eco-switcher-menu" class="hidden absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[680px] bg-carbon border border-neutral-subtle/30 rounded-2xl p-6 shadow-orange-glow-lg z-50">
+            <div class="flex justify-between items-center pb-4 mb-4 border-b border-neutral-subtle/20">
+              <span class="font-mono text-[11px] text-sixo-orange uppercase tracking-wider">SIXOLAB HOLDING ECOSYSTEM</span>
+              <a href="ecosystem.html" class="font-mono text-[11px] text-neutral-white">Active View</a>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <a href="gitlink.html" class="sixo-spotlight-card p-4 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 transition-all block group">
+                <span class="font-mono text-[10px] text-sixo-orange block mb-1">01 // BUILD</span>
+                <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow">Gitlink IT Solutions</h4>
+                <p class="text-[11px] text-neutral-gray mt-1 leading-snug">Software, AI, Web Apps & Automation.</p>
+                <span class="text-[10px] font-mono text-neutral-subtle block mt-3">gitlinkitsolutions.com ↗</span>
+              </a>
+              <a href="xenon.html" class="sixo-spotlight-card p-4 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 transition-all block group">
+                <span class="font-mono text-[10px] text-sixo-glow block mb-1">02 // CREATE</span>
+                <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow">Xenon Studios</h4>
+                <p class="text-[11px] text-neutral-gray mt-1 leading-snug">Brand Strategy, UI/UX, Design & Identity.</p>
+                <span class="text-[10px] font-mono text-neutral-subtle block mt-3">xenonstudios.bd ↗</span>
+              </a>
+              <a href="one-percent.html" class="sixo-spotlight-card p-4 rounded-xl bg-obsidian border border-neutral-subtle/20 hover:border-sixo-orange/50 transition-all block group">
+                <span class="font-mono text-[10px] text-sixo-orange block mb-1">03 // PRODUCE</span>
+                <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow">One Percent</h4>
+                <p class="text-[11px] text-neutral-gray mt-1 leading-snug">TVCs, Commercial Films, Photography & VFX.</p>
+                <span class="text-[10px] font-mono text-neutral-subtle block mt-3">Production House</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="services.html" class="hover:text-neutral-white transition-colors">Capabilities (53)</a>
+        <a href="process.html" class="hover:text-neutral-white transition-colors">Process & Models</a>
+        <a href="index.html#case-studies" class="hover:text-neutral-white transition-colors">Case Studies</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="contact.html" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
+          <span>Initiate Discovery</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN PAGE WRAPPER -->
+  <main class="relative z-10 max-w-[1440px] mx-auto border-x border-neutral-subtle/15 pt-28">
+
+    <!-- SECTION 2.1: HOLDING HERO -->
+    <section id="eco-hero" class="pt-20 pb-20 px-6 lg:px-12 border-b border-neutral-subtle/20 relative">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-orange">
+          01 // PARENT / HOLDING COMPANY
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-6xl text-neutral-white leading-tight mb-6">
+          Sixolab LLC: <span class="bg-sixo-accent bg-clip-text text-transparent">Connect & Operate</span> the Ecosystem.
+        </h1>
+        <p class="text-base sm:text-xl text-neutral-gray leading-relaxed mb-8">
+          Sixolab LLC is the parent organization behind a multidisciplinary ecosystem spanning technology, creative, branding, media and commercial production. It provides the strategic, operational and business framework connecting its specialized companies: setting direction, protecting standards and making sure clients get one coherent experience, whichever company is doing the work.
+        </p>
+
+        <!-- Metadata Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-neutral-subtle/20">
+          <div class="p-4 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <span class="font-mono text-[10px] text-sixo-orange block">VERTICAL</span>
+            <span class="font-display font-semibold text-sm text-neutral-white">Group & Holding</span>
+          </div>
+          <div class="p-4 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <span class="font-mono text-[10px] text-sixo-orange block">ECOSYSTEM ROLE</span>
+            <span class="font-display font-semibold text-sm text-neutral-white">Connect & Operate</span>
+          </div>
+          <div class="p-4 rounded-xl bg-carbon border border-neutral-subtle/20">
+            <span class="font-mono text-[10px] text-sixo-orange block">OPERATING COMPANIES</span>
+            <span class="font-display font-semibold text-sm text-neutral-white">Gitlink • Xenon • One Percent</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2.2: THE TRIAD MODEL -->
+    <section id="eco-model" class="py-24 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">STRUCTURAL SPECIALIZATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">The Model: Build. Create. Produce.</h2>
+        <p class="text-neutral-gray text-base mt-2">Specialist execution layers united under parent holding stewardship.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1: Gitlink -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs text-sixo-orange block mb-2">01 // BUILD</span>
+            <h3 class="font-display font-bold text-xl text-neutral-white mb-1">Gitlink IT Solutions</h3>
+            <p class="text-xs font-mono text-sixo-glow mb-4">"Builds the technology."</p>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-6">
+              Software, AI, automation and the infrastructure behind every product.
+            </p>
+          </div>
+          <a href="gitlink.html" class="text-xs font-mono text-sixo-orange hover:underline">Explore Technology Vertical →</a>
+        </div>
+
+        <!-- Card 2: Xenon -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs text-sixo-glow block mb-2">02 // CREATE</span>
+            <h3 class="font-display font-bold text-xl text-neutral-white mb-1">Xenon Studios</h3>
+            <p class="text-xs font-mono text-sixo-glow mb-4">"Creates the brand & creative."</p>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-6">
+              How a business, product or idea looks, communicates and feels.
+            </p>
+          </div>
+          <a href="xenon.html" class="text-xs font-mono text-sixo-glow hover:underline">Explore Creative Vertical →</a>
+        </div>
+
+        <!-- Card 3: One Percent -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs text-sixo-orange block mb-2">03 // PRODUCE</span>
+            <h3 class="font-display font-bold text-xl text-neutral-white mb-1">One Percent</h3>
+            <p class="text-xs font-mono text-sixo-glow mb-4">"Produces the visual execution."</p>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-6">
+              Turning creative concepts into real-world films, photography and campaigns.
+            </p>
+          </div>
+          <a href="one-percent.html" class="text-xs font-mono text-sixo-orange hover:underline">Explore Production Vertical →</a>
+        </div>
+
+        <!-- Card 4: Sixolab LLC -->
+        <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian flex flex-col justify-between border-sixo-orange/50">
+          <div>
+            <span class="font-mono text-xs text-neutral-white block mb-2">00 // CONNECT</span>
+            <h3 class="font-display font-bold text-xl text-neutral-white mb-1">Sixolab LLC</h3>
+            <p class="text-xs font-mono text-sixo-orange mb-4">"Connects & operates the ecosystem."</p>
+            <p class="text-sm text-neutral-gray leading-relaxed mb-6">
+              Giving every company a shared strategy, standard and seamless client experience.
+            </p>
+          </div>
+          <a href="contact.html" class="text-xs font-mono text-neutral-white hover:underline">Engage Holding Desk →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2.3: GROUP GOVERNANCE DEEP-DIVE -->
+    <section id="eco-areas" class="py-28 bg-obsidian px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 5 // GROUP DOCUMENTATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Group-Level Areas: What Sixolab LLC Oversees</h2>
+        <p class="text-neutral-gray text-base mt-2">Nine strategic holding disciplines establishing group-wide operational standards.</p>
+      </div>
+
+      <div class="divide-y divide-neutral-subtle/20 border-y border-neutral-subtle/20">
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">01 // DIRECTION</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Business Strategy</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Long-term direction, positioning and growth planning across the group and inside client engagements.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">02 // INCUBATION</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Venture Development</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Identifying, structuring and launching new companies and products within the ecosystem.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">03 // STANDARDS</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Operations</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Shared processes, standards and delivery systems that keep every company running consistently.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">04 // ALLIANCES</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Partnerships</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Alliances with technology providers, brands, agencies and institutions that extend what the group can deliver.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">05 // SCOPING</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Business Development</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Matching each client to the right company and shaping proposals that span disciplines.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">06 // INTEGRATION</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Cross-company Projects</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Coordinating engagements that need technology, creative and production to work as one team.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">07 // CAPITAL</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Strategic Investments / New Ventures</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Backing and building new businesses that strengthen and fit the ecosystem.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">08 // PORTFOLIO</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Brand & Portfolio Management</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            Governing how each company is positioned and how the group presents as one portfolio.
+          </p>
+        </div>
+
+        <div class="py-6 px-4 sixo-sweep-row flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-xs text-sixo-orange">09 // OWNERSHIP</span>
+            <h3 class="font-display font-bold text-lg text-neutral-white">Client Relationships</h3>
+          </div>
+          <p class="text-sm text-neutral-gray max-w-xl leading-relaxed">
+            A single point of accountability for clients working with more than one company.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2.4: SIXOLAB DIRECT ENGAGEMENT CRITERIA -->
+    <section id="eco-criteria" class="py-28 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
+      <div class="max-w-3xl mb-16">
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">ENGAGEMENT GOVERNANCE</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Engagement Criteria: Working with Sixolab LLC Directly</h2>
+        <p class="text-neutral-gray text-base mt-2">Transparent requirements and deliverable standards for group-level engagements.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Q1: BEST FIT FOR -->
+        <div class="p-8 rounded-2xl bg-obsidian border-t-2 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-2">CRITERIA // 01</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">Best Fit For</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Businesses that need more than one discipline at once.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Organizations launching a brand or product end to end.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Partners and investors exploring venture collaboration.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Q2: WHAT WE NEED FROM YOU -->
+        <div class="p-8 rounded-2xl bg-obsidian border-t-2 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-2">CRITERIA // 02</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">What We Need From You</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>A clear business objective and a named decision-maker.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Willingness to share context: goals, constraints, existing assets.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Timely feedback and approvals at agreed checkpoints.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Q3: WHAT YOU RECEIVE -->
+        <div class="p-8 rounded-2xl bg-obsidian border-t-2 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-2">CRITERIA // 03</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">What You Receive</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>One point of contact across every company involved.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>A unified proposal and a coordinated timeline.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Strategic oversight from discovery through delivery.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Q4: HOW WE ENGAGE -->
+        <div class="p-8 rounded-2xl bg-obsidian border-t-2 border-sixo-orange">
+          <span class="font-mono text-xs text-sixo-orange block mb-2">CRITERIA // 04</span>
+          <h3 class="font-display font-bold text-xl text-neutral-white mb-4">How We Engage</h3>
+          <ul class="space-y-3 text-sm text-neutral-gray leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Group-level discovery to define the full scope.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Work then scoped and assigned to the right company.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange mt-2 shrink-0"></span>
+              <span>Sixolab coordinates and stays accountable throughout.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
+        <span>© 2026 SIXOLAB LLC. ALL RIGHTS RESERVED.</span>
+        <div class="flex items-center gap-6">
+          <a href="gitlink.html" class="hover:text-neutral-white">Gitlink IT Solutions</a>
+          <a href="xenon.html" class="hover:text-neutral-white">Xenon Studios</a>
+          <a href="one-percent.html" class="hover:text-neutral-white">One Percent</a>
+          <a href="contact.html" class="text-sixo-orange hover:underline">Contact HQ →</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
