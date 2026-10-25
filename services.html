@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Master Capabilities Directory (53 Services) | SIXOLAB LLC</title>
-  <meta name="description" content="Explore all 53 engineering, creative, visual production, and holding governance capabilities across the Sixolab LLC ecosystem." />
+  <title>Master Capabilities Directory (53 Services) | SIXOLAB</title>
+  <meta name="description" content="Explore all 53 engineering, creative, visual production, and holding governance capabilities across the Sixolab ecosystem." />
   <link rel="canonical" href="https://www.sixolab.com/services.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -105,7 +105,22 @@
           <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
           <span>Initiate Discovery</span>
         </a>
+        <button id="mobile-menu-trigger" class="lg:hidden text-neutral-white p-2" aria-label="Toggle Navigation Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-carbon border-b border-neutral-subtle/20 px-6 py-6 space-y-4">
+      <a href="index.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Overview</a>
+      <a href="ecosystem.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">The Ecosystem</a>
+      <a href="gitlink.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Gitlink IT Solutions (Build)</a>
+      <a href="xenon.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Xenon Studios (Create)</a>
+      <a href="one-percent.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">One Percent (Produce)</a>
+      <a href="services.html" class="block font-mono text-xs uppercase text-sixo-orange py-1">Master 53 Capabilities</a>
+      <a href="process.html" class="block font-mono text-xs uppercase text-neutral-gray hover:text-neutral-white py-1">Process, Models & Terms</a>
+      <a href="contact.html" class="block font-mono text-xs uppercase text-sixo-orange py-1">Direct Intake Portal</a>
     </div>
   </header>
 
@@ -122,7 +137,7 @@
           Every Discipline. <span class="bg-sixo-accent bg-clip-text text-transparent">One Coherent Standard.</span>
         </h1>
         <p class="text-base sm:text-xl text-neutral-gray leading-relaxed">
-          The unified operational directory of Sixolab LLC, Gitlink IT Solutions, Xenon Studios, and One Percent. Search and select any capability to construct a customized project brief.
+          The unified operational directory of Sixolab, Gitlink IT Solutions, Xenon Studios, and One Percent. Search and select any capability to construct a customized project brief.
         </p>
       </div>
 
@@ -137,7 +152,7 @@
             Sixolab Governance (9)
           </button>
           <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="gitlink">
-            Gitlink // BUILD (15)
+            Gitlink // BUILD (13)
           </button>
           <button class="px-4 py-2 rounded-full font-mono text-xs font-semibold bg-carbon text-neutral-gray hover:text-neutral-white transition-all" data-service-filter="xenon">
             Xenon // CREATE (12)
@@ -164,8 +179,8 @@
 
     <!-- SECTION 6.2: THE 53-ROW ARCHITECTURAL SERVICE MATRIX -->
     <section id="services-table" class="py-12 px-6 lg:px-12 border-b border-neutral-subtle/20">
-      <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse">
+      <div class="overflow-x-auto -mx-6 px-6 lg:mx-0 lg:px-0">
+        <table class="w-full min-w-[760px] text-left border-collapse">
           <thead>
             <tr class="border-b border-neutral-subtle/30 font-mono text-xs text-neutral-subtle uppercase">
               <th class="py-4 px-6">ID & Code</th>
@@ -183,14 +198,14 @@
     </section>
 
     <!-- FLOATING PROJECT SCOPE BASKET TRAY -->
-    <div id="scope-basket-tray" class="fixed bottom-8 right-8 z-40 bg-carbon/95 backdrop-blur-xl border border-sixo-orange/60 rounded-2xl p-5 shadow-orange-glow-lg flex items-center gap-6 transition-all duration-300 translate-y-32 opacity-0">
+    <div id="scope-basket-tray" class="fixed bottom-6 left-6 right-6 sm:left-auto sm:right-8 z-40 bg-carbon/95 backdrop-blur-xl border border-sixo-orange/60 rounded-2xl p-4 sm:p-5 shadow-orange-glow-lg flex items-center justify-between sm:justify-start gap-4 sm:gap-6 transition-all duration-300 translate-y-32 opacity-0">
       <div>
         <span class="font-mono text-[10px] text-sixo-orange uppercase block">PROJECT SCOPE BUILDER</span>
         <div class="text-sm font-display font-bold text-neutral-white mt-0.5">
           <span id="scope-basket-count" class="text-sixo-orange font-mono text-base">0</span> Capabilities Selected
         </div>
       </div>
-      <a id="scope-basket-cta" href="contact.html" class="magnetic-btn px-6 py-3 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-xs shadow-orange-glow whitespace-nowrap">
+      <a id="scope-basket-cta" href="contact.html" class="magnetic-btn px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-xs shadow-orange-glow whitespace-nowrap">
         Configure Brief →
       </a>
     </div>
@@ -198,8 +213,8 @@
     <!-- FOOTER -->
     <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
       <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
-        <span>© 2026 SIXOLAB LLC. ALL RIGHTS RESERVED.</span>
-        <div class="flex items-center gap-6">
+        <span>© 2026 SIXOLAB. ALL RIGHTS RESERVED.</span>
+        <div class="flex flex-wrap items-center gap-6">
           <a href="index.html" class="hover:text-neutral-white">Overview</a>
           <a href="ecosystem.html" class="hover:text-neutral-white">The Ecosystem</a>
           <a href="process.html" class="hover:text-neutral-white">Process & Models</a>
@@ -211,6 +226,7 @@
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

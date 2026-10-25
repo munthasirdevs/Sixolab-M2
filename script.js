@@ -1,22 +1,22 @@
 /* ==========================================================================
-   Sixolab LLC — Master Frontend Orchestration & Motion Engine
+   Sixolab — Master Frontend Orchestration & Motion Engine
    Zero-3D-Hover Policy: 2D Planar Physics, Ambient WebGL/Canvas & GSAP Engine
    ========================================================================== */
 
-// 53 Capabilities Master Dataset
+// 53 Capabilities Master Dataset (Exactly 9 + 13 + 12 + 19 = 53 Unique Services)
 const SIXOLAB_SERVICES = [
-  // 01 Sixolab LLC — Connect & Operate (9 capabilities)
-  { id: 'SIX-01', cat: 'sixolab', code: '01', title: 'Business Strategy', desc: 'Long-term direction, positioning and growth planning across the group and inside client engagements.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-02', cat: 'sixolab', code: '02', title: 'Venture Development', desc: 'Identifying, structuring and launching new companies and products within the ecosystem.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-03', cat: 'sixolab', code: '03', title: 'Operations', desc: 'Shared processes, standards and delivery systems that keep every company running consistently.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-04', cat: 'sixolab', code: '04', title: 'Partnerships', desc: 'Alliances with technology providers, brands, agencies and institutions that extend what the group can deliver.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-05', cat: 'sixolab', code: '05', title: 'Business Development', desc: 'Matching each client to the right company and shaping proposals that span disciplines.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-06', cat: 'sixolab', code: '06', title: 'Cross-company Projects', desc: 'Coordinating engagements that need technology, creative and production to work as one team.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-07', cat: 'sixolab', code: '07', title: 'Strategic Investments / New Ventures', desc: 'Backing and building new businesses that strengthen and fit the ecosystem.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-08', cat: 'sixolab', code: '08', title: 'Brand & Portfolio Management', desc: 'Governing how each company is positioned and how the group presents as one portfolio.', vertical: 'Sixolab LLC // GROUP' },
-  { id: 'SIX-09', cat: 'sixolab', code: '09', title: 'Client Relationships', desc: 'A single point of accountability for clients working with more than one company.', vertical: 'Sixolab LLC // GROUP' },
+  // 01 Sixolab — Connect & Operate (9 capabilities)
+  { id: 'SIX-01', cat: 'sixolab', code: '01', title: 'Business Strategy', desc: 'Long-term direction, positioning and growth planning across the group and inside client engagements.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-02', cat: 'sixolab', code: '02', title: 'Venture Development', desc: 'Identifying, structuring and launching new companies and products within the ecosystem.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-03', cat: 'sixolab', code: '03', title: 'Operations', desc: 'Shared processes, standards and delivery systems that keep every company running consistently.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-04', cat: 'sixolab', code: '04', title: 'Partnerships', desc: 'Alliances with technology providers, brands, agencies and institutions that extend what the group can deliver.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-05', cat: 'sixolab', code: '05', title: 'Business Development', desc: 'Matching each client to the right company and shaping proposals that span disciplines.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-06', cat: 'sixolab', code: '06', title: 'Cross-company Projects', desc: 'Coordinating engagements that need technology, creative and production to work as one team.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-07', cat: 'sixolab', code: '07', title: 'Strategic Investments / New Ventures', desc: 'Backing and building new businesses that strengthen and fit the ecosystem.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-08', cat: 'sixolab', code: '08', title: 'Brand & Portfolio Management', desc: 'Governing how each company is positioned and how the group presents as one portfolio.', vertical: 'Sixolab // GROUP' },
+  { id: 'SIX-09', cat: 'sixolab', code: '09', title: 'Client Relationships', desc: 'A single point of accountability for clients working with more than one company.', vertical: 'Sixolab // GROUP' },
 
-  // 02 Gitlink IT Solutions — BUILD / Technology (15 capabilities)
+  // 02 Gitlink IT Solutions — BUILD / Technology (13 capabilities)
   { id: 'GIT-01', cat: 'gitlink', code: '10', title: 'Custom Software Development', desc: 'Bespoke software engineered around your workflows, instead of forcing your business into off-the-shelf tools.', vertical: 'Gitlink IT Solutions // BUILD' },
   { id: 'GIT-02', cat: 'gitlink', code: '11', title: 'Web Applications', desc: 'Fast, secure and scalable browser-based applications, portals and customer-facing platforms.', vertical: 'Gitlink IT Solutions // BUILD' },
   { id: 'GIT-03', cat: 'gitlink', code: '12', title: 'Enterprise Software', desc: 'Robust systems for large teams: role-based access, reporting, integrations and long-term maintainability.', vertical: 'Gitlink IT Solutions // BUILD' },
@@ -30,63 +30,76 @@ const SIXOLAB_SERVICES = [
   { id: 'GIT-11', cat: 'gitlink', code: '20', title: 'Internal Business Systems', desc: 'Inventory, CRM, operations and management tools tailored to how your company actually runs.', vertical: 'Gitlink IT Solutions // BUILD' },
   { id: 'GIT-12', cat: 'gitlink', code: '21', title: 'Dashboards & Digital Platforms', desc: 'Live visibility into data and operations, plus platforms that bring users, content and transactions together.', vertical: 'Gitlink IT Solutions // BUILD' },
   { id: 'GIT-13', cat: 'gitlink', code: '22', title: 'Technical Consulting', desc: 'Architecture reviews, technology selection and roadmaps, before you commit budget to the wrong build.', vertical: 'Gitlink IT Solutions // BUILD' },
-  { id: 'GIT-14', cat: 'gitlink', code: '23', title: 'Website & E-Commerce Engineering', desc: 'Business & portfolio websites, WooCommerce & Shopify online stores, high-converting landing pages (<2s load speed), Core Web Vitals optimization, and headless/custom CMS.', vertical: 'Gitlink IT Solutions // BUILD' },
-  { id: 'GIT-15', cat: 'gitlink', code: '24', title: 'Digital Marketing & Operational Support', desc: 'Data-driven SEO, Social Media Marketing (SMM), Search Engine Marketing (SEM), 24/7 dedicated support, monthly performance reporting, and data operations.', vertical: 'Gitlink IT Solutions // BUILD' },
 
   // 03 Xenon Studios — CREATE / Brand & Experience (12 capabilities)
-  { id: 'XEN-01', cat: 'xenon', code: '25', title: 'Brand Strategy', desc: 'Positioning, audience, messaging and personality: the thinking that comes before any visual.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-02', cat: 'xenon', code: '26', title: 'Creative Direction', desc: 'One creative vision guiding every touchpoint, campaign and piece of content.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-03', cat: 'xenon', code: '27', title: 'Brand Identity', desc: 'Logo, typography, color and tone assembled into an identity that is recognizable and ownable.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-04', cat: 'xenon', code: '28', title: 'Graphic Design', desc: 'Print and digital collateral, packaging and marketing material with premium finish.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-05', cat: 'xenon', code: '29', title: 'UI/UX Design', desc: 'Research-led interface and experience design for apps, platforms and digital products.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-06', cat: 'xenon', code: '30', title: 'Web Design', desc: 'Websites and landing pages designed to carry the brand and convert the visitor.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-07', cat: 'xenon', code: '31', title: 'Motion Design', desc: 'Animated identities, explainers and interface motion where every movement has a reason.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-08', cat: 'xenon', code: '32', title: 'Campaign Creative', desc: 'Concepts and assets built around a single campaign objective across channels.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-09', cat: 'xenon', code: '33', title: 'Social Media Creative', desc: 'Platform-native content systems that keep a brand consistent and noticed.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-10', cat: 'xenon', code: '34', title: 'Digital Experiences', desc: 'Interactive, immersive and web-based experiences that bring a brand to life.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-11', cat: 'xenon', code: '35', title: 'Content Design', desc: 'Decks, editorial and presentations structured and designed to communicate clearly.', vertical: 'Xenon Studios // CREATE' },
-  { id: 'XEN-12', cat: 'xenon', code: '36', title: 'Visual Systems', desc: 'Scalable design systems and guidelines so every future asset stays on brand.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-01', cat: 'xenon', code: '23', title: 'Brand Strategy', desc: 'Positioning, audience, messaging and personality: the thinking that comes before any visual.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-02', cat: 'xenon', code: '24', title: 'Brand Creative Direction', desc: 'One cohesive creative vision guiding every touchpoint, campaign and piece of brand collateral.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-03', cat: 'xenon', code: '25', title: 'Brand Identity', desc: 'Logo, typography, color and tone assembled into an identity that is recognizable and ownable.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-04', cat: 'xenon', code: '26', title: 'Graphic Design', desc: 'Print and digital collateral, packaging and marketing material with premium finish.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-05', cat: 'xenon', code: '27', title: 'UI/UX Design', desc: 'Research-led interface and experience design for apps, platforms and digital products.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-06', cat: 'xenon', code: '28', title: 'Web Design', desc: 'Websites and landing pages designed to carry the brand and convert the visitor.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-07', cat: 'xenon', code: '29', title: 'Motion Design', desc: 'Animated identities, explainers and interface motion where every movement has a reason.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-08', cat: 'xenon', code: '30', title: 'Campaign Creative', desc: 'Concepts and assets built around a single campaign objective across channels.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-09', cat: 'xenon', code: '31', title: 'Social Media Creative', desc: 'Platform-native content systems that keep a brand consistent and noticed.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-10', cat: 'xenon', code: '32', title: 'Digital Experiences', desc: 'Interactive, immersive and web-based experiences that bring a brand to life.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-11', cat: 'xenon', code: '33', title: 'Content Design', desc: 'Decks, editorial and presentations structured and designed to communicate clearly.', vertical: 'Xenon Studios // CREATE' },
+  { id: 'XEN-12', cat: 'xenon', code: '34', title: 'Visual Systems', desc: 'Scalable design systems and guidelines so every future asset stays on brand.', vertical: 'Xenon Studios // CREATE' },
 
   // 04 One Percent — PRODUCE / Film & Visual Execution (19 capabilities)
-  { id: 'ONE-01', cat: 'onepercent', code: '37', title: 'Creative Direction', desc: 'The concept, treatment and visual language that guides a production from idea to final frame.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-02', cat: 'onepercent', code: '38', title: 'Production Management', desc: 'Scheduling, budgeting, crew, locations and logistics, so shoots run on time and on plan.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-03', cat: 'onepercent', code: '39', title: 'Commercial Production', desc: 'End-to-end production for commercial campaigns across broadcast and digital.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-04', cat: 'onepercent', code: '40', title: 'TVCs (Television Commercials)', desc: 'Television commercials crafted for high-impact brand awareness in seconds.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-05', cat: 'onepercent', code: '41', title: 'Advertising Films', desc: 'Narrative-driven advertising films for product launches and brand campaigns.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-06', cat: 'onepercent', code: '42', title: 'Brand Films', desc: 'Longer-form films that communicate who a brand is and what it stands for.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-07', cat: 'onepercent', code: '43', title: 'Corporate Films', desc: 'Company profiles, internal communication and stakeholder films with polish.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-08', cat: 'onepercent', code: '44', title: 'Product Films', desc: 'Cinematic product showcases that make features feel desirable.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-09', cat: 'onepercent', code: '45', title: 'Documentary Production', desc: 'Real stories, told with depth, patience and a documentary eye.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-10', cat: 'onepercent', code: '46', title: 'Music Videos', desc: 'Visual storytelling built around sound, rhythm and artist identity.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-11', cat: 'onepercent', code: '47', title: 'Cinematography', desc: 'Camera, lighting and composition that give every frame a cinematic feel.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-12', cat: 'onepercent', code: '48', title: 'Photography', desc: 'Commercial, product and brand photography with a consistent visual standard.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-13', cat: 'onepercent', code: '49', title: 'Videography', desc: 'Fast, reliable video capture for events, content and documentation.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-14', cat: 'onepercent', code: '50', title: 'Editing', desc: 'Story-first editing: pacing, structure and rhythm that hold attention.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-15', cat: 'onepercent', code: '51', title: 'Color Grading', desc: 'Color that sets mood and keeps a whole project visually consistent.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-16', cat: 'onepercent', code: '52', title: 'Motion Graphics', desc: 'Titles, animation and graphic layers that clarify and elevate the edit.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-17', cat: 'onepercent', code: '53', title: 'VFX (Visual Effects)', desc: 'Visual effects, compositing and cleanup that make the impossible shot possible.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-18', cat: 'onepercent', code: '54', title: 'Sound Design', desc: 'Layered sound, mix and music, because sound does more of the work than people notice.', vertical: 'One Percent // PRODUCE' },
-  { id: 'ONE-19', cat: 'onepercent', code: '55', title: 'Post-Production Masters', desc: 'The complete finishing pipeline, from offline cut to final masters and deliverables.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-01', cat: 'onepercent', code: '35', title: 'Film Creative Direction & Treatment', desc: 'The concept, treatment and visual language that guides a commercial film production from idea to final frame.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-02', cat: 'onepercent', code: '36', title: 'Production Management', desc: 'Scheduling, budgeting, crew, locations and logistics, so shoots run on time and on plan.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-03', cat: 'onepercent', code: '37', title: 'Commercial Production', desc: 'End-to-end production for commercial campaigns across broadcast and digital.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-04', cat: 'onepercent', code: '38', title: 'TVCs (Television Commercials)', desc: 'Television commercials crafted for high-impact brand awareness in seconds.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-05', cat: 'onepercent', code: '39', title: 'Advertising Films', desc: 'Narrative-driven advertising films for product launches and brand campaigns.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-06', cat: 'onepercent', code: '40', title: 'Brand Films', desc: 'Longer-form films that communicate who a brand is and what it stands for.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-07', cat: 'onepercent', code: '41', title: 'Corporate Films', desc: 'Company profiles, internal communication and stakeholder films with polish.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-08', cat: 'onepercent', code: '42', title: 'Product Films', desc: 'Cinematic product showcases that make features feel desirable.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-09', cat: 'onepercent', code: '43', title: 'Documentary Production', desc: 'Real stories, told with depth, patience and a documentary eye.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-10', cat: 'onepercent', code: '44', title: 'Music Videos', desc: 'Visual storytelling built around sound, rhythm and artist identity.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-11', cat: 'onepercent', code: '45', title: 'Cinematography', desc: 'Camera, lighting and composition that give every frame a cinematic feel.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-12', cat: 'onepercent', code: '46', title: 'Photography', desc: 'Commercial, product and brand photography with a consistent visual standard.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-13', cat: 'onepercent', code: '47', title: 'Videography', desc: 'Fast, reliable video capture for events, content and documentation.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-14', cat: 'onepercent', code: '48', title: 'Editing', desc: 'Story-first editing: pacing, structure and rhythm that hold attention.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-15', cat: 'onepercent', code: '49', title: 'Color Grading', desc: 'Color that sets mood and keeps a whole project visually consistent.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-16', cat: 'onepercent', code: '50', title: 'Motion Graphics', desc: 'Titles, animation and graphic layers that clarify and elevate the edit.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-17', cat: 'onepercent', code: '51', title: 'VFX (Visual Effects)', desc: 'Visual effects, compositing and cleanup that make the impossible shot possible.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-18', cat: 'onepercent', code: '52', title: 'Sound Design', desc: 'Layered sound, mix and music, because sound does more of the work than people notice.', vertical: 'One Percent // PRODUCE' },
+  { id: 'ONE-19', cat: 'onepercent', code: '53', title: 'Post-Production Masters', desc: 'The complete finishing pipeline, from offline cut to final masters and deliverables.', vertical: 'One Percent // PRODUCE' },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP plugins if available
-  if (typeof gsap !== 'undefined') {
-    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+  try {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+  } catch (err) {
+    console.warn('ScrollTrigger registration error:', err);
   }
 
-  initPreloader();
-  initAmbientCanvas();
-  initCursor();
-  initSpotlightCards();
-  initMagneticButtons();
-  initElasticDividers();
-  initStickyNav();
-  initAnatomyInteractiveStrip();
-  initCapabilitiesDirectory();
-  initScopeConfigurator();
-  initAccordionSlabs();
-  initClipboardButtons();
+  // Safe execution of all initializers
+  const initializers = [
+    initPreloader,
+    initAmbientCanvas,
+    initCursor,
+    initSpotlightCards,
+    initMagneticButtons,
+    initElasticDividers,
+    initStickyNav,
+    initAnatomyInteractiveStrip,
+    initCapabilitiesDirectory,
+    initScopeConfigurator,
+    initAccordionSlabs,
+    initClipboardButtons
+  ];
+
+  initializers.forEach((fn) => {
+    try {
+      fn();
+    } catch (err) {
+      console.warn(`[Sixolab Engine] Error in ${fn.name}:`, err);
+    }
+  });
 });
 
 /* ==========================================================================
@@ -96,28 +109,42 @@ function initPreloader() {
   const preloader = document.getElementById('sixo-preloader');
   if (!preloader) return;
 
-  const isLoaded = sessionStorage.getItem('sixo_loaded');
+  // Global failsafe timeout: guarantee preloader is never stuck
+  setTimeout(() => {
+    if (preloader && preloader.style.display !== 'none') {
+      preloader.style.display = 'none';
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+    }
+  }, 3200);
 
-  if (isLoaded && typeof gsap !== 'undefined') {
-    // Returning view: Rapid 0.45s shutter wipe bypass
-    gsap.timeline({
+  const isLoaded = (function() {
+    try { return sessionStorage.getItem('sixo_loaded'); } catch(e) { return null; }
+  })();
+
+  const hasFullAnatomy = !!document.getElementById('path-l-base');
+
+  if ((isLoaded || !hasFullAnatomy) && typeof gsap !== 'undefined') {
+    // Rapid 0.4s shutter wipe bypass for returning visits or subpages
+    const tl = gsap.timeline({
       onComplete: () => {
         preloader.style.display = 'none';
         if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
       }
-    })
-    .to('#shutter-top', { yPercent: -100, duration: 0.45, ease: 'power3.inOut' })
-    .to('#shutter-bottom', { yPercent: 100, duration: 0.45, ease: 'power3.inOut' }, 0)
-    .to(preloader.querySelector('.relative.z-10'), { opacity: 0, duration: 0.2 }, 0);
+    });
+
+    const innerRel = preloader.querySelector('.relative');
+    if (innerRel) tl.to(innerRel, { opacity: 0, duration: 0.2 }, 0);
+    tl.to('#shutter-top', { yPercent: -100, duration: 0.45, ease: 'power3.inOut' }, 0);
+    tl.to('#shutter-bottom', { yPercent: 100, duration: 0.45, ease: 'power3.inOut' }, 0);
     return;
   }
 
-  // First session view: Full 3.2-second Knight's Gambit Choreography
-  if (typeof gsap !== 'undefined') {
+  // First session view: Full Knight's Gambit Choreography (Homepage)
+  if (typeof gsap !== 'undefined' && hasFullAnatomy) {
     const preloaderTl = gsap.timeline({
       defaults: { ease: 'power3.inOut' },
       onComplete: () => {
-        sessionStorage.setItem('sixo_loaded', 'true');
+        try { sessionStorage.setItem('sixo_loaded', 'true'); } catch(e){}
         preloader.style.display = 'none';
         if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
       }
@@ -158,13 +185,16 @@ function initPreloader() {
       .to('#modular-grid-circles', { opacity: 0, scale: 1.15, duration: 0.4 }, 2.2)
       .to('#sixo-preloader > .relative', { opacity: 0, y: -20, duration: 0.35 }, 2.55)
       .to('#shutter-top', { yPercent: -100, duration: 0.85, ease: 'expo.inOut' }, 2.65)
-      .to('#shutter-bottom', { yPercent: 100, duration: 0.85, ease: 'expo.inOut' }, 2.65)
-      .from('.hero-line', { yPercent: 110, duration: 0.9, stagger: 0.12, ease: 'power4.out' }, 2.75);
+      .to('#shutter-bottom', { yPercent: 100, duration: 0.85, ease: 'expo.inOut' }, 2.65);
+
+    if (document.querySelector('.hero-line')) {
+      preloaderTl.from('.hero-line', { yPercent: 110, duration: 0.9, stagger: 0.12, ease: 'power4.out' }, 2.75);
+    }
   } else {
     // Fallback if GSAP is blocked
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 1500);
+    }, 800);
   }
 }
 
@@ -347,8 +377,8 @@ function initStickyNav() {
   const header = document.getElementById('global-nav');
   const trigger = document.getElementById('eco-switcher-trigger');
   const menu = document.getElementById('eco-switcher-menu');
-  const mobileToggle = document.getElementById('mobile-menu-toggle');
-  const mobileDrawer = document.getElementById('mobile-menu-drawer');
+  const mobileToggle = document.getElementById('mobile-menu-toggle') || document.getElementById('mobile-menu-trigger');
+  const mobileDrawer = document.getElementById('mobile-menu-drawer') || document.getElementById('mobile-menu');
 
   // Shrink/shadow header on scroll
   window.addEventListener('scroll', () => {
@@ -362,28 +392,62 @@ function initStickyNav() {
   // Desktop mega menu hover / click
   if (trigger && menu) {
     let timeout;
+    let isPinned = false;
+
     const showMenu = () => {
       clearTimeout(timeout);
-      menu.classList.remove('hidden');
-      if (typeof gsap !== 'undefined') {
-        gsap.fromTo(menu, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        if (typeof gsap !== 'undefined') {
+          gsap.fromTo(menu, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+        }
       }
     };
+
     const hideMenu = () => {
+      if (isPinned) return;
       timeout = setTimeout(() => {
-        menu.classList.add('hidden');
-      }, 150);
+        if (!isPinned) {
+          menu.classList.add('hidden');
+        }
+      }, 300);
     };
 
     trigger.addEventListener('mouseenter', showMenu);
     trigger.addEventListener('mouseleave', hideMenu);
     menu.addEventListener('mouseenter', showMenu);
     menu.addEventListener('mouseleave', hideMenu);
+
+    // Desktop click toggle support
+    const triggerLink = trigger.querySelector('a');
+    if (triggerLink) {
+      triggerLink.addEventListener('click', (e) => {
+        if (window.innerWidth >= 1024) {
+          e.preventDefault();
+          e.stopPropagation();
+          isPinned = !isPinned;
+          if (isPinned) {
+            showMenu();
+          } else {
+            menu.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        isPinned = false;
+        menu.classList.add('hidden');
+      }
+    });
   }
 
-  // Mobile drawer toggle
+  // Mobile drawer toggle (handles all page variations)
   if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileDrawer.classList.toggle('hidden');
     });
   }
