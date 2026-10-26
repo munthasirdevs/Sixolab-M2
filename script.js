@@ -117,8 +117,8 @@ function initPreloader() {
     }
   }, 3200);
 
-  const isLoaded = (function() {
-    try { return sessionStorage.getItem('sixo_loaded'); } catch(e) { return null; }
+  const isLoaded = (function () {
+    try { return sessionStorage.getItem('sixo_loaded'); } catch (e) { return null; }
   })();
 
   const hasFullAnatomy = !!document.getElementById('path-l-base');
@@ -144,7 +144,7 @@ function initPreloader() {
     const preloaderTl = gsap.timeline({
       defaults: { ease: 'power3.inOut' },
       onComplete: () => {
-        try { sessionStorage.setItem('sixo_loaded', 'true'); } catch(e){}
+        try { sessionStorage.setItem('sixo_loaded', 'true'); } catch (e) { }
         preloader.style.display = 'none';
         if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
       }
@@ -542,11 +542,10 @@ function initCapabilitiesDirectory() {
           </td>
           <td class="py-5 px-6 text-right whitespace-nowrap">
             <button
-              class="scope-toggle-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all ${
-                isSelected
-                  ? 'bg-sixo-orange text-obsidian shadow-orange-glow'
-                  : 'bg-carbon border border-neutral-subtle/30 text-neutral-white hover:border-sixo-orange hover:text-sixo-orange'
-              }"
+              class="scope-toggle-btn px-4 py-2 rounded-full text-xs font-mono font-medium transition-all ${isSelected
+          ? 'bg-sixo-orange text-obsidian shadow-orange-glow'
+          : 'bg-carbon border border-neutral-subtle/30 text-neutral-white hover:border-sixo-orange hover:text-sixo-orange'
+        }"
               data-id="${s.id}"
               data-title="${s.title}"
             >

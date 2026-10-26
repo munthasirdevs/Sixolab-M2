@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gitlink IT Solutions — Technology Vertical (BUILD) | SIXOLAB</title>
-  <meta name="description" content="Gitlink IT Solutions is the technical delivery engine of Sixolab: custom software, enterprise systems, AI solutions, web applications, and cloud infrastructure." />
+  <meta name="description"
+    content="Gitlink IT Solutions is the technical delivery engine of Sixolab: custom software, enterprise systems, AI solutions, web applications, and cloud infrastructure." />
   <link rel="canonical" href="https://www.sixolab.com/gitlink.html" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -55,30 +59,38 @@
   </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="antialiased sixo-noise">
 
   <div id="sixo-cursor-dot" class="hidden lg:block"></div>
   <div id="sixo-cursor-ring" class="hidden lg:block"></div>
 
-  <div id="sixo-preloader" class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
-    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0"></div>
+  <div id="sixo-preloader"
+    class="fixed inset-0 z-[9500] flex flex-col justify-between p-6 pointer-events-auto overflow-hidden">
+    <div id="shutter-top" class="absolute top-0 left-0 w-full h-1/2 bg-obsidian border-b border-neutral-subtle/30 z-0">
+    </div>
     <div id="shutter-bottom" class="absolute bottom-0 left-0 w-full h-1/2 bg-obsidian z-0"></div>
   </div>
 
   <canvas id="sixo-ambient-3d" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
   <!-- SECTION 01: GLOBAL STICKY HEADER & ECOSYSTEM SWITCHER -->
-  <header id="global-nav" class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20 transition-all duration-300">
+  <header id="global-nav"
+    class="fixed top-0 left-0 w-full z-50 h-20 bg-obsidian/85 backdrop-blur-xl border-b border-neutral-subtle/20 transition-all duration-300">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-full flex items-center justify-between">
-      
+
       <!-- Brand Lockup -->
       <a href="index.html" class="flex items-center gap-3.5 group">
         <div class="w-8 h-8 flex items-center justify-center">
           <svg viewBox="0 0 200 200" class="w-full h-full transition-transform group-hover:scale-105 duration-300">
-            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
-            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
-            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20" stroke-linecap="round" />
-            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 62 125 C 62 158, 105 172, 138 152" fill="none" stroke="#F5F5F5" stroke-width="20"
+              stroke-linecap="round" />
+            <path d="M 138 152 C 154 132, 135 104, 100 96 C 68 90, 62 108, 62 125" fill="none" stroke="#F5F5F5"
+              stroke-width="20" stroke-linecap="round" />
+            <path d="M 100 96 C 64 84, 58 46, 98 34 L 122 26" fill="none" stroke="#F5F5F5" stroke-width="20"
+              stroke-linecap="round" />
+            <path d="M 122 26 L 118 46 L 146 76 C 134 86, 118 76, 108 62" fill="none" stroke="#FF5A1F" stroke-width="20"
+              stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div class="flex items-center gap-2">
@@ -91,7 +103,8 @@
       </a>
 
       <!-- Navigation Pill -->
-      <nav class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
+      <nav
+        class="hidden lg:flex items-center gap-6 bg-carbon/90 border border-neutral-subtle/25 rounded-full px-6 py-2 shadow-crimson-ambient text-xs font-medium text-neutral-gray relative">
         <a href="index.html" class="hover:text-neutral-white transition-colors">Overview</a>
 
         <!-- Ecosystem Switcher Trigger -->
@@ -99,31 +112,44 @@
           <a href="ecosystem.html" class="text-neutral-white flex items-center gap-1.5 font-semibold">
             <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
             <span>The Ecosystem</span>
-            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
           </a>
 
           <!-- Mega-Menu Switcher Dropdown -->
-          <div id="eco-switcher-menu" class="hidden absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[860px] max-w-[94vw] z-50">
-            <div class="relative rounded-2xl bg-[#0c0c0e] border border-neutral-subtle/35 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_50px_rgba(255,90,31,0.14)] p-6 lg:p-7 specular-top-border overflow-hidden">
-              
+          <div id="eco-switcher-menu"
+            class="hidden absolute top-full left-1/2 -translate-x-1/2 pt-3 w-[860px] max-w-[94vw] z-50">
+            <div
+              class="relative rounded-2xl bg-[#0c0c0e] border border-neutral-subtle/35 shadow-[0_30px_90px_rgba(0,0,0,0.95),0_0_50px_rgba(255,90,31,0.14)] p-6 lg:p-7 specular-top-border overflow-hidden">
+
               <!-- Atmospheric Background Glow Orbs -->
-              <div class="absolute -top-24 -left-24 w-72 h-72 bg-sixo-wine/40 rounded-full blur-3xl pointer-events-none"></div>
-              <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-sixo-crimson/25 rounded-full blur-3xl pointer-events-none"></div>
+              <div
+                class="absolute -top-24 -left-24 w-72 h-72 bg-sixo-wine/40 rounded-full blur-3xl pointer-events-none">
+              </div>
+              <div
+                class="absolute -bottom-24 -right-24 w-72 h-72 bg-sixo-crimson/25 rounded-full blur-3xl pointer-events-none">
+              </div>
 
               <!-- Top Executive Header Row -->
-              <div class="relative z-10 flex flex-wrap justify-between items-center pb-4 mb-5 border-b border-neutral-subtle/25 gap-3">
+              <div
+                class="relative z-10 flex flex-wrap justify-between items-center pb-4 mb-5 border-b border-neutral-subtle/25 gap-3">
                 <div class="flex items-center gap-3">
                   <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sixo-orange opacity-75"></span>
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sixo-orange opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-sixo-orange"></span>
                   </span>
                   <div>
-                    <span class="font-mono text-[11px] font-semibold text-sixo-orange tracking-wider uppercase">SIXOLAB OPERATING TRIAD</span>
+                    <span class="font-mono text-[11px] font-semibold text-sixo-orange tracking-wider uppercase">SIXOLAB
+                      OPERATING TRIAD</span>
                     <span class="hidden sm:inline text-neutral-disabled mx-2">|</span>
-                    <span class="text-xs text-neutral-gray hidden sm:inline">Three autonomous specialists under unified holding governance</span>
+                    <span class="text-xs text-neutral-gray hidden sm:inline">Three autonomous specialists under unified
+                      holding governance</span>
                   </div>
                 </div>
-                <a href="ecosystem.html" class="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-white hover:text-sixo-glow transition-colors group">
+                <a href="ecosystem.html"
+                  class="inline-flex items-center gap-1.5 font-mono text-xs text-neutral-white hover:text-sixo-glow transition-colors group">
                   <span>Explore Holding Architecture</span>
                   <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
                 </a>
@@ -131,85 +157,138 @@
 
               <!-- 3 Autonomous Operating Specialists Grid -->
               <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-                
+
                 <!-- Gitlink Card -->
-                <a href="gitlink.html" class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-sixo-orange/60 ring-1 ring-sixo-orange/40 p-4 transition-all duration-300 block group relative overflow-hidden">
+                <a href="gitlink.html"
+                  class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-sixo-orange/60 ring-1 ring-sixo-orange/40 p-4 transition-all duration-300 block group relative overflow-hidden">
                   <div class="flex items-start justify-between mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-sixo-orange text-obsidian border border-sixo-orange flex items-center justify-center transition-all duration-300 shadow-sm">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <div
+                      class="w-10 h-10 rounded-lg bg-sixo-orange text-obsidian border border-sixo-orange flex items-center justify-center transition-all duration-300 shadow-sm">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                      </svg>
                     </div>
-                    <span class="font-mono text-[10px] font-semibold text-obsidian px-2 py-0.5 rounded-full bg-sixo-orange">ACTIVE VERTICAL</span>
+                    <span
+                      class="font-mono text-[10px] font-semibold text-obsidian px-2 py-0.5 rounded-full bg-sixo-orange">ACTIVE
+                      VERTICAL</span>
                   </div>
-                  <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
+                  <h4
+                    class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
                     <span>Gitlink IT Solutions</span>
                     <span class="text-sixo-orange transition-all text-xs">●</span>
                   </h4>
-                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Enterprise software engineering, multi-agent AI ecosystems, and cloud systems.</p>
-                  
+                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Enterprise software engineering,
+                    multi-agent AI ecosystems, and cloud systems.</p>
+
                   <div class="mt-3 pt-3 border-t border-neutral-subtle/20 flex flex-wrap gap-1.5">
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Custom Software</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">AI Systems</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">13 Skills</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Custom
+                      Software</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">AI
+                      Systems</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">13
+                      Skills</span>
                   </div>
                 </a>
 
                 <!-- Xenon Card -->
-                <a href="xenon.html" class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-[#272733] hover:border-sixo-glow/60 p-4 transition-all duration-300 block group relative overflow-hidden">
+                <a href="xenon.html"
+                  class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-[#272733] hover:border-sixo-glow/60 p-4 transition-all duration-300 block group relative overflow-hidden">
                   <div class="flex items-start justify-between mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-[#1a1a24] border border-[#2e2e40] flex items-center justify-center text-sixo-glow group-hover:bg-sixo-glow group-hover:text-obsidian group-hover:border-sixo-glow transition-all duration-300 shadow-sm">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    <div
+                      class="w-10 h-10 rounded-lg bg-[#1a1a24] border border-[#2e2e40] flex items-center justify-center text-sixo-glow group-hover:bg-sixo-glow group-hover:text-obsidian group-hover:border-sixo-glow transition-all duration-300 shadow-sm">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                          d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
+                        </path>
+                      </svg>
                     </div>
-                    <span class="font-mono text-[10px] font-semibold text-sixo-glow px-2 py-0.5 rounded-full bg-sixo-crimson/30 text-sixo-glow border border-sixo-crimson/40">02 // CREATE</span>
+                    <span
+                      class="font-mono text-[10px] font-semibold text-sixo-glow px-2 py-0.5 rounded-full bg-sixo-crimson/30 text-sixo-glow border border-sixo-crimson/40">02
+                      // CREATE</span>
                   </div>
-                  <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
+                  <h4
+                    class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
                     <span>Xenon Studios</span>
-                    <span class="text-neutral-subtle group-hover:text-sixo-glow group-hover:translate-x-0.5 transition-all text-xs">↗</span>
+                    <span
+                      class="text-neutral-subtle group-hover:text-sixo-glow group-hover:translate-x-0.5 transition-all text-xs">↗</span>
                   </h4>
-                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Brand strategy, high-conversion UI/UX systems, and comprehensive digital identities.</p>
-                  
+                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Brand strategy, high-conversion
+                    UI/UX systems, and comprehensive digital identities.</p>
+
                   <div class="mt-3 pt-3 border-t border-neutral-subtle/20 flex flex-wrap gap-1.5">
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Brand Strategy</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">UI/UX Systems</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">12 Skills</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Brand
+                      Strategy</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">UI/UX
+                      Systems</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">12
+                      Skills</span>
                   </div>
                 </a>
 
                 <!-- One Percent Card -->
-                <a href="one-percent.html" class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-[#272733] hover:border-sixo-orange/60 p-4 transition-all duration-300 block group relative overflow-hidden">
+                <a href="one-percent.html"
+                  class="sixo-spotlight-card rounded-xl bg-[#131317] hover:bg-[#181820] border border-[#272733] hover:border-sixo-orange/60 p-4 transition-all duration-300 block group relative overflow-hidden">
                   <div class="flex items-start justify-between mb-3">
-                    <div class="w-10 h-10 rounded-lg bg-[#1a1a24] border border-[#2e2e40] flex items-center justify-center text-sixo-orange group-hover:bg-sixo-orange group-hover:text-obsidian group-hover:border-sixo-orange transition-all duration-300 shadow-sm">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    <div
+                      class="w-10 h-10 rounded-lg bg-[#1a1a24] border border-[#2e2e40] flex items-center justify-center text-sixo-orange group-hover:bg-sixo-orange group-hover:text-obsidian group-hover:border-sixo-orange transition-all duration-300 shadow-sm">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                        </path>
+                      </svg>
                     </div>
-                    <span class="font-mono text-[10px] font-semibold text-sixo-orange px-2 py-0.5 rounded-full bg-sixo-orange/15 border border-sixo-orange/30">03 // PRODUCE</span>
+                    <span
+                      class="font-mono text-[10px] font-semibold text-sixo-orange px-2 py-0.5 rounded-full bg-sixo-orange/15 border border-sixo-orange/30">03
+                      // PRODUCE</span>
                   </div>
-                  <h4 class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
+                  <h4
+                    class="font-display font-bold text-sm text-neutral-white group-hover:text-sixo-glow transition-colors flex items-center justify-between">
                     <span>One Percent</span>
-                    <span class="text-neutral-subtle group-hover:text-sixo-orange group-hover:translate-x-0.5 transition-all text-xs">↗</span>
+                    <span
+                      class="text-neutral-subtle group-hover:text-sixo-orange group-hover:translate-x-0.5 transition-all text-xs">↗</span>
                   </h4>
-                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Cinema TVCs, commercial brand films, high-fidelity VFX, and sound production.</p>
-                  
+                  <p class="text-xs text-[#9d9da8] mt-1.5 leading-relaxed line-clamp-2">Cinema TVCs, commercial brand
+                    films, high-fidelity VFX, and sound production.</p>
+
                   <div class="mt-3 pt-3 border-t border-neutral-subtle/20 flex flex-wrap gap-1.5">
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Cinema TVCs</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">VFX & Audio</span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">19 Skills</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">Cinema
+                      TVCs</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">VFX
+                      & Audio</span>
+                    <span
+                      class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1b1b24] text-neutral-300 border border-[#2b2b3a]">19
+                      Skills</span>
                   </div>
                 </a>
 
               </div>
 
               <!-- Bottom Holding Command & Action Bar -->
-              <div class="relative z-10 mt-5 pt-4 border-t border-neutral-subtle/25 flex flex-col md:flex-row justify-between items-center gap-3">
+              <div
+                class="relative z-10 mt-5 pt-4 border-t border-neutral-subtle/25 flex flex-col md:flex-row justify-between items-center gap-3">
                 <div class="flex items-center gap-2.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
                   <p class="text-xs text-neutral-gray">
-                    <strong class="text-neutral-white font-medium">Integrated Engagements:</strong> Governed by SIXOLAB with single master agreement & unified SLA.
+                    <strong class="text-neutral-white font-medium">Integrated Engagements:</strong> Governed by SIXOLAB
+                    with single master agreement & unified SLA.
                   </p>
                 </div>
                 <div class="flex items-center gap-4 shrink-0">
-                  <a href="services.html" class="text-xs font-mono text-neutral-gray hover:text-neutral-white transition-colors whitespace-nowrap">
+                  <a href="services.html"
+                    class="text-xs font-mono text-neutral-gray hover:text-neutral-white transition-colors whitespace-nowrap">
                     53 Capabilities Matrix →
                   </a>
-                  <a href="contact.html?vertical=gitlink" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-sixo-orange text-obsidian font-mono text-xs font-semibold hover:bg-sixo-glow transition-all duration-200 whitespace-nowrap shadow-sm">
+                  <a href="contact.html?vertical=gitlink"
+                    class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-sixo-orange text-obsidian font-mono text-xs font-semibold hover:bg-sixo-glow transition-all duration-200 whitespace-nowrap shadow-sm">
                     <span>Scope with Gitlink</span>
                     <span>→</span>
                   </a>
@@ -227,30 +306,45 @@
 
       <!-- Right Action CTA -->
       <div class="flex items-center gap-4">
-        <a href="contact.html?vertical=gitlink" class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
+        <a href="contact.html?vertical=gitlink"
+          class="magnetic-btn inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sixo-orange/50 bg-sixo-wine/30 text-neutral-white text-xs font-medium hover:bg-sixo-orange hover:text-obsidian hover:shadow-orange-glow transition-all duration-300">
           <span class="w-1.5 h-1.5 rounded-full bg-sixo-orange"></span>
           <span>Scope with Gitlink</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-toggle" class="lg:hidden p-2 text-neutral-gray hover:text-neutral-white" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        <button id="mobile-menu-toggle" class="lg:hidden p-2 text-neutral-gray hover:text-neutral-white"
+          aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
       </div>
 
     </div>
 
     <!-- Mobile Drawer -->
-    <div id="mobile-menu-drawer" class="hidden lg:hidden bg-carbon/98 border-b border-neutral-subtle/30 px-6 py-6 space-y-4">
-      <a href="index.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Overview</a>
-      <a href="ecosystem.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">The Ecosystem & Holding Model</a>
-      <a href="gitlink.html" class="block text-sm font-medium text-sixo-orange font-bold pl-4 py-1">01 // Gitlink IT Solutions (BUILD)</a>
+    <div id="mobile-menu-drawer"
+      class="hidden lg:hidden bg-carbon/98 border-b border-neutral-subtle/30 px-6 py-6 space-y-4">
+      <a href="index.html"
+        class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Overview</a>
+      <a href="ecosystem.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">The
+        Ecosystem & Holding Model</a>
+      <a href="gitlink.html" class="block text-sm font-medium text-sixo-orange font-bold pl-4 py-1">01 // Gitlink IT
+        Solutions (BUILD)</a>
       <a href="xenon.html" class="block text-sm font-medium text-sixo-glow pl-4 py-1">02 // Xenon Studios (CREATE)</a>
-      <a href="one-percent.html" class="block text-sm font-medium text-sixo-orange pl-4 py-1">03 // One Percent (PRODUCE)</a>
-      <a href="services.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Capabilities Directory (53)</a>
-      <a href="process.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Process & Payment Terms</a>
-      <a href="index.html#case-studies" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Case Studies</a>
-      <a href="contact.html?vertical=gitlink" class="block text-center mt-4 px-6 py-3 rounded-full bg-sixo-accent text-obsidian font-bold text-xs">Scope with Gitlink →</a>
+      <a href="one-percent.html" class="block text-sm font-medium text-sixo-orange pl-4 py-1">03 // One Percent
+        (PRODUCE)</a>
+      <a href="services.html"
+        class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Capabilities Directory
+        (53)</a>
+      <a href="process.html" class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Process &
+        Payment Terms</a>
+      <a href="index.html#case-studies"
+        class="block text-sm font-medium text-neutral-gray hover:text-neutral-white py-1">Case Studies</a>
+      <a href="contact.html?vertical=gitlink"
+        class="block text-center mt-4 px-6 py-3 rounded-full bg-sixo-accent text-obsidian font-bold text-xs">Scope with
+        Gitlink →</a>
     </div>
   </header>
 
@@ -260,21 +354,26 @@
     <!-- SECTION 3.1: GITLINK HERO -->
     <section id="gitlink-hero" class="pt-20 pb-20 px-6 lg:px-12 border-b border-neutral-subtle/20 relative">
       <div class="max-w-4xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-orange">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-carbon border border-sixo-orange/40 mb-6 font-mono text-xs text-sixo-orange">
           02 // TECHNOLOGY VERTICAL — ROLE: BUILD — FOCUS: TECHNICAL DELIVERY
         </div>
         <h1 class="font-display font-bold text-4xl sm:text-6xl text-neutral-white leading-tight mb-6">
           Gitlink IT Solutions: <span class="bg-sixo-accent bg-clip-text text-transparent">Build the Technology.</span>
         </h1>
         <p class="text-base sm:text-xl text-neutral-gray leading-relaxed mb-8">
-          Gitlink IT Solutions handles the technology vertical of the Sixolab ecosystem. This is where the actual technical delivery sits. From custom software and AI to automation, cloud infrastructure and the internal systems a business runs on, Gitlink designs and engineers technology that is built to scale and built to last.
+          Gitlink IT Solutions handles the technology vertical of the Sixolab ecosystem. This is where the actual
+          technical delivery sits. From custom software and AI to automation, cloud infrastructure and the internal
+          systems a business runs on, Gitlink designs and engineers technology that is built to scale and built to last.
         </p>
 
         <div class="flex flex-wrap items-center gap-4 mb-10">
-          <a href="contact.html?vertical=gitlink" class="magnetic-btn px-8 py-4 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-sm shadow-orange-glow hover:shadow-orange-glow-lg transition-all">
+          <a href="contact.html?vertical=gitlink"
+            class="magnetic-btn px-8 py-4 rounded-full bg-sixo-accent text-obsidian font-display font-bold text-sm shadow-orange-glow hover:shadow-orange-glow-lg transition-all">
             Request Technical Discovery →
           </a>
-          <a href="https://gitlinkitsolutions.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-carbon border border-neutral-subtle/30 text-neutral-white font-mono text-xs hover:border-sixo-orange transition-colors">
+          <a href="https://gitlinkitsolutions.com" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-carbon border border-neutral-subtle/30 text-neutral-white font-mono text-xs hover:border-sixo-orange transition-colors">
             <span>gitlinkitsolutions.com</span>
             <span>↗</span>
           </a>
@@ -286,9 +385,11 @@
     <!-- SECTION 3.2: 13 CORE ENGINEERING CAPABILITIES -->
     <section id="gitlink-core" class="py-24 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
       <div class="max-w-3xl mb-16">
-        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 7 // GROUP DOCUMENTATION</span>
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 7 // GROUP
+          DOCUMENTATION</span>
         <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">13 Core Engineering Capabilities</h2>
-        <p class="text-neutral-gray text-base mt-2">The verified technology delivery roster supporting enterprise software, SaaS, AI and digital infrastructure.</p>
+        <p class="text-neutral-gray text-base mt-2">The verified technology delivery roster supporting enterprise
+          software, SaaS, AI and digital infrastructure.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,91 +397,104 @@
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 01</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Custom Software Development</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Bespoke software engineered around your workflows, instead of forcing your business into off-the-shelf tools.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Bespoke software engineered around your workflows,
+            instead of forcing your business into off-the-shelf tools.</p>
         </div>
 
         <!-- 02 Web Applications -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 02</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Web Applications</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Fast, secure and scalable browser-based applications, portals and customer-facing platforms.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Fast, secure and scalable browser-based applications,
+            portals and customer-facing platforms.</p>
         </div>
 
         <!-- 03 Enterprise Software -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 03</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Enterprise Software</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Robust systems for large teams: role-based access, reporting, integrations and long-term maintainability.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Robust systems for large teams: role-based access,
+            reporting, integrations and long-term maintainability.</p>
         </div>
 
         <!-- 04 AI Solutions -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 04</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">AI Solutions</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Practical AI built around real business problems: assistants, analysis, content and decision support.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Practical AI built around real business problems:
+            assistants, analysis, content and decision support.</p>
         </div>
 
         <!-- 05 AI Integration -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 05</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">AI Integration</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Embedding AI into your existing products and processes so it increases leverage, not complexity.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Embedding AI into your existing products and processes so
+            it increases leverage, not complexity.</p>
         </div>
 
         <!-- 06 SaaS Development -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 06</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">SaaS Development</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Designing and building subscription software products, from first MVP through to scale.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Designing and building subscription software products,
+            from first MVP through to scale.</p>
         </div>
 
         <!-- 07 Business Automation -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 07</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Business Automation</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Removing repetitive manual work through automated workflows and system-to-system handoffs.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Removing repetitive manual work through automated
+            workflows and system-to-system handoffs.</p>
         </div>
 
         <!-- 08 Mobile Applications -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 08</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Mobile Applications</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">iOS and Android applications with clean UX and dependable backends (Native Swift/Kotlin, React Native & Flutter).</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">iOS and Android applications with clean UX and dependable
+            backends (Native Swift/Kotlin, React Native & Flutter).</p>
         </div>
 
         <!-- 09 APIs & Integrations -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 09</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">APIs & Integrations</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Connecting your tools, data and third-party services into one system that works together.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Connecting your tools, data and third-party services into
+            one system that works together.</p>
         </div>
 
         <!-- 10 Cloud Infrastructure -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 10</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Cloud & Digital Infrastructure</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Hosting, deployment, security and scaling foundations that keep products fast and online.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Hosting, deployment, security and scaling foundations
+            that keep products fast and online.</p>
         </div>
 
         <!-- 11 Internal Business Systems -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 11</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Internal Business Systems</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Inventory, CRM, operations and management tools tailored to how your company actually runs.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Inventory, CRM, operations and management tools tailored
+            to how your company actually runs.</p>
         </div>
 
         <!-- 12 Dashboards & Platforms -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 12</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Dashboards & Digital Platforms</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Live visibility into data and operations, plus platforms that bring users, content and transactions together.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Live visibility into data and operations, plus platforms
+            that bring users, content and transactions together.</p>
         </div>
 
         <!-- 13 Technical Consulting -->
         <div class="sixo-spotlight-card p-6 rounded-2xl bg-obsidian md:col-span-2 lg:col-span-3">
           <span class="font-mono text-xs text-sixo-orange block mb-2">TECH // 13</span>
           <h3 class="font-display font-bold text-lg text-neutral-white mb-2">Technical Consulting</h3>
-          <p class="text-sm text-neutral-gray leading-relaxed">Architecture reviews, technology selection and roadmaps, before you commit budget to the wrong build.</p>
+          <p class="text-sm text-neutral-gray leading-relaxed">Architecture reviews, technology selection and roadmaps,
+            before you commit budget to the wrong build.</p>
         </div>
       </div>
     </section>
@@ -388,109 +502,141 @@
     <!-- SECTION 3.3: EXTENDED WEB, E-COMMERCE, CMS & OPS COMMAND DECK -->
     <section id="gitlink-extended" class="py-28 bg-obsidian px-6 lg:px-12 border-b border-neutral-subtle/20">
       <div class="max-w-3xl mb-12">
-        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">GITLINKITSOLUTIONS.COM ECOSYSTEM</span>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Extended Digital, Web & Growth Suite</h2>
-        <p class="text-neutral-gray text-base mt-2">Comprehensive service modules from Gitlink's commercial track record across 60+ engagements.</p>
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">GITLINKITSOLUTIONS.COM
+          ECOSYSTEM</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Extended Digital, Web & Growth Suite
+        </h2>
+        <p class="text-neutral-gray text-base mt-2">Comprehensive service modules from Gitlink's commercial track record
+          across 60+ engagements.</p>
       </div>
 
       <!-- Tab Buttons -->
       <div class="flex flex-wrap gap-2 pb-6 border-b border-neutral-subtle/20 mb-8" role="tablist">
-        <button class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-sixo-orange text-obsidian gitlink-tab-btn" data-tab="tab-ecom">Website & E-Commerce</button>
-        <button class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn" data-tab="tab-cms">CMS & Mobile Stack</button>
-        <button class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn" data-tab="tab-marketing">Digital Marketing</button>
-        <button class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn" data-tab="tab-ops">Extended Operations</button>
-        <button class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn" data-tab="tab-care">Client-Care Protocols</button>
+        <button
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-sixo-orange text-obsidian gitlink-tab-btn"
+          data-tab="tab-ecom">Website & E-Commerce</button>
+        <button
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn"
+          data-tab="tab-cms">CMS & Mobile Stack</button>
+        <button
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn"
+          data-tab="tab-marketing">Digital Marketing</button>
+        <button
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn"
+          data-tab="tab-ops">Extended Operations</button>
+        <button
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-semibold bg-carbon text-neutral-gray hover:text-neutral-white gitlink-tab-btn"
+          data-tab="tab-care">Client-Care Protocols</button>
       </div>
 
       <!-- Tab Contents -->
       <div id="tab-ecom" class="gitlink-tab-pane grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Business & Portfolio Websites</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Pixel-perfect responsive design, mobile-first layouts, SEO markup, and dynamic interactive portfolios.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Pixel-perfect responsive design, mobile-first layouts,
+            SEO markup, and dynamic interactive portfolios.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">E-Commerce Development</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">WooCommerce & Shopify stores with custom cart/checkout flows, secure payment gateways, and inventory dashboards.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">WooCommerce & Shopify stores with custom cart/checkout
+            flows, secure payment gateways, and inventory dashboards.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Landing Pages (&lt;2s Load)</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Ultra-fast conversion-focused landing pages, A/B testing-ready architecture, and frictionless CTA design.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Ultra-fast conversion-focused landing pages, A/B
+            testing-ready architecture, and frictionless CTA design.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Speed & Core Web Vitals</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Lighthouse 95+ optimization, image compression, browser caching, script minification, and database indexing.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Lighthouse 95+ optimization, image compression, browser
+            caching, script minification, and database indexing.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Maintenance & Support Plans</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Ongoing CMS updates, daily cloud backups, malware scanning, security patches, and monthly uptime reports.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Ongoing CMS updates, daily cloud backups, malware
+            scanning, security patches, and monthly uptime reports.</p>
         </div>
       </div>
 
       <div id="tab-cms" class="gitlink-tab-pane hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">WordPress Custom Development</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Bespoke themes and plugins engineered for speed, avoiding bloat and heavy third-party builders.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Bespoke themes and plugins engineered for speed, avoiding
+            bloat and heavy third-party builders.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Webflow Enterprise CMS</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Visual CMS architecture, client-first styling classes, and custom code integrations.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Visual CMS architecture, client-first styling classes,
+            and custom code integrations.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Headless CMS Platforms</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Decoupled content engines using Strapi, Contentful, and Sanity paired with Next.js/React frontends.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Decoupled content engines using Strapi, Contentful, and
+            Sanity paired with Next.js/React frontends.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Native iOS & Android</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">High-performance native apps written in Swift and Kotlin for maximum OS integration.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">High-performance native apps written in Swift and Kotlin
+            for maximum OS integration.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Cross-Platform Apps</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Single-codebase delivery with React Native and Flutter for rapid cross-device rollouts.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Single-codebase delivery with React Native and Flutter
+            for rapid cross-device rollouts.</p>
         </div>
       </div>
 
       <div id="tab-marketing" class="gitlink-tab-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Search Engine Optimization (SEO)</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Technical SEO audits, keyword strategy, schema markup, and content architecture for sustained rank growth.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Technical SEO audits, keyword strategy, schema markup,
+            and content architecture for sustained rank growth.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Social Media Marketing (SMM)</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Audience targeting, creative ad management, and conversion-optimized social ad funnels.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Audience targeting, creative ad management, and
+            conversion-optimized social ad funnels.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Search Engine Marketing (SEM)</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Google Ads, high-intent search campaigns, and performance tracking with transparent ROAS metrics.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Google Ads, high-intent search campaigns, and performance
+            tracking with transparent ROAS metrics.</p>
         </div>
       </div>
 
       <div id="tab-ops" class="gitlink-tab-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Data Operations & OCR</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Automated document digitisation, data extraction pipelines, and high-accuracy data entry.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Automated document digitisation, data extraction
+            pipelines, and high-accuracy data entry.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Technical & SEO Writing</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Search-optimized product copy, technical documentation, developer guides, and business proposals.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Search-optimized product copy, technical documentation,
+            developer guides, and business proposals.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">IT & Business Consultancy</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Enterprise software architecture, digital transformation roadmaps, and vendor evaluations.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Enterprise software architecture, digital transformation
+            roadmaps, and vendor evaluations.</p>
         </div>
       </div>
 
       <div id="tab-care" class="gitlink-tab-pane hidden grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Monthly Service Reports</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Transparent operational tracking, server metrics, security logs, and task completions.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Transparent operational tracking, server metrics,
+            security logs, and task completions.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">Lifetime Business Reporting</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Continuous performance tracking to help leadership identify ongoing efficiency opportunities.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Continuous performance tracking to help leadership
+            identify ongoing efficiency opportunities.</p>
         </div>
         <div class="p-6 rounded-2xl bg-carbon border border-neutral-subtle/20">
           <h4 class="font-display font-bold text-base text-neutral-white mb-2">24/7 Dedicated Support</h4>
-          <p class="text-xs text-neutral-gray leading-relaxed">Direct engineer escalation channels for critical incident response and zero downtime.</p>
+          <p class="text-xs text-neutral-gray leading-relaxed">Direct engineer escalation channels for critical incident
+            response and zero downtime.</p>
         </div>
       </div>
     </section>
@@ -498,41 +644,50 @@
     <!-- SECTION 3.4: 6-STAGE ENGINEERING PIPELINE -->
     <section id="gitlink-pipeline" class="py-24 bg-carbon px-6 lg:px-12 border-b border-neutral-subtle/20">
       <div class="max-w-3xl mb-16">
-        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">DEVELOPMENT METHODOLOGY</span>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">How We Build: 6-Stage Engineering Pipeline</h2>
-        <p class="text-neutral-gray text-base mt-2">A predictable, milestone-driven technical path from discovery to deployment.</p>
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">DEVELOPMENT
+          METHODOLOGY</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">How We Build: 6-Stage Engineering
+          Pipeline</h2>
+        <p class="text-neutral-gray text-base mt-2">A predictable, milestone-driven technical path from discovery to
+          deployment.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 01</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">Discovery</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Requirements, constraints, user stories and tech stack selection.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Requirements, constraints, user stories and tech stack
+            selection.</p>
         </div>
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 02</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">UI & Wireframes</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Interactive Figma prototypes, design systems, and UX flows.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Interactive Figma prototypes, design systems, and UX
+            flows.</p>
         </div>
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 03</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">Development</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Clean modular code, frontend components, and robust backend APIs.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Clean modular code, frontend components, and robust
+            backend APIs.</p>
         </div>
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 04</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">Integration</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Connecting database schemas, payment gateways, and third-party APIs.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Connecting database schemas, payment gateways, and
+            third-party APIs.</p>
         </div>
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 05</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">QA & Testing</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Performance, security, accessibility, cross-browser, and regression tests.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Performance, security, accessibility, cross-browser, and
+            regression tests.</p>
         </div>
         <div class="p-5 rounded-xl bg-obsidian border border-neutral-subtle/20">
           <span class="font-mono text-xs text-sixo-orange block mb-2">STAGE // 06</span>
           <h4 class="font-display font-bold text-sm text-neutral-white mb-1">Launch & Care</h4>
-          <p class="text-[11px] text-neutral-gray leading-snug">Production deployment, handover documentation, and ongoing support.</p>
+          <p class="text-[11px] text-neutral-gray leading-snug">Production deployment, handover documentation, and
+            ongoing support.</p>
         </div>
       </div>
     </section>
@@ -540,9 +695,12 @@
     <!-- SECTION 3.5: GITLINK ENGAGEMENT CRITERIA -->
     <section id="gitlink-criteria" class="py-28 bg-obsidian px-6 lg:px-12 border-b border-neutral-subtle/20">
       <div class="max-w-3xl mb-16">
-        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 8 // GROUP DOCUMENTATION</span>
-        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Engagement Criteria: Working with Gitlink IT Solutions</h2>
-        <p class="text-neutral-gray text-base mt-2">Explicit criteria ensuring technical engagements start fast and run smoothly.</p>
+        <span class="font-mono text-xs text-sixo-orange uppercase tracking-wider block mb-2">PAGE 8 // GROUP
+          DOCUMENTATION</span>
+        <h2 class="font-display font-bold text-3xl sm:text-4xl text-neutral-white">Engagement Criteria: Working with
+          Gitlink IT Solutions</h2>
+        <p class="text-neutral-gray text-base mt-2">Explicit criteria ensuring technical engagements start fast and run
+          smoothly.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -638,7 +796,8 @@
 
     <!-- FOOTER -->
     <footer id="global-footer" class="bg-obsidian border-t border-neutral-subtle/20">
-      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
+      <div
+        class="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-subtle gap-4">
         <span>© 2026 GITLINK IT SOLUTIONS • A SIXOLAB COMPANY.</span>
         <div class="flex items-center gap-6">
           <a href="index.html" class="hover:text-neutral-white">Overview</a>
@@ -674,4 +833,5 @@
     });
   </script>
 </body>
+
 </html>
